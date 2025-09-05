@@ -1,4 +1,2 @@
 /.idea
 
-# shop 모듈의 .env 파일만 무시
-/shop/.env
