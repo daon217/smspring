@@ -1,70 +1,109 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <style>
-    #map1{
-        width:auto;
-        height:400px;
-        border:2px solid red;
-    }
+    #map1{ width:auto; height:400px; border:2px solid red; }
 </style>
 
 <script>
     let map1 = {
-        init:function(){
-            let mapContainer = document.getElementById('map1');
-            let mapOption = {
-                center: new kakao.maps.LatLng(36.798587, 127.075860),
-                level: 7
+        map: null,
+        currentPosition: null,
+        markers: [],
+
+        init: function() {
+            this.makeMap();
+            $('#btn1').click(() => {
+                this.currentPosition ? this.getData('병원') : alert('현재 위치를 먼저 확인해주세요.');
+            });
+            $('#btn2').click(() => {
+                this.currentPosition ? this.getData('편의점') : alert('현재 위치를 먼저 확인해주세요.');
+            });
+        },
+
+        clearMarkers: function() {
+            this.markers.forEach(marker => marker.setMap(null));
+            this.markers = [];
+        },
+
+        getData: function(category) {
+            this.clearMarkers();
+
+            $.ajax({
+                url: '/getnearby',
+                data: {
+                    lat: this.currentPosition.getLat(),
+                    lng: this.currentPosition.getLng(),
+                    category: category
+                },
+                success: (places) => {
+                    places.forEach(place => {
+                        let placePosition = new kakao.maps.LatLng(place.lat, place.lng);
+                        let marker = new kakao.maps.Marker({
+                            map: this.map,
+                            position: placePosition,
+                            title: place.name
+                        });
+                        this.markers.push(marker);
+                    });
+                }
+            });
+        },
+
+        makeMap: function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    // 1. 사용자의 현재 위치를 먼저 얻어옵니다.
+                    let lat = position.coords.latitude;
+                    let lng = position.coords.longitude;
+
+                    this.currentPosition = new kakao.maps.LatLng(lat, lng);
+
+                    // 2. 현재 위치를 중심으로 지도 생성 옵션을 만듭니다.
+                    let mapContainer = document.getElementById('map1');
+                    let mapOption = {
+                        center: this.currentPosition, // 지도의 중심을 현재 위치로 설정
+                        level: 5
+                    };
+
+                    // 3. 지도와 컨트롤들을 생성합니다.
+                    this.map = new kakao.maps.Map(mapContainer, mapOption);
+                    let mapTypeControl = new kakao.maps.MapTypeControl();
+                    this.map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+                    let zoomControl = new kakao.maps.ZoomControl();
+                    this.map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+                    // 4. 현재 위치에 마커를 표시합니다.
+                    new kakao.maps.Marker({ map: this.map, position: this.currentPosition });
+
+                    // 5. 현재 위치의 주소를 가져옵니다.
+                    var geocoder = new kakao.maps.services.Geocoder();
+                    geocoder.coord2Address(lng, lat, (result, status) => {
+                        if (status === kakao.maps.services.Status.OK) {
+                            var detailAddr = result[0].road_address ? result[0].road_address.address_name : result[0].address.address_name;
+                            $('#addr1').html('현재위치: ' + detailAddr);
+                        }
+                    });
+                }, (error) => {
+                    console.error("Geolocation 오류:", error);
+                    alert("위치 정보를 가져오는 데 실패했습니다. 브라우저의 위치 권한을 확인해주세요.");
+                });
+            } else {
+                alert('이 브라우저는 위치 정보를 지원하지 않습니다.');
             }
-            let map = new kakao.maps.Map(mapContainer, mapOption);
-            // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
-            let mapTypeControl = new kakao.maps.MapTypeControl();
-
-            // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
-            // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
-            map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
-
-            // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
-            let zoomControl = new kakao.maps.ZoomControl();
-            map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
-            // 마커가 표시될 위치입니다
-            let markerPosition  = new kakao.maps.LatLng(36.798587, 127.075860);
-
-            // 마커를 생성합니다
-            let marker = new kakao.maps.Marker({
-                position: markerPosition
-                // map:map 이렇게 하고 아래꺼 지워도 됨
-            });
-
-            // 마커가 지도 위에 표시되도록 설정합니다
-            marker.setMap(map);
-
-            //infowindow
-            let iwContent ='<p>Info Window</p>';
-            var infowindow = new kakao.maps.InfoWindow({
-                content : iwContent
-            });
-
-            // Event
-            kakao.maps.event.addListener(marker, 'mouseover', function() {
-                infowindow.open(map, marker);
-            });
-            kakao.maps.event.addListener(marker, 'mouseout', function() {
-                infowindow.close();
-            });
-            kakao.maps.event.addListener(marker, 'click', function() {
-                location.href='<c:url value="/cust/get"/> '
-            });
-
         }
-    }
+    };
+
     $(function() {
-        map1.init()
-    })
+        map1.init();
+    });
 </script>
 
 <div class="col-sm-10">
     <h2>Map1</h2>
-    <div id="map1"> </div>
+    <h5 id="latlog"></h5>
+    <h3 id="addr1">위치 정보를 찾는 중...</h3>
+    <h3 id="addr2"></h3>
+    <button id="btn1" class="btn btn-primary">병원</button>
+    <button id="btn2" class="btn btn-primary">편의점</button>
+    <div id="map1"></div>
 </div>

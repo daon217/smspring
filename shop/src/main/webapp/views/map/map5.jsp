@@ -1,3 +1,4 @@
+<%--내가만든 교통정보 및 로드뷰 정보 보여주는 지도 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <style>
