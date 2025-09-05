@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.sm.marker.SelectTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-05T04:29:03.325Z" hostname="DAON" time="2.519">
+  <properties/>
+  <testcase name="contextLoads()" classname="edu.sm.marker.SelectTests" time="2.519"/>
+  <system-out><![CDATA[13:28:58.882 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [edu.sm.marker.SelectTests]: SelectTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:28:59.086 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration edu.sm.ShopApplication for test class edu.sm.marker.SelectTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::      (v3.4.10-SNAPSHOT)
+
+2025-09-05T13:29:00.093+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Starting SelectTests using Java 17.0.15 with PID 19604 (started by daon2 in C:\smspring\smspring\shop)
+2025-09-05T13:29:00.096+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : The following 1 profile is active: "dev"
+2025-09-05T13:29:01.684+09:00  INFO 19604 --- [    Test worker] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2025-09-05T13:29:01.740+09:00  INFO 19604 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2025-09-05T13:29:01.743+09:00  INFO 19604 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource test [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2025-09-05T13:29:01.743+09:00  INFO 19604 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource Inlined Test Properties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2025-09-05T13:29:01.743+09:00  INFO 19604 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2025-09-05T13:29:01.744+09:00  INFO 19604 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.web.context.support.ServletContextPropertySource] to EncryptableEnumerablePropertySourceWrapper
+2025-09-05T13:29:01.744+09:00  INFO 19604 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2025-09-05T13:29:01.744+09:00  INFO 19604 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2025-09-05T13:29:01.745+09:00  INFO 19604 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2025-09-05T13:29:01.745+09:00  INFO 19604 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource Config resource 'file [.env]' via location 'optional:file:.env[.properties]' [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2025-09-05T13:29:01.745+09:00  INFO 19604 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource Config resource 'class path resource [application-dev.yml]' via location 'optional:classpath:/' [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2025-09-05T13:29:01.745+09:00  INFO 19604 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource Config resource 'class path resource [application.yml]' via location 'optional:classpath:/' [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2025-09-05T13:29:01.745+09:00  INFO 19604 --- [    Test worker] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationInfo [org.springframework.boot.ApplicationInfoPropertySource] to EncryptableMapPropertySourceWrapper
+2025-09-05T13:29:01.805+09:00  INFO 19604 --- [    Test worker] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2025-09-05T13:29:01.905+09:00  INFO 19604 --- [    Test worker] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2025-09-05T13:29:01.910+09:00  INFO 19604 --- [    Test worker] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2025-09-05T13:29:01.936+09:00  INFO 19604 --- [    Test worker] c.u.j.encryptor.DefaultLazyEncryptor     : Found Custom Encryptor Bean org.jasypt.encryption.pbe.PooledPBEStringEncryptor@35650279 with name: jasyptStringEncryptor
+2025-09-05T13:29:02.764+09:00  INFO 19604 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-09-05T13:29:03.294+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Started SelectTests in 3.895 seconds (process running for 6.147)
+2025-09-05T13:29:04.853+09:00  INFO 19604 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-05T13:29:05.517+09:00  INFO 19604 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e614370
+2025-09-05T13:29:05.523+09:00  INFO 19604 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-05T13:29:05.762+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=101, title=순대국1, img=ss1.jpg, lat=37.5645, lng=126.991, loc=100)
+2025-09-05T13:29:05.764+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=102, title=순대국2, img=ss2.jpg, lat=37.5445, lng=126.971, loc=100)
+2025-09-05T13:29:05.767+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=103, title=순대국3, img=ss3.jpg, lat=37.5645, lng=126.971, loc=100)
+2025-09-05T13:29:05.767+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=104, title=순대국4, img=ss4.jpg, lat=37.5655, lng=126.981, loc=100)
+2025-09-05T13:29:05.768+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=105, title=순대국5, img=ss5.jpg, lat=37.5635, lng=126.975, loc=100)
+2025-09-05T13:29:05.768+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=106, title=순대국6, img=ss6.jpg, lat=37.5655, lng=126.973, loc=100)
+2025-09-05T13:29:05.769+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=107, title=순대국7, img=ss7.jpg, lat=37.5665, lng=126.972, loc=100)
+2025-09-05T13:29:05.770+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=201, title=순대국1, img=ss1.jpg, lat=35.1761, lng=129.165, loc=200)
+2025-09-05T13:29:05.771+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=202, title=순대국2, img=ss2.jpg, lat=35.1711, lng=129.174, loc=200)
+2025-09-05T13:29:05.771+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=203, title=순대국3, img=ss3.jpg, lat=35.1791, lng=129.172, loc=200)
+2025-09-05T13:29:05.772+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=204, title=순대국4, img=ss4.jpg, lat=35.1731, lng=129.166, loc=200)
+2025-09-05T13:29:05.774+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=301, title=순대국1, img=ss1.jpg, lat=33.2516, lng=126.416, loc=300)
+2025-09-05T13:29:05.775+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=302, title=순대국2, img=ss2.jpg, lat=33.2606, lng=126.412, loc=300)
+2025-09-05T13:29:05.776+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=303, title=순대국3, img=ss3.jpg, lat=33.2586, lng=126.421, loc=300)
+2025-09-05T13:29:05.777+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=304, title=순대국4, img=ss4.jpg, lat=33.2616, lng=126.415, loc=300)
+2025-09-05T13:29:05.797+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=101, title=순대국1, img=ss1.jpg, lat=37.5645, lng=126.991, loc=100)
+2025-09-05T13:29:05.802+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=201, title=순대국1, img=ss1.jpg, lat=35.1761, lng=129.165, loc=200)
+2025-09-05T13:29:05.802+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=202, title=순대국2, img=ss2.jpg, lat=35.1711, lng=129.174, loc=200)
+2025-09-05T13:29:05.802+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=203, title=순대국3, img=ss3.jpg, lat=35.1791, lng=129.172, loc=200)
+2025-09-05T13:29:05.803+09:00  INFO 19604 --- [    Test worker] edu.sm.marker.SelectTests                : Marker(target=204, title=순대국4, img=ss4.jpg, lat=35.1731, lng=129.166, loc=200)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
