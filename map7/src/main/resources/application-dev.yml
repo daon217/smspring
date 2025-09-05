@@ -1,0 +1,28 @@
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: classpath:keystore.p12   #이게 인증서다라는 표시
+    key-store-password: 111111
+    key-store-type: PKCS12  # 인증서 형식 (최근에는 더 복잡한 구조로도 나옴 : 암호화 알고림즘)
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+spring:
+  mvc:
+    view:
+      prefix: /views/
+      suffix: .jsp
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/shopdb?serverTimezone=Asia/Seoul
+    username: root
+    password: 111111
+mybatis:
+  type-aliases-package: edu.sm.app.dto
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    root: info
