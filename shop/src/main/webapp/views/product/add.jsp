@@ -4,7 +4,7 @@
 <%-- Center Page --%>
 <div class="col-sm-9">
     <h2>Product Add Page</h2>
-    <form action="/product/registerimpl" method="post">
+    <form action="/product/registerimpl" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" class="form-control" placeholder="Enter name" id="name" name="productName">
