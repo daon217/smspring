@@ -1,6 +1,8 @@
 package edu.sm.app.service;
 
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import edu.sm.app.dto.Product;
 import edu.sm.app.repository.ProductRepository;
 import edu.sm.common.frame.SmService;
@@ -58,5 +60,10 @@ public class ProductService implements SmService<Product, Integer> {
     @Override
     public Product get(Integer s) throws Exception {
         return productRepository.select(s);
+    }
+
+    public Page<Product> getPage(int pageNo) throws Exception {
+        PageHelper.startPage(pageNo, 3);
+        return productRepository.getpage();
     }
 }

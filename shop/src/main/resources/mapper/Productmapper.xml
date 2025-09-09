@@ -3,7 +3,10 @@
         PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.sm.app.repository.ProductRepository">
-
+    <select id="getpage" resultType="Product">
+        select * from product p
+                          inner join cate c on p.cate_id = c.cate_id
+    </select>
     <select id="select" parameterType="Integer" resultType="Product">
         SELECT * FROM product p
                           INNER JOIN cate c ON p.cate_id=c.cate_id WHERE p.product_id=#{productId}
