@@ -1,7 +1,8 @@
 package edu.sm.controller;
 
 // 필요한 클래스들을 모두 import 합니다.
-import com.mc.app.dto.Content;
+// 프로젝트 구조에 맞는 올바른 경로로 수정
+import edu.sm.app.dto.Content; // 또는 edu.sm.dto.Cust 등
 import edu.sm.app.dto.Marker;
 import edu.sm.app.dto.Place;
 import edu.sm.app.service.MarkerService;

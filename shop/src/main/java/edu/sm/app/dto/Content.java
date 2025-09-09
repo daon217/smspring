@@ -1,4 +1,5 @@
-package com.mc.app.dto;
+package edu.sm.app.dto;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

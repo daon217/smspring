@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0bc1bd177461e885b04962ec8febaabb&libraries=services"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8ebb7e444a8cd5d1f3bbc02bbacb744a&libraries=services"></script>
 
     <style>
         .fakeimg {
@@ -27,37 +27,49 @@
     <p>Resize this responsive page to see the effect!</p>
 </div>
 <ul class="nav justify-content-end">
-    <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-    </li>
+    <c:choose>
+        <c:when test="${sessionScope.cust.custId == null}">
+            <li class="nav-item">
+                <a class="nav-link" href="<c:url value="/register"/> ">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<c:url value="/login"/>">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </c:when>
+        <c:otherwise>
+            <li class="nav-item">
+                <a class="nav-link" href="<c:url value="/custinfo?id=${sessionScope.cust.custId}"/> ">${sessionScope.cust.custId}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<c:url value="/logout"/> ">Logout</a>
+            </li>
+        </c:otherwise>
+    </c:choose>
 </ul>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="<c:url value='/' />">Navbar</a>
+    <a class="navbar-brand" href="<c:url value="/"/>">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/cust"/> ">Cust</a>
+                <a class="nav-link" href="<c:url value="/cust"/>">Cust</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/item"/> ">Item</a>
+                <a class="nav-link" href="<c:url value="/product"/>">Product</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<c:url value="/map"/> ">Map</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/chart"/> ">Chart</a>
+                <a class="nav-link" href="<c:url value="/chart"/>">Chart</a>
             </li>
         </ul>
     </div>
@@ -90,38 +102,6 @@
 </div>
 
 <div class="text-center" style="background-color:black; color: white; margin-bottom:0; max-height: 50px;">
-    <p>Footer</p>
-</div>
-
-
-            <h3>Some Links</h3>
-            <p>Lorem ipsum dolor sit ame.</p>
-            <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-
-            </ul>
-            <hr class="d-sm-none">
-        </div>
-        <div class="col-sm-9">
-
-            <h2>TITLE HEADING</h2>
-            <h5>Title description, Sep 2, 2017</h5>
-            <div class="fakeimg">Fake Image</div>
-            <p>Some text..</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
-    </div>
-</div>
-
-<div class="jumbotron text-center" style="margin-bottom:0">
     <p>Footer</p>
 </div>
 
