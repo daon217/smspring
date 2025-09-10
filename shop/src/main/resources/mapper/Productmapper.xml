@@ -15,9 +15,12 @@
         select * from product p
                           inner join cate c on p.cate_id = c.cate_id
     </select>
+
     <insert id="insert" parameterType="Product">
-        INSERT INTO product VALUES (0,#{productName},#{productPrice},#{discountRate}, #{productImg}, NOW(), NOW(), #{cateId})
+        INSERT INTO product(product_name, product_price, discount_rate, product_img, cate_id)
+        VALUES(#{productName}, #{productPrice}, #{discountRate}, #{productImg}, #{cateId})
     </insert>
+
     <update id="update" parameterType="Product">
         UPDATE product SET product_name=#{productName},product_price=#{productPrice},discount_rate=#{discountRate},product_img=#{productImg}, product_update=NOW() WHERE product_id=#{productId}
     </update>

@@ -15,6 +15,7 @@ public class MainController {
 
     @RequestMapping("/")
     public String main(Model model) {
+        log.info("Test..");
         // Database 데이터를 가지고 온다.
         return "index";
     }

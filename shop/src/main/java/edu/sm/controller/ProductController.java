@@ -47,6 +47,7 @@ public class ProductController {
         model.addAttribute("p", product);
         model.addAttribute("left", dir+"left");
         model.addAttribute("center", dir+"detail");
+        log.info(product.getProductId()+","+product.getProductName());
         return "index";
     }
     @RequestMapping("/registerimpl")
@@ -77,13 +78,5 @@ public class ProductController {
         model.addAttribute("left",dir+"left");
         model.addAttribute("center",dir+"getpage");
         return "index";
-    }
-    @RequestMapping("/addimpl")
-    public String addimpl(Product product) throws Exception {
-        log.info("Input Date {},{}",
-                product.getProductName(),
-                product.getProductImgFile().getOriginalFilename());
-        productService.register(product);
-        return "redirect:/product/get";
     }
 }

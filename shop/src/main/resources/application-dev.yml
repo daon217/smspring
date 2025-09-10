@@ -10,14 +10,14 @@ server:
       charset: UTF-8
       force: true
 spring:
+  # 이 부분이 가장 중요합니다! .env 파일을 읽어오는 설정입니다.
   config:
-    import: optional:file:.env[.properties]  # .env import
+    import: optional:file:.env[.properties]
   mvc:
     view:
       prefix: /views/
       suffix: .jsp
   datasource:
-    #url: jdbc:mysql://127.0.0.1:3306/shopdb?serverTimezone=Asia/Seoul
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
     url: jdbc:log4jdbc:mysql://127.0.0.1:3306/shopdb?characterEncoding=utf8
     username: root
@@ -27,7 +27,6 @@ spring:
 mybatis:
   type-aliases-package: edu.sm.app.dto
   mapper-locations: classpath:/mapper/*.xml
-  # 스네이크 케이스(_)를 카멜 케이스로 자동 변환해주는 설정
   configuration:
     map-underscore-to-camel-case: true
 
@@ -40,6 +39,7 @@ app:
   dir:
     imgsdir: file:///C:/smspring/imgs/     # 화면 출력 용
     uploadimgsdir: C:/smspring/imgs/    # 파일 Write 용
+    logsdir: file:///C:/smspring/logs/
   key:
     skey: ${MY_KEY}
     algo: PBEWithMD5AndDES

@@ -81,6 +81,7 @@ public class LoginController {
         Cust dbCust = custService.get(id);
         if(dbCust != null && bCryptPasswordEncoder.matches(pwd, dbCust.getCustPwd())){
             httpSession.setAttribute("cust",dbCust);
+            log.info(dbCust.getCustId()+","+dbCust.getCustName());
             return "redirect:/";
         }
         model.addAttribute("center","login");
