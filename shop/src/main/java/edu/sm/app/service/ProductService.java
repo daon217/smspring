@@ -4,6 +4,7 @@ package edu.sm.app.service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import edu.sm.app.dto.Product;
+import edu.sm.app.dto.ProductSearch; // 추가
 import edu.sm.app.repository.ProductRepository;
 import edu.sm.common.frame.SmService;
 import edu.sm.util.FileUploadUtil;
@@ -60,6 +61,11 @@ public class ProductService implements SmService<Product, Integer> {
     @Override
     public Product get(Integer s) throws Exception {
         return productRepository.select(s);
+    }
+
+    // searchProductList 메서드 추가
+    public List<Product> searchProductList(ProductSearch search) throws Exception {
+        return productRepository.searchProductList(search);
     }
 
     public Page<Product> getPage(int pageNo) throws Exception {

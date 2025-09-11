@@ -28,4 +28,21 @@
         DELETE FROM product WHERE product_id=#{productId}
     </delete>
 
+    <select id="searchProductList" parameterType="ProductSearch" resultType="Product">
+        SELECT * FROM product p
+        INNER JOIN cate c ON p.cate_id = c.cate_id
+        <where>
+            <if test="productName != null and productName != ''">
+                product_name LIKE CONCAT('%', #{productName}, '%')
+            </if>
+            <if test="minPrice > 0">
+                AND product_price >= #{minPrice}
+            </if>
+            <if test="maxPrice > 0">
+                AND product_price <= #{maxPrice}
+            </if>
+        </where>
+        ORDER BY productId DESC
+    </select>
+
 </mapper>

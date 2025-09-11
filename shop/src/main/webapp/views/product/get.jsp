@@ -9,6 +9,23 @@
 <%-- Center Page --%>
 <div class="col-sm-9">
     <h2>Product Get Page</h2>
+
+    <form action="/product/search" method="get">
+        <div class="form-row">
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="productName" placeholder="상품명">
+            </div>
+            <div class="col-sm-3">
+                <input type="number" class="form-control" name="minPrice" placeholder="최소 금액">
+            </div>
+            <div class="col-sm-3">
+                <input type="number" class="form-control" name="maxPrice" placeholder="최대 금액">
+            </div>
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-primary btn-block">Search</button>
+            </div>
+        </div>
+    </form>
     <table id="product_table" class="table table-bordered">
         <thead>
         <tr>
@@ -44,9 +61,6 @@
                 </c:forEach>
             </c:otherwise>
         </c:choose>
-
-
         </tbody>
     </table>
-
 </div>

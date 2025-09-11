@@ -4,6 +4,7 @@ package edu.sm.controller;
 import com.github.pagehelper.PageInfo;
 import edu.sm.app.dto.Cust;
 import edu.sm.app.dto.Product;
+import edu.sm.app.dto.ProductSearch; // 추가
 import edu.sm.app.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -64,6 +65,17 @@ public class ProductController {
     public String get(Model model) throws Exception {
         List<Product> list = null;
         list = productService.get();
+        model.addAttribute("plist", list);
+        model.addAttribute("left", dir+"left");
+        model.addAttribute("center", dir+"get");
+        return "index";
+    }
+
+    // search 메서드 추가
+    @RequestMapping("/search")
+    public String search(Model model, ProductSearch search) throws Exception {
+        List<Product> list = null;
+        list = productService.searchProductList(search);
         model.addAttribute("plist", list);
         model.addAttribute("left", dir+"left");
         model.addAttribute("center", dir+"get");
