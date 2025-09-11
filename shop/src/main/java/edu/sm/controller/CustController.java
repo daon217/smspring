@@ -2,6 +2,7 @@ package edu.sm.controller;
 
 import com.github.pagehelper.PageInfo;
 import edu.sm.app.dto.Cust;
+import edu.sm.app.dto.CustSearch;
 import edu.sm.app.service.CustService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -49,6 +50,16 @@ public class CustController {
     public String get(Model model) throws Exception {
         List<Cust> list = null;
         list = custService.get();
+
+        model.addAttribute("clist", list);
+        model.addAttribute("left", dir+"left");
+        model.addAttribute("center", dir+"get");
+        return "index";
+    }
+    @RequestMapping("/search")
+    public String search(Model model, CustSearch custSearch ) throws Exception {
+        List<Cust> list = null;
+        list = custService.searchCustList(custSearch);
 
         model.addAttribute("clist", list);
         model.addAttribute("left", dir+"left");

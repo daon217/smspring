@@ -4,6 +4,24 @@
 
 <div class="col-sm-10">
     <h2>Cust Get Page</h2>
+    <form action="/cust/search" method="get"
+    <form style="margin-bottom: 30px;" id="search_form" class="form-inline well">
+        <div class="form-group">
+            <label for="id">Name:</label>
+            <input type="text" name="custName" class="form-control" id="id">
+        </div>
+        <div class="form-group">
+            <label for="sdate">Start:</label>
+            <input type="date" name="startDate" class="form-control" id="sdate">
+        </div>
+        <div class="form-group">
+            <label for="edate">End:</label>
+            <input type="date" name="endDate" class="form-control" id="edate">
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-info">Search</input>
+        </div>
+    </form>
     <table class="table table-bordered">
         <thead>
         <tr>
