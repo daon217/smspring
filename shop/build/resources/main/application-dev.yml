@@ -1,0 +1,51 @@
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: classpath:keystore.p12
+    key-store-password: ENC(idIWCdznEM3ggslDeTmLJw==)
+    key-store-type: PKCS12
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+spring:
+  spring:
+    messages:
+      basename: message
+      encoding: utf-8
+      cache-duration: 10
+      fallback-to-system-locale: false
+  # 이 부분이 가장 중요합니다! .env 파일을 읽어오는 설정입니다.
+  config:
+    import: optional:file:.env[.properties]
+  mvc:
+    view:
+      prefix: /views/
+      suffix: .jsp
+  datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mysql://127.0.0.1:3306/shopdb?characterEncoding=utf8
+    username: root
+    password: ENC(idIWCdznEM3ggslDeTmLJw==)
+
+# MyBatis 설정 부분
+mybatis:
+  type-aliases-package: edu.sm.app.dto
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    root: info
+
+# Application Config
+app:
+  dir:
+    imgsdir: file:///C:/smspring/imgs/     # 화면 출력 용
+    uploadimgsdir: C:/smspring/imgs/    # 파일 Write 용
+    logsdir: file:///C:/smspring/logs/
+  key:
+    skey: ${MY_KEY}
+    algo: PBEWithMD5AndDES
