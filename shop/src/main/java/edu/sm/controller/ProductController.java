@@ -69,6 +69,7 @@ public class ProductController {
         model.addAttribute("productName", productSearch.getProductName());
         model.addAttribute("startPrice", productSearch.getStartPrice());
         model.addAttribute("endPrice", productSearch.getEndPrice());
+        model.addAttribute("cateId", productSearch.getCateId());
 
         model.addAttribute("plist", list);
         model.addAttribute("left", dir+"left");

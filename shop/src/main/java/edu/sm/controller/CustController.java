@@ -61,17 +61,38 @@ public class CustController {
         List<Cust> list = null;
         list = custService.searchCustList(custSearch);
 
+        model.addAttribute("custName", custSearch.getCustName());
+        model.addAttribute("startDate", custSearch.getStartDate());
+        model.addAttribute("endDate", custSearch.getEndDate());
+
         model.addAttribute("clist", list);
         model.addAttribute("left", dir+"left");
         model.addAttribute("center", dir+"get");
+
         return "index";
     }
-    @RequestMapping("/getpage")
-    public String getpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model) throws Exception {
+    //    @RequestMapping("/getpage")
+//    public String getpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model) throws Exception {
+//        PageInfo<Cust> p = null;
+//        p = new PageInfo<>(custService.getPage(pageNo), 3); // 5:하단 네비게이션 개수
+//        model.addAttribute("target","/cust");
+//        model.addAttribute("clist",p);
+//        model.addAttribute("left", dir+"left");
+//        model.addAttribute("center", dir+"getpage");
+//        return "index";
+//    }
+    @RequestMapping("/searchpage")
+    public String searchpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model,
+                             CustSearch custSearch) throws Exception {
         PageInfo<Cust> p = null;
-        p = new PageInfo<>(custService.getPage(pageNo), 3); // 5:하단 네비게이션 개수
+        p = new PageInfo<>(custService.getPageSearch(pageNo, custSearch), 3); // 5:하단 네비게이션 개수
+
+        model.addAttribute("custName", custSearch.getCustName());
+        model.addAttribute("startDate", custSearch.getStartDate());
+        model.addAttribute("endDate", custSearch.getEndDate());
+
         model.addAttribute("target","/cust");
-        model.addAttribute("clist",p);
+        model.addAttribute("cpage",p);
         model.addAttribute("left", dir+"left");
         model.addAttribute("center", dir+"getpage");
         return "index";
