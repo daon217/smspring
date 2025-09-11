@@ -9,32 +9,55 @@
 <%-- Center Page --%>
 <div class="col-sm-9">
     <h2>Product Get Page</h2>
+
     <form action="/product/search" method="get"
-          style="margin-bottom: 30px;"
-          id="search_form" class="form-inline well">
+          style="margin-bottom: 30px;" id="search_form" class="form-inline well">
         <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" name="productName" class="form-control" id="name" value="${productName}">
+            <input type="text" name="productName" class="form-control" id="name"
+            <c:if test="${productName != null}">
+                   value="${productName}"
+            </c:if>
+            >
         </div>
         <div class="form-group">
             <label for="sprice">Start:</label>
-            <input type="number" name="startPrice" class="form-control" id="sprice" min="0" step="5000" value="${startPrice}">
+            <input type="number" name="startPrice" class="form-control" id="sprice" min="0" step="5000"
+            <c:choose>
+            <c:when test="${startPrice != null}">
+                   value="${startPrice}"
+            </c:when>
+            <c:otherwise>
+                   value="0"
+            </c:otherwise>
+            </c:choose>
+            >
         </div>
         <div class="form-group">
             <label for="eprice">End:</label>
-            <input type="number" name="endPrice" class="form-control" id="eprice" min="0" step="5000" value="${endPrice}">
+            <input type="number" name="endPrice" class="form-control" id="eprice" min="0" step="5000"
+            <c:choose>
+            <c:when test="${endPrice != null}">
+                   value="${endPrice}"
+            </c:when>
+            <c:otherwise>
+                   value="0"
+            </c:otherwise>
+            </c:choose>
+            >
         </div>
         <div class="form-group">
             <label for="cate">Category:</label>
             <select class="form-control" name="cateId" id="cate">
-                <option value="0" <c:if test="${cateId == 0}">selected</c:if>>전체</option>
+                <option value="0" <c:if test="${cateId == 0}">selected</c:if>  >전체</option>
                 <option value="10" <c:if test="${cateId == 10}">selected</c:if>>하의</option>
                 <option value="20" <c:if test="${cateId == 20}">selected</c:if>>상의</option>
                 <option value="30" <c:if test="${cateId == 30}">selected</c:if>>신발</option>
             </select>
+
         </div>
         <div class="form-group">
-            <input type="submit" class="btn btn-info" value="Search" />
+            <input type="submit" class="btn btn-info">Search</input>
         </div>
     </form>
 
