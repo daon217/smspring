@@ -10,7 +10,7 @@
             <a class="nav-link" href="<c:url value="/product/get"/>">get</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<c:url value="/product/getpage"/>">getpage</a>
+            <a class="nav-link" href="<c:url value="/product/searchpage"/>">getpage</a>
         </li>
 
     </ul>

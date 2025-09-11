@@ -9,6 +9,37 @@
 <%-- Center Page --%>
 <div class="col-sm-9">
     <h2>Product Get Page</h2>
+
+    <form action="/product/searchpage" method="get"
+          style="margin-bottom: 30px;"
+          id="search_form" class="form-inline well">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="productName" class="form-control" id="name" value="${productName}">
+        </div>
+        <div class="form-group">
+            <label for="sprice">Start:</label>
+            <input type="number" name="startPrice" class="form-control" id="sprice" min="0" step="5000" value="${startPrice}">
+        </div>
+        <div class="form-group">
+            <label for="eprice">End:</label>
+            <input type="number" name="endPrice" class="form-control" id="eprice" min="0" step="5000" value="${endPrice}">
+        </div>
+        <div class="form-group">
+            <label for="cate">Category:</label>
+            <select class="form-control" name="cateId" id="cate">
+                <option value="0" <c:if test="${cateId == 0}">selected</c:if>>전체</option>
+                <option value="10" <c:if test="${cateId == 10}">selected</c:if>>하의</option>
+                <option value="20" <c:if test="${cateId == 20}">selected</c:if>>상의</option>
+                <option value="30" <c:if test="${cateId == 30}">selected</c:if>>신발</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-info" value="Search" />
+        </div>
+    </form>
+
+
     <table id="product_table" class="table table-bordered">
         <thead>
         <tr>
@@ -23,14 +54,14 @@
         </thead>
         <tbody>
         <c:choose>
-            <c:when test="${plist == null}">
+            <c:when test="${ppage == null}">
                 <h5>데이터가 없습니다.</h5>
             </c:when>
             <c:otherwise>
-                <c:forEach var="p" items="${plist.list}">
+                <c:forEach var="p" items="${ppage.list}">
                     <tr>
                         <td><img src="/imgs/${p.productImg}"></td>
-                        <td><a href="/product/detail?id=${p.productId}">${p.productId}</a></td>
+                        <td><a href="<c:url value="/product/detail?id=${p.productId}"/> ">${p.productId}</a></td>
                         <td>${p.productName}</td>
                         <td><fmt:formatNumber type="number" pattern="###,###원" value="${p.productPrice}" /></td>
                         <td>${p.discountRate}</td>
@@ -44,9 +75,8 @@
                 </c:forEach>
             </c:otherwise>
         </c:choose>
-
-
         </tbody>
     </table>
-    <jsp:include page="/views/product/page.jsp" />
+
+    <jsp:include page="pagination.jsp" />
 </div>

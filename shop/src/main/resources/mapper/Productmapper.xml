@@ -3,6 +3,29 @@
         PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.sm.app.repository.ProductRepository">
+    <select id="getpageSearch" parameterType="ProductSearch" resultType="Product">
+        select * from product p inner join cate c on p.cate_id = c.cate_id
+        <where>
+            <if test="productName != null and !productName.equals('')">
+                p.product_name like concat('%',#{productName},'%')
+            </if>
+            <if test="startPrice != null and startPrice != 0">
+                <![CDATA[
+                  and p.product_price  >=  #{startPrice}
+                 ]]>
+            </if>
+            <if test="endPrice != null and endPrice != 0">
+                <![CDATA[
+                  and p.product_price  <=  #{endPrice}
+                ]]>
+            </if>
+            <if test="cateId != null and cateId != 0">
+                <![CDATA[
+                  and c.cate_id  =  #{cateId}
+                ]]>
+            </if>
+        </where>
+    </select>
     <select id="searchProductList" parameterType="ProductSearch" resultType="Product">
         select * from product p inner join cate c on p.cate_id = c.cate_id
         <where>
@@ -10,19 +33,16 @@
                 p.product_name like concat('%',#{productName},'%')
             </if>
             <if test="startPrice != null and startPrice != 0">
-                <!--and cust_regdate &gt;= #{startDate} -->
                 <![CDATA[
                   and p.product_price  >=  #{startPrice}
                  ]]>
             </if>
             <if test="endPrice != null and endPrice != 0">
-                <!--and date(cust_regdate) &lt;= #{endDate} -->
                 <![CDATA[
                   and p.product_price  <=  #{endPrice}
                 ]]>
             </if>
             <if test="cateId != null and cateId != 0">
-                <!--and date(cust_regdate) &lt;= #{endDate} -->
                 <![CDATA[
                   and c.cate_id  =  #{cateId}
                 ]]>
