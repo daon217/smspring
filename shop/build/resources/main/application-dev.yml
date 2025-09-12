@@ -49,3 +49,5 @@ app:
   key:
     skey: ${MY_KEY}
     algo: PBEWithMD5AndDES
+    wkey: ENC(ujBA1JACJu2p9j6zX+vrd9p/ZPho16chYvfNoOC8Ski8LQhp96WvomTXolMJypABjEjam/nslEfM0eA3zyKi4cxNTk9BseWFAbWXrJ2HPkA=)
+    owkey: ENC(vIqd9CSeOJ2B+RNZB8q8uX2gqVeotK1BVjLTnpvApIu0QKfrK4PIS+zKhZuQbERZ)

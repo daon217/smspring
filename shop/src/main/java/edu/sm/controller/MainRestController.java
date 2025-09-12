@@ -5,9 +5,12 @@ import edu.sm.app.dto.Marker;
 import edu.sm.app.dto.Search;
 import edu.sm.app.service.MarkerService;
 import edu.sm.util.FileUploadUtil;
+import edu.sm.util.WeatherUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.ParseException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,6 +25,16 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class MainRestController {
+
+    @Value("${app.key.wkey}")
+    String wkey;
+
+    @RequestMapping("/getwt1")
+    public Object getwt1(@RequestParam("loc") String loc) throws IOException, ParseException {
+        return WeatherUtil.getWeather(loc,wkey);
+    }
+
+
     @RequestMapping("/saveaudio")
     public Object saveaudio(@RequestParam("file") MultipartFile file) throws IOException {
         FileUploadUtil.saveFile(file, "C:/smspring/audios/");
@@ -33,9 +46,3 @@ public class MainRestController {
         return "OK";
     }
 }
-
-
-
-
-
-

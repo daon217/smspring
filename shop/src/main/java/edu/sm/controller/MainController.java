@@ -31,4 +31,19 @@ public class MainController {
         model.addAttribute("center", "pic");
         return "index";
     }
+    @RequestMapping("/wt1")
+    public String wt1(Model model) {
+        model.addAttribute("center", "wt1");
+        return "index";
+    }
+    @RequestMapping("/wt2")
+    public String wt2(Model model) {
+        model.addAttribute("center", "wt2");
+        return "index";
+    }
+    @RequestMapping("/wt3")
+    public String wt3(Model model) {
+        model.addAttribute("center", "wt3");
+        return "index";
+    }
 }
