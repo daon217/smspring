@@ -17,76 +17,44 @@ public class MapController {
 
     final MarkerService markerService;
 
-    String dir = "map/";
+    String dir="map/";
 
     @RequestMapping("")
     public String main(Model model) {
-        model.addAttribute("center", dir + "center");
-        model.addAttribute("left", dir + "left");
+        model.addAttribute("center",dir+"center");
+        model.addAttribute("left",dir+"left");
         return "index";
     }
-
     @RequestMapping("/go")
-    public String go(Model model, @RequestParam("target") int target) {
-        model.addAttribute("target",target);
+    public String go(Model model, @RequestParam("target") int target) throws Exception {
+        Marker marker = markerService.get(target);
+        model.addAttribute("marker",marker);
         model.addAttribute("center",dir+"go");
         model.addAttribute("left",dir+"left");
         return "index";
     }
-
-    // 서울 지역 마커 데이터를 전달
     @RequestMapping("/map1")
     public String map1(Model model) {
-        model.addAttribute("center", dir + "map1");
-        model.addAttribute("left", dir + "left");
+        model.addAttribute("center",dir+"map1");
+        model.addAttribute("left",dir+"left");
         return "index";
     }
-
-    // 부산 지역 마커 데이터를 전달
     @RequestMapping("/map2")
     public String map2(Model model) {
-        model.addAttribute("center", dir + "map2");
-        model.addAttribute("left", dir + "left");
+        model.addAttribute("center",dir+"map2");
+        model.addAttribute("left",dir+"left");
         return "index";
     }
-
-    // 제주 지역 마커 데이터를 전달
     @RequestMapping("/map3")
     public String map3(Model model) {
-        model.addAttribute("center", dir + "map3");
-        model.addAttribute("left", dir + "left");
+        model.addAttribute("center",dir+"map3");
+        model.addAttribute("left",dir+"left");
         return "index";
     }
-
-    // 이외의 메서드들은 데이터를 가져오는 로직이 없는 상태로 유지됩니다.
     @RequestMapping("/map4")
     public String map4(Model model) {
-        model.addAttribute("center", dir + "map4");
-        model.addAttribute("left", dir + "left");
-        return "index";
-    }
-    @RequestMapping("/map5")
-    public String map5(Model model) {
-        model.addAttribute("center", dir + "map5");
-        model.addAttribute("left", dir + "left");
-        return "index";
-    }
-    @RequestMapping("/map6")
-    public String map6(Model model) {
-        model.addAttribute("center", dir + "map6");
-        model.addAttribute("left", dir + "left");
-        return "index";
-    }
-    @RequestMapping("/map7")
-    public String map7(Model model) {
-        model.addAttribute("center", dir + "map7");
-        model.addAttribute("left", dir + "left");
-        return "index";
-    }
-    @RequestMapping("/map8")
-    public String map8(Model model) {
-        model.addAttribute("center", dir + "map8");
-        model.addAttribute("left", dir + "left");
+        model.addAttribute("center",dir+"map4");
+        model.addAttribute("left",dir+"left");
         return "index";
     }
 }

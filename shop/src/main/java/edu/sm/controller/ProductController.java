@@ -51,12 +51,29 @@ public class ProductController {
         productService.register(product);
         return "redirect:/product/get";
     }
-    @RequestMapping("/getpage")
-    public String getpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model) throws Exception {
+    //    @RequestMapping("/getpage")
+//    public String getpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model) throws Exception {
+//        PageInfo<Product> p = null;
+//        p = new PageInfo<>(productService.getPage(pageNo), 3); // 5:하단 네비게이션 개수
+//        model.addAttribute("target","/product");
+//        model.addAttribute("clist",p);
+//        model.addAttribute("left", dir+"left");
+//        model.addAttribute("center", dir+"getpage");
+//        return "index";
+//    }
+    @RequestMapping("/searchpage")
+    public String searchpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model,
+                             ProductSearch productSearch) throws Exception {
         PageInfo<Product> p = null;
-        p = new PageInfo<>(productService.getPage(pageNo), 3); // 5:하단 네비게이션 개수
+        p = new PageInfo<>(productService.getPageSearch(pageNo, productSearch), 3); // 5:하단 네비게이션 개수
+
+        model.addAttribute("productName", productSearch.getProductName());
+        model.addAttribute("startPrice", productSearch.getStartPrice());
+        model.addAttribute("endPrice", productSearch.getEndPrice());
+        model.addAttribute("cateId", productSearch.getCateId());
+
         model.addAttribute("target","/product");
-        model.addAttribute("clist",p);
+        model.addAttribute("cpage",p);
         model.addAttribute("left", dir+"left");
         model.addAttribute("center", dir+"getpage");
         return "index";
@@ -69,6 +86,7 @@ public class ProductController {
         model.addAttribute("productName", productSearch.getProductName());
         model.addAttribute("startPrice", productSearch.getStartPrice());
         model.addAttribute("endPrice", productSearch.getEndPrice());
+        model.addAttribute("cateId", productSearch.getCateId());
 
         model.addAttribute("plist", list);
         model.addAttribute("left", dir+"left");
@@ -77,22 +95,6 @@ public class ProductController {
         return "index";
     }
 
-    @RequestMapping("/searchpage")
-    public String searchpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model, ProductSearch productSearch) throws Exception {
-        PageInfo<Product> p = null;
-        p = new PageInfo<>(productService.getPageSearch(pageNo, productSearch), 3);
-
-        model.addAttribute("productName", productSearch.getProductName());
-        model.addAttribute("startPrice", productSearch.getStartPrice());
-        model.addAttribute("endPrice", productSearch.getEndPrice());
-        model.addAttribute("cateId", productSearch.getCateId());
-
-        model.addAttribute("target", "/product");
-        model.addAttribute("ppage", p);
-        model.addAttribute("left", dir+"left");
-        model.addAttribute("center", dir+"getpage");
-        return "index";
-    }
     @RequestMapping("/updateimpl")
     public String updateimpl(Model model, Product product) throws Exception {
         productService.modify(product);
