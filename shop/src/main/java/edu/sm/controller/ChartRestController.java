@@ -15,14 +15,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import edu.sm.app.service.OrderService;
+import edu.sm.app.dto.ChartData;
 
 @RestController
 @RequiredArgsConstructor
 @Slf4j
 public class ChartRestController {
 
+    private final OrderService orderService;
+
     @RequestMapping("/chart2_1")
     public Object chart2_1() throws Exception {
+        //[[],[]]
         JSONArray jsonArray = new JSONArray();
         String [] nation = {"Kor","Eng","Jap","Chn","Usa"};
         Random random = new Random();
@@ -36,6 +41,7 @@ public class ChartRestController {
     }
     @RequestMapping("/chart2_2")
     public Object chart2_2() throws Exception {
+        //{cate:[],data:[]}
         JSONObject jsonObject = new JSONObject();
         String arr [] = {"0-9", "10-19", "20-29", "30-39", "40-49", "50-59", "60-69", "70-79", "80-89", "90+"};
         jsonObject.put("cate",arr);
@@ -49,6 +55,7 @@ public class ChartRestController {
     }
     @RequestMapping("/chart2_3")
     public Object chart2_3() throws Exception {
+        // text
         String text = "메츠의 부진이 더 놀라운 이유는 이번 시즌 엄청난 돈을 썼을 뿐만 아니라 트레이드 데드 라인에도 가장 바쁘게 움직인 팀 중 하나였기 때문이다." +
                 "지난 겨울 후안 소토를 7억 6,500만 달러(약 1조 664억 원)에 영입했던 메츠는 우승을 위해 클레이 홈즈, 션 머네야, 프랭키 몬타스 등 선발진도 대거 보강했다." +
                 "여름에는 트레버 로저스, 라이언 헬슬리 등 불펜 투수를 트레이드로 데려와 월드시리즈 우승을 향한 승부수를 띄웠다." +
@@ -121,18 +128,54 @@ public class ChartRestController {
         resultObject.put("drilldown", drilldownSeries);
         return resultObject;
     }
+
+    // 월별 매출 합계 차트 데이터 반환
+    @RequestMapping("/chart3_1")
+    public Object chart3_1() throws Exception {
+        List<ChartData> totalSalesList = orderService.getMonthlyTotalSales();
+        JSONArray result = new JSONArray();
+        for(ChartData data : totalSalesList){
+            JSONArray item = new JSONArray();
+            item.add(data.getMonth());
+            item.add(data.getTotalSales());
+            result.add(item);
+        }
+        return result;
+    }
+
+    // 월별 매출 평균 차트 데이터 반환
+    @RequestMapping("/chart3_2")
+    public Object chart3_2() throws Exception {
+        List<ChartData> averageSalesList = orderService.getMonthlyAverageSales();
+        JSONObject result = new JSONObject();
+        JSONArray categories = new JSONArray();
+        JSONArray data = new JSONArray();
+        for(ChartData item : averageSalesList){
+            categories.add(item.getMonth());
+            data.add(item.getAverageSales());
+        }
+        result.put("categories", categories);
+        result.put("data", data);
+        return result;
+    }
+
     @RequestMapping("/chart1")
     public Object chart1() throws Exception {
+        // []
         JSONArray jsonArray = new JSONArray();
+
+        // {}
         JSONObject jsonObject1 = new JSONObject();
         JSONObject jsonObject2 = new JSONObject();
         JSONObject jsonObject3 = new JSONObject();
         jsonObject1.put("name","Korea");
         jsonObject2.put("name","Japan");
         jsonObject3.put("name","China");
+        // []
         JSONArray data1Array = new JSONArray();
         JSONArray data2Array = new JSONArray();
         JSONArray data3Array = new JSONArray();
+
         Random random = new Random();
         for(int i=0;i<12;i++){
             data1Array.add(random.nextInt(100)+1);
@@ -142,6 +185,7 @@ public class ChartRestController {
         jsonObject1.put("data",data1Array);
         jsonObject2.put("data",data2Array);
         jsonObject3.put("data",data3Array);
+
         jsonArray.add(jsonObject1);
         jsonArray.add(jsonObject2);
         jsonArray.add(jsonObject3);
