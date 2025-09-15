@@ -5,18 +5,20 @@
 <mapper namespace="edu.sm.app.repository.OrderRepository">
     <select id="findMonthlyTotalSales" resultType="ChartData">
         SELECT
-            DATE_FORMAT(order_date, '%Y-%m') AS month,
-            SUM(order_price) AS totalSales
-        FROM `order`
+            DATE_FORMAT(o.order_date, '%Y-%m') AS month,
+            SUM(o.order_qt * p.product_price * (1 - p.discount_rate)) AS totalSales
+        FROM orders o
+            JOIN product p ON o.product_id = p.product_id
         GROUP BY month
         ORDER BY month ASC
     </select>
 
     <select id="findMonthlyAverageSales" resultType="ChartData">
         SELECT
-            DATE_FORMAT(order_date, '%Y-%m') AS month,
-            AVG(order_price) AS averageSales
-        FROM `order`
+            DATE_FORMAT(o.order_date, '%Y-%m') AS month,
+            AVG(o.order_qt * p.product_price * (1 - p.discount_rate)) AS averageSales
+        FROM orders o
+            JOIN product p ON o.product_id = p.product_id
         GROUP BY month
         ORDER BY month ASC
     </select>

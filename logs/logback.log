@@ -1763,3 +1763,67 @@
 [2025-09-15 16:13:50:8331][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Sep 15 16:13:50 KST 2025, status=500, error=Internal Server Error, trace=org.springfr (truncated)...]
 [2025-09-15 16:13:50:8396][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 500
 [2025-09-15 16:13:50:8396][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 500
+[2025-09-15 16:16:21:159041][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/chart/chart3", parameters={}
+[2025-09-15 16:16:21:159044][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.ChartController#chart3(Model)
+[2025-09-15 16:16:21:159047][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-15 16:16:21:159047][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {center=chart/chart3, left=chart/left}
+[2025-09-15 16:16:21:159048][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-15 16:16:21:159074][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-15 16:16:21:159174][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/chart3_1", parameters={}
+[2025-09-15 16:16:21:159175][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.ChartRestController#chart3_1()
+[2025-09-15 16:16:21:159186][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Failed to complete request: org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'shopdb.order' doesn't exist
+### The error may exist in file [C:\smspring\shop\build\resources\main\mapper\ordermapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT             DATE_FORMAT(order_date, '%Y-%m') AS month,             SUM(order_price) AS totalSales         FROM `order`         GROUP BY month         ORDER BY month ASC
+### Cause: java.sql.SQLSyntaxErrorException: Table 'shopdb.order' doesn't exist
+; bad SQL grammar []
+[2025-09-15 16:16:21:159190][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-15 16:16:21:159190][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-15 16:16:21:159193][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-15 16:16:21:159193][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Sep 15 16:16:21 KST 2025, status=500, error=Internal Server Error, trace=org.springfr (truncated)...]
+[2025-09-15 16:16:21:159195][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 500
+[2025-09-15 16:16:21:159197][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/chart3_2", parameters={}
+[2025-09-15 16:16:21:159197][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.ChartRestController#chart3_2()
+[2025-09-15 16:16:21:159203][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Failed to complete request: org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'shopdb.order' doesn't exist
+### The error may exist in file [C:\smspring\shop\build\resources\main\mapper\ordermapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT             DATE_FORMAT(order_date, '%Y-%m') AS month,             AVG(order_price) AS averageSales         FROM `order`         GROUP BY month         ORDER BY month ASC
+### Cause: java.sql.SQLSyntaxErrorException: Table 'shopdb.order' doesn't exist
+; bad SQL grammar []
+[2025-09-15 16:16:21:159207][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-15 16:16:21:159208][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-15 16:16:21:159208][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-15 16:16:21:159209][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Sep 15 16:16:21 KST 2025, status=500, error=Internal Server Error, trace=org.springfr (truncated)...]
+[2025-09-15 16:16:21:159210][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 500
+[2025-09-15 16:18:03:3711][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 63 mappings in 'requestMappingHandlerMapping'
+[2025-09-15 16:18:03:3786][restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /imgs/**, /logs/**] in 'resourceHandlerMapping'
+[2025-09-15 16:18:03:3900][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[2025-09-15 16:18:03:3950][restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+[2025-09-15 16:18:05:6028][https-jsse-nio-8443-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2025-09-15 16:18:05:6029][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+[2025-09-15 16:18:05:6029][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+[2025-09-15 16:18:05:6029][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+[2025-09-15 16:18:05:6030][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@43648c4f
+[2025-09-15 16:18:05:6030][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@66a7a42b
+[2025-09-15 16:18:05:6030][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+[2025-09-15 16:18:05:6030][https-jsse-nio-8443-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2025-09-15 16:18:05:6059][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/chart/chart3", parameters={}
+[2025-09-15 16:18:05:6061][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.ChartController#chart3(Model)
+[2025-09-15 16:18:05:6082][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-15 16:18:05:6083][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {center=chart/chart3, left=chart/left}
+[2025-09-15 16:18:05:6087][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-15 16:18:06:6989][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-15 16:18:06:7054][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/chart3_1", parameters={}
+[2025-09-15 16:18:06:7054][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.ChartRestController#chart3_1()
+[2025-09-15 16:18:06:7075][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/chart3_2", parameters={}
+[2025-09-15 16:18:06:7076][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.ChartRestController#chart3_2()
+[2025-09-15 16:18:07:7421][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-15 16:18:07:7423][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-15 16:18:07:7425][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{"data":[165000.0,192449.99958450595,329883.33329682547,155999.99955296516,155599.99986489615,208012 (truncated)...]
+[2025-09-15 16:18:07:7425][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[["2025-01",495000],["2025-02",1154699],["2025-03",989649],["2025-04",623999],["2025-05",466799],["2 (truncated)...]
+[2025-09-15 16:18:07:7441][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-15 16:18:07:7445][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
