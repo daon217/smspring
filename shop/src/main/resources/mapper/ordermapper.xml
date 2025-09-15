@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.sm.app.repository.OrderRepository">
+    <select id="findMonthlyTotalSales" resultType="ChartData">
+        SELECT
+            DATE_FORMAT(order_date, '%Y-%m') AS month,
+            SUM(order_price) AS totalSales
+        FROM `order`
+        GROUP BY month
+        ORDER BY month ASC
+    </select>
+
+    <select id="findMonthlyAverageSales" resultType="ChartData">
+        SELECT
+            DATE_FORMAT(order_date, '%Y-%m') AS month,
+            AVG(order_price) AS averageSales
+        FROM `order`
+        GROUP BY month
+        ORDER BY month ASC
+    </select>
+</mapper>
