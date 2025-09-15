@@ -65,6 +65,11 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+// 메인 클래스를 명시적으로 지정하여 bootRun 오류를 해결합니다.
+tasks.named('bootRun') {
+    mainClass = 'edu.sm.ShopApplication'
+}
+
 tasks.named('test') {
     useJUnitPlatform()
 }
