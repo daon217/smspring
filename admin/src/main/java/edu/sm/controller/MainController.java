@@ -15,4 +15,10 @@ public class MainController {
     public String main(Model model) {
         return "index";
     }
+
+    @RequestMapping("/chart")
+    public String chart(Model model) {
+        model.addAttribute("center", "chart");
+        return "index";
+    }
 }
