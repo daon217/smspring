@@ -45,6 +45,7 @@ app:
     imgsdir: file:///C:/smspring/imgs/
     uploadimgsdir: C:/smspring/imgs/
     logsdir: file:///C:/smspring/logs/
+    logsdirRead: C:/smspring/logs/
   key:
     skey: ${MY_KEY}
     algo: PBEWithMD5AndDES
