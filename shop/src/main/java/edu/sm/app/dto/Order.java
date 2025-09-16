@@ -1,8 +1,7 @@
 package edu.sm.app.dto;
 
 import lombok.*;
-
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,7 +11,8 @@ import java.sql.Timestamp;
 @Builder
 public class Order {
     private int orderId;
-    private String custId;
-    private int orderPrice;
-    private Timestamp orderDate;
+    private int productId;
+    private int cateId;
+    private LocalDateTime orderDate;
+    private int orderQt;
 }
