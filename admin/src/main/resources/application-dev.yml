@@ -1,21 +1,11 @@
 server:
-  port: 8443
-  ssl:
-    enabled: true
-    key-store: classpath:keystore.p12
-    key-store-password: ENC(idIWCdznEM3ggslDeTmLJw==)
-    key-store-type: PKCS12
+  port: 8088
   servlet:
     encoding:
       charset: UTF-8
       force: true
 spring:
   spring:
-    messages:
-      basename: message
-      encoding: utf-8
-      cache-duration: 10
-      fallback-to-system-locale: false
   config:
     import: optional:file:.env[.properties]
   mvc:
