@@ -1,15 +1,17 @@
 package edu.sm.controller;
 
+import com.github.pagehelper.PageInfo;
 import edu.sm.app.dto.Product;
-import edu.sm.app.service.CustService;
+import edu.sm.app.dto.ProductSearch;
+import edu.sm.app.service.CateService;
 import edu.sm.app.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import java.util.List;
 
 @Controller
@@ -17,41 +19,47 @@ import java.util.List;
 @RequestMapping("/product")
 @RequiredArgsConstructor
 public class ProductController {
-
-    final CustService custService;
-    final ProductService productService; // ProductService를 주입합니다.
-    final BCryptPasswordEncoder bCryptPasswordEncoder;
-    final StandardPBEStringEncryptor standardPBEStringEncryptor;
+    final ProductService productService;
+    final CateService cateService;
 
     String dir="product/";
 
+
     @RequestMapping("/add")
-    public String add(Model model) {
+    public String add(Model model) throws Exception {
+        model.addAttribute("cate",cateService.get());
         model.addAttribute("center",dir+"add");
         return "index";
     }
-
+    @RequestMapping("/get")
+    public String get(Model model) throws Exception {
+        model.addAttribute("plist", productService.get());
+        model.addAttribute("center", dir+"get");
+        return "index";
+    }
     @RequestMapping("/registerimpl")
-    public String register(Product product) {
-        log.info("register product: {}", product);
-        try {
-            productService.register(product);
-        } catch (Exception e) {
-            log.error("Failed to register product", e);
-        }
+    public String registerimpl(Model model, Product product) throws Exception {
+        productService.register(product);
         return "redirect:/product/get";
     }
-
-
-    @RequestMapping("/get")
-    public String get(Model model) {
-        try {
-            List<Product> products = productService.get();
-            model.addAttribute("products", products);
-        } catch (Exception e) {
-            log.error("Failed to get product list", e);
-        }
-        model.addAttribute("center",dir+"get");
+    @RequestMapping("/updateimpl")
+    public String updateimpl(Model model, Product product) throws Exception {
+        productService.modify(product);
+        return "redirect:/product/detail?id="+product.getProductId();
+    }
+    @RequestMapping("/delete")
+    public String delete(Model model, @RequestParam("id") int id) throws Exception {
+        productService.remove(id);
+        return "redirect:/product/get";
+    }
+    @RequestMapping("/detail")
+    public String detail(Model model, @RequestParam("id") int id) throws Exception {
+        Product product = null;
+        product = productService.get(id);
+        model.addAttribute("p", product);
+        model.addAttribute("left", dir+"left");
+        model.addAttribute("center", dir+"detail");
+        log.info(product.getProductId()+","+product.getProductName());
         return "index";
     }
 }

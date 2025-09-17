@@ -47,7 +47,12 @@
                         </div>
                         <div class="form-group">
                             <label for="cate">Cate Id:</label>
-                            <input type="number" class="form-control" placeholder="Enter cate id" id="cate" name="cateId">
+                            <%--                            <input type="number" class="form-control" placeholder="Enter cate id" id="cate" name="cateId">--%>
+                            <select class="form-control" name="cateId" id="cate">
+                                <c:forEach  var="ca" items="${cate}">
+                                    <option value="${ca.cateId}">${ca.cateName}</option>
+                                </c:forEach>
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Register</button>
                     </form>

@@ -3,6 +3,8 @@ package edu.sm.app.service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import edu.sm.app.dto.Cust;
+import edu.sm.app.dto.CustSearch;
 import edu.sm.app.dto.Product;
 import edu.sm.app.dto.ProductSearch;
 import edu.sm.app.repository.ProductRepository;
@@ -72,7 +74,7 @@ public class ProductService implements SmService<Product, Integer> {
         return productRepository.getpage();
     }
     public Page<Product> getPageSearch(int pageNo, ProductSearch productSearch) throws Exception {
-        PageHelper.startPage(pageNo, 3);
+        PageHelper.startPage(pageNo, 3); // 3: 한화면에 출력되는 개수
         return productRepository.getpageSearch(productSearch);
     }
 }
