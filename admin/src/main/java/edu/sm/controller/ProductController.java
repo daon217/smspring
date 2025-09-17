@@ -60,6 +60,7 @@ public class ProductController {
         model.addAttribute("left", dir+"left");
         model.addAttribute("center", dir+"detail");
         log.info(product.getProductId()+","+product.getProductName());
+        model.addAttribute("cate",cateService.get());
         return "index";
     }
 }

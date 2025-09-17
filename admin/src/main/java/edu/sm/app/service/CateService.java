@@ -4,7 +4,6 @@ import edu.sm.app.dto.Cate;
 import edu.sm.app.dto.Content;
 import edu.sm.app.dto.Search;
 import edu.sm.app.repository.CateRepository;
-import edu.sm.app.repository.ContentRepository;
 import edu.sm.common.frame.SmService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
