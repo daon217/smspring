@@ -1,6 +1,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <script>
     $(function(){
@@ -26,7 +27,6 @@
                     <tr>
                         <th>ID</th>
                         <th>NAME</th>
-                        <th>ADDRESS</th>
                         <th>Register Date</th>
                         <th>Update Date</th>
                     </tr>
@@ -35,265 +35,27 @@
                     <tr>
                         <th>ID</th>
                         <th>NAME</th>
-                        <th>ADDRESS</th>
                         <th>Register Date</th>
                         <th>Update Date</th>
                     </tr>
                     </tfoot>
                     <tbody>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-                    <tr>
-                        <th>id01</th>
-                        <th>이말숙</th>
-                        <th>아산시</th>
-                        <th>2025-09-01</th>
-                        <th>2025-09-05</th>
-                    </tr>
-
+                    <c:forEach var="c" items="${clist}">
+                        <tr>
+                            <td><a href="<c:url value="/cust/detail?id=${c.custId}"/>"/>${c.custId}</td>
+                            <td>${c.custName}</td>
+                            <td>
+                                <fmt:parseDate value="${ c.custRegdate }"
+                                               pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
+                                <fmt:formatDate pattern="yyyy년MM월dd일 HH:mm" value="${ parsedDateTime }" />
+                            </td>
+                            <td>
+                                <fmt:parseDate value="${ c.custUpdate }"
+                                               pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
+                                <fmt:formatDate pattern="yyyy년MM월dd일 HH:mm" value="${ parsedDateTime }" />
+                            </td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>

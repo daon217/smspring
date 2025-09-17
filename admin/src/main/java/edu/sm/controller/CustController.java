@@ -22,8 +22,7 @@ import java.util.List;
 public class CustController {
 
     final CustService custService;
-    final BCryptPasswordEncoder bCryptPasswordEncoder;
-    final StandardPBEStringEncryptor standardPBEStringEncryptor;
+
 
     String dir="cust/";
 
@@ -32,11 +31,35 @@ public class CustController {
         model.addAttribute("center",dir+"add");
         return "index";
     }
+    @RequestMapping("/addimpl")
+    public String addimpl(Model model, Cust cust) throws Exception {
 
+        custService.register(cust);
+        return "redirect:/cust/get";
+    }
+    @RequestMapping("/updateimpl")
+    public String updateimpl(Model model, Cust cust) throws Exception {
+        custService.modify(cust);
+        return "redirect:/cust/detail?id="+cust.getCustId();
+    }
     @RequestMapping("/get")
-    public String get(Model model) {
+    public String get(Model model) throws Exception {
+        model.addAttribute("clist",custService.get());
         model.addAttribute("center",dir+"get");
         return "index";
+    }
+    @RequestMapping("/detail")
+    public String detail(Model model, @RequestParam("id") String id) throws Exception {
+        Cust cust = custService.get(id);
+
+        model.addAttribute("cust",cust);
+        model.addAttribute("center",dir+"detail");
+        return "index";
+    }
+    @RequestMapping("/delete")
+    public String delete(Model model, @RequestParam("id") String id) throws Exception {
+        custService.remove(id);
+        return "redirect:/cust/get";
     }
 
 }

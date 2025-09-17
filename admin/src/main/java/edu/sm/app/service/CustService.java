@@ -7,6 +7,8 @@ import edu.sm.app.dto.CustSearch;
 import edu.sm.app.repository.CustRepository;
 import edu.sm.common.frame.SmService;
 import lombok.RequiredArgsConstructor;
+import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,14 +18,19 @@ import java.util.List;
 public class CustService implements SmService<Cust, String> {
 
     final CustRepository custRepository;
+    final BCryptPasswordEncoder bCryptPasswordEncoder;
+    final StandardPBEStringEncryptor standardPBEStringEncryptor;
 
     @Override
     public void register(Cust cust) throws Exception {
+        cust.setCustPwd(bCryptPasswordEncoder.encode(cust.getCustPwd()));
+        cust.setCustAddr(standardPBEStringEncryptor.encrypt(cust.getCustAddr()));
         custRepository.insert(cust);
     }
 
     @Override
     public void modify(Cust cust) throws Exception {
+        cust.setCustAddr(standardPBEStringEncryptor.encrypt(cust.getCustAddr()));
         custRepository.update(cust);
     }
 
@@ -39,7 +46,9 @@ public class CustService implements SmService<Cust, String> {
 
     @Override
     public Cust get(String s) throws Exception {
-        return custRepository.select(s);
+        Cust cust = custRepository.select(s);
+        cust.setCustAddr(standardPBEStringEncryptor.decrypt(cust.getCustAddr()));
+        return cust;
     }
     public List<Cust> searchCustList(CustSearch custSearch) throws Exception {
         return custRepository.searchCustList(custSearch);
