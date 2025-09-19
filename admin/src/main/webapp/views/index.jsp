@@ -18,7 +18,7 @@
     <!-- Custom fonts for this template-->
     <link href="<c:url value="/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
     <link
-            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            href="https://fonts.googlzeapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
             rel="stylesheet">
 
     <!-- Custom styles for this template-->
@@ -51,6 +51,7 @@
 
     <script>
         let index = {
+            type:'#',
             init:function(){
                 $('#login_form > button').click(()=>{
                     // let id = $('#id').val();
@@ -61,6 +62,44 @@
                     });
                     $('#login_form').submit();
                 });
+                $('#cust_search_form > button').click(()=>{
+                    $('#cust_search_form').attr('method','get');
+                    $('#cust_search_form').attr('action','<c:url value="/custsearch"/>');
+                    $('#cust_search_form').submit();
+                });
+                $('#product_search_form > button').click(()=>{
+                    $('#product_search_form').attr('method','get');
+                    $('#product_search_form').attr('action','<c:url value="/productsearch"/>');
+                    $('#product_search_form').submit();
+                });
+
+                $('#sel1').change(()=>{
+                    this.type = $('#sel1').val();
+                    this.display();
+                });
+                $('#cust_search_form').hide();
+                $('#product_search_form').hide();
+                <c:if test="${searchtype == 'cust'}">
+                $('#cust_search_form').show();
+                </c:if>
+                <c:if test="${searchtype == 'product'}">
+                $('#product_search_form').show();
+                </c:if>
+
+            },
+            display:function(){
+
+                if(this.type == 'c'){
+                    $('#product_search_form').hide();
+                    $('#cust_search_form').show();
+
+                }else if(this.type == 'p'){
+                    $('#cust_search_form').hide();
+                    $('#product_search_form').show();
+                }else{
+                    $('#cust_search_form').hide();
+                    $('#product_search_form').hide();
+                }
             }
         };
         $(function(){
@@ -183,20 +222,67 @@
                     <i class="fa fa-bars"></i>
                 </button>
 
+
                 <!-- Topbar Search -->
-                <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                               aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <i class="fas fa-search fa-sm"></i>
-                            </button>
-                        </div>
+                <form class="form-inline d-none d-sm-block" >
+                    <div class="form-group">
+                        <label for="sel1" class="form-control mb-2 mr-sm-2">검생대상 선택</label>
+                        <select class="form-control mb-2 mr-sm-2" id="sel1">
+                            <option value="#">Select</option>
+                            <option value="c" <c:if test="${searchtype == 'cust'}">selected</c:if> >Cust</option>
+                            <option value="p" <c:if test="${searchtype == 'product'}">selected</c:if> >Product</option>
+                        </select>
                     </div>
                 </form>
+                <form class="form-inline" id="cust_search_form">
 
+                    <div class="form-group" id="sa1">
+                        <input type="text" name="custName" class="form-control mb-2 mr-sm-2" placeholder="Input Name .." id="txt"
+                        <c:if test="${searchcust.custName != null}">
+                               value="${searchcust.custName}"
+                        </c:if>
+                        >
+                        <input type="date" name="startDate" class="form-control mb-2 mr-sm-2" id="sdate"
+                        <c:if test="${searchcust.startDate != null}">
+                               value="${searchcust.startDate}"
+                        </c:if>
+                        >
+                        <input type="date" name="endDate" class="form-control mb-2 mr-sm-2" id="edate"
+                        <c:if test="${searchcust.endDate != null}">
+                               value="${searchcust.endDate}"
+                        </c:if>
+                        >
+                    </div>
+                    <button type="button" class="btn btn-primary mb-2">Search</button>
+                </form>
+                <form class="form-inline" id="product_search_form">
+
+                    <div class="form-group" id="sa2">
+                        <input type="text" name="productName" class="form-control mb-2 mr-sm-2" placeholder="Input Name .." id="txt"
+                        <c:if test="${searchproduct.productName != null}">
+                               value="${searchproduct.productName}"
+                        </c:if>
+                        >
+                        <input type="number" name="startPrice" class="form-control mb-2 mr-sm-2" id="sprice" min="0" step="5000" placeholder="Input Start Price .."
+                        <c:if test="${searchproduct.startPrice != null}">
+                               value="${searchproduct.startPrice}"
+                        </c:if>
+                        >
+                        <input type="number" name="endPrice" class="form-control mb-2 mr-sm-2" id="sprice" min="0" step="5000" placeholder="Input End Price .."
+                        <c:if test="${searchproduct.endPrice != null}">
+                               value="${searchproduct.endPrice}"
+                        </c:if>
+                        >
+                        <select class="form-control mb-2 mr-sm-2" id="sel1" name="cateId">
+                            <option value="0" <c:if test="${searchproduct.cateId == 0}">selected</c:if>>전체</option>
+                            <option value="10" <c:if test="${searchproduct.cateId == 10}">selected</c:if>>상의</option>
+                            <option value="20" <c:if test="${searchproduct.cateId == 20}">selected</c:if>>하의</option>
+                            <option value="30" <c:if test="${searchproduct.cateId == 30}">selected</c:if>>신발</option>
+                            <option value="40" <c:if test="${searchproduct.cateId == 40}">selected</c:if>>가방</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary mb-2">Search</button>
+                </form>
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
 
@@ -342,7 +428,11 @@
 
                     <c:choose>
                         <c:when test="${sessionScope.admin == null}">
-                            <a href="#" data-toggle="modal" data-target="#loginModal">login</a>
+                            <from class="form-inline">
+                                <a href="#" data-toggle="modal" data-target="#loginModal"
+                                   class="btn btn-warning btn-sm" role="button">LOGIN</a>
+<%--                            <a href="#" data-toggle="modal" data-target="#loginModal">login</a>--%>
+                            </from>
                         </c:when>
                         <c:otherwise>
                             <li class="nav-item dropdown no-arrow">
