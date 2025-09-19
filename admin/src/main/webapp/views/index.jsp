@@ -18,7 +18,7 @@
     <!-- Custom fonts for this template-->
     <link href="<c:url value="/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
     <link
-            href="https://fonts.googlzeapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
             rel="stylesheet">
 
     <!-- Custom styles for this template-->
@@ -53,6 +53,10 @@
         let index = {
             type:'#',
             init:function(){
+
+                if('${loginfail}' == 'fail'){
+                    $('#loginModal').modal('show');
+                }
                 $('#login_form > button').click(()=>{
                     // let id = $('#id').val();
                     // let pwd = $('#id').val();
@@ -215,7 +219,7 @@
         <div id="content">
 
             <!-- Topbar -->
-            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <nav class=" navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                 <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -234,7 +238,7 @@
                         </select>
                     </div>
                 </form>
-                <form class="form-inline" id="cust_search_form">
+                <form class="form-inline " id="cust_search_form">
 
                     <div class="form-group" id="sa1">
                         <input type="text" name="custName" class="form-control mb-2 mr-sm-2" placeholder="Input Name .." id="txt"
@@ -428,17 +432,16 @@
 
                     <c:choose>
                         <c:when test="${sessionScope.admin == null}">
-                            <from class="form-inline">
+                            <form class="form-inline">
                                 <a href="#" data-toggle="modal" data-target="#loginModal"
-                                   class="btn btn-warning btn-sm" role="button">LOGIN</a>
-<%--                            <a href="#" data-toggle="modal" data-target="#loginModal">login</a>--%>
-                            </from>
+                                   class="btn btn-warning mb-2 mr-sm-2 " role="button">LOGIN</a>
+                            </form>
                         </c:when>
                         <c:otherwise>
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" role="button"
                                    aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">${sessionScope.admin.id}</span>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">${sessionScope.admin.adminId}</span>
                                     <img class="img-profile rounded-circle"
                                          src="<c:url value="/img/undraw_profile.svg"/>">
 
@@ -447,10 +450,10 @@
                                 <!-- Dropdown - User Information -->
                             </li>
                             <li class="nav-item dropdown no-arrow">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">${sessionScope.admin.role.roleName}</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">${sessionScope.admin.adminRole}</span>
                             </li>
                             <li class="nav-item dropdown no-arrow">
-                                <a href="<c:url value="/logout"/>" role="button"
+                                <a href="<c:url value="/logoutimpl"/>" role="button"
                                    aria-haspopup="true" aria-expanded="false">LOGOUT</a>
                             </li>
                         </c:otherwise>
@@ -504,7 +507,16 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">Ready to Leave?</h5>
+                <h5 class="modal-title" id="loginModalLabel">
+                    <c:choose>
+                        <c:when test="${msg != null}">
+                            Login Fail .. Try again !
+                        </c:when>
+                        <c:otherwise>
+                            Login
+                        </c:otherwise>
+                    </c:choose>
+                </h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -546,7 +558,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Lgout</a>
+                <a class="btn btn-primary" href="<c:url value="/logout"/>">Lgout</a>
             </div>
         </div>
     </div>
