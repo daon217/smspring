@@ -1,123 +1,248 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <style>
-    #container{
-        width:auto;
-        border: 2px solid red;
+    .chart-container {
+        width: 100%;
+        min-height: 300px;
+        margin-bottom: 2rem;
     }
 </style>
 <script>
-    let chart={
-        url:'https://127.0.0.1:8443/logs/maininfo.log',
-        // url:'https://demo-live-data.highcharts.com/time-data.csv',
-        init:function(){
-            this.createChart();
-        },
-        createChart:function(){
-            Highcharts.chart('container', {
-                chart: {
-                    type: 'areaspline'
-                },
-                lang: {
-                    locale: 'en-GB'
-                },
-                title: {
-                    text: 'Live Data'
-                },
-                accessibility: {
-                    announceNewData: {
-                        enabled: true,
-                        minAnnounceInterval: 15000,
-                        announcementFormatter: function (
-                            allSeries,
-                            newSeries,
-                            newPoint
-                        ) {
-                            if (newPoint) {
-                                return 'New point added. Value: ' + newPoint.y;
-                            }
-                            return false;
-                        }
+    function createChart(containerId, titleText, dataUrl, chartType) {
+        Highcharts.chart(containerId, {
+            chart: {
+                type: chartType,
+                events: {
+                    load: function () {
+                        var series = this.series[0];
+                        setInterval(function () {
+                            $.ajax({
+                                url: dataUrl,
+                                success: function (result) {
+                                    if (Array.isArray(result) && result.length > 0) {
+                                        if (series) {
+                                            series.setData(result.map(item => item[1]));
+                                        } else {
+                                            // Handle multi-series data
+                                            result.forEach((seriesData, index) => {
+                                                if (this.series[index]) {
+                                                    this.series[index].setData(seriesData.data);
+                                                }
+                                            });
+                                        }
+                                    } else if (result && result.data && Array.isArray(result.data)) {
+                                        if (series) {
+                                            series.setData(result.data);
+                                        }
+                                    }
+                                }
+                            });
+                        }, 5000);
                     }
-                },
-                plotOptions: {
-                    areaspline: {
-                        color: '#32CD32',
-                        fillColor: {
-                            linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
-                            stops: [
-                                [0, '#32CD32'],
-                                [1, '#32CD3200']
-                            ]
-                        },
-                        threshold: null,
-                        marker: {
-                            lineWidth: 1,
-                            lineColor: null,
-                            fillColor: 'white'
-                        }
-                    }
-                },
-                data: {
-                    csvURL: this.url,
-                    enablePolling: true,
-                    dataRefreshRate: parseInt(2, 10)
                 }
-            });
-        }
+            },
+            title: {
+                text: titleText
+            },
+            xAxis: {
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            },
+            series: [{
+                name: 'Data',
+                data: []
+            }]
+        });
     }
-    $(()=>{
-        chart.init();
-    })
+
+    $(function() {
+        // Chart 1
+        Highcharts.chart('container1', {
+            chart: {
+                type: 'line',
+                events: {
+                    load: function () {
+                        var chart = this;
+                        setInterval(function () {
+                            $.ajax({
+                                url: '/chart1',
+                                success: function (result) {
+                                    if (Array.isArray(result)) {
+                                        chart.update({
+                                            series: result
+                                        });
+                                    }
+                                }
+                            });
+                        }, 5000);
+                    }
+                }
+            },
+            title: {
+                text: 'Live Data 1 (Multi-series)'
+            },
+            xAxis: {
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            }
+        });
+
+        // Chart 2
+        Highcharts.chart('container2', {
+            chart: {
+                type: 'column',
+                events: {
+                    load: function () {
+                        var series = this.series[0];
+                        setInterval(function () {
+                            $.ajax({
+                                url: '/chart2_1',
+                                success: function (result) {
+                                    if (Array.isArray(result) && result.length > 0) {
+                                        var data = result.map(item => item[1]);
+                                        var categories = result.map(item => item[0]);
+                                        series.setData(data);
+                                        series.chart.xAxis[0].setCategories(categories);
+                                    }
+                                }
+                            });
+                        }, 5000);
+                    }
+                }
+            },
+            title: {
+                text: 'Live Data 2'
+            },
+            xAxis: {
+                categories: []
+            },
+            series: [{
+                name: 'Random Value',
+                data: []
+            }]
+        });
+
+        // Chart 3
+        Highcharts.chart('container3', {
+            chart: {
+                type: 'area',
+                events: {
+                    load: function () {
+                        var series = this.series[0];
+                        setInterval(function () {
+                            $.ajax({
+                                url: '/chart3_1',
+                                success: function (result) {
+                                    if (Array.isArray(result) && result.length > 0) {
+                                        var data = result.map(item => item[1]);
+                                        var categories = result.map(item => item[0]);
+                                        series.setData(data);
+                                        series.chart.xAxis[0].setCategories(categories);
+                                    }
+                                }
+                            });
+                        }, 5000);
+                    }
+                }
+            },
+            title: {
+                text: 'Live Data 3 (Monthly Sales)'
+            },
+            xAxis: {
+                categories: []
+            },
+            series: [{
+                name: 'Total Sales',
+                data: []
+            }]
+        });
+
+        // Chart 4
+        Highcharts.chart('container4', {
+            chart: {
+                type: 'bar',
+                events: {
+                    load: function () {
+                        var series = this.series[0];
+                        setInterval(function () {
+                            $.ajax({
+                                url: '/chart2_2',
+                                success: function (result) {
+                                    if (result && Array.isArray(result.data)) {
+                                        series.setData(result.data);
+                                        series.chart.xAxis[0].setCategories(result.cate);
+                                    }
+                                }
+                            });
+                        }, 5000);
+                    }
+                }
+            },
+            title: {
+                text: 'Live Data 4 (Age Distribution)'
+            },
+            xAxis: {
+                categories: []
+            },
+            series: [{
+                name: 'Random Value',
+                data: []
+            }]
+        });
+    });
 </script>
 
-<!-- Begin Page Content -->
 <div class="container-fluid">
-
-    <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Chart</h1>
         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
     </div>
 
-    <!-- Content Row -->
-
     <div class="row">
-
-        <!-- Line Chart -->
-        <div class="col-xl-8 col-lg-7">
+        <div class="col-xl-6 col-lg-6">
             <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Live Data 1</h6>
                 </div>
-                <!-- Card Body -->
                 <div class="card-body">
-                    <div id="container"></div>
+                    <div class="chart-area" id="container1"></div>
                 </div>
             </div>
         </div>
 
-        <!-- Pie Chart -->
-        <div class="col-xl-4 col-lg-5">
+        <div class="col-xl-6 col-lg-6">
             <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Live Data 2</h6>
                 </div>
-                <!-- Card Body -->
                 <div class="card-body">
-
+                    <div class="chart-area" id="container2"></div>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-xl-6 col-lg-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Live Data 3</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-area" id="container3"></div>
+                </div>
+            </div>
+        </div>
 
-
-
-
+        <div class="col-xl-6 col-lg-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Live Data 4</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-area" id="container4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

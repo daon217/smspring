@@ -34,10 +34,24 @@ public class MainRestController {
         return WeatherUtil.getWeather(loc,wkey);
     }
 
-    @RequestMapping("/savedata")
-    public Object saveaudio(@RequestParam("data") String data) throws IOException {
-        log.info(data);
-        return "OK";
+    @RequestMapping("/savedata1")
+    public void savedata1(Anything anything) {
+        log.info("[MainLogger1] " + anything.toString());
+    }
+
+    @RequestMapping("/savedata2")
+    public void savedata2(Anything anything) {
+        log.info("[MainLogger2] " + anything.toString());
+    }
+
+    @RequestMapping("/savedata3")
+    public void savedata3(Anything anything) {
+        log.info("[MainLogger3] " + anything.toString());
+    }
+
+    @RequestMapping("/savedata4")
+    public void savedata4(Anything anything) {
+        log.info("[MainLogger4] " + anything.toString());
     }
 
     @RequestMapping("/saveaudio")

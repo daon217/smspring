@@ -6501,3 +6501,735 @@ org.apache.jasper.JasperException: /views/product/getpage.jsp (line: [59], colum
 [2025-09-23 14:33:20:380921][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
 [2025-09-23 14:33:20:380921][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
 [2025-09-23 14:33:20:380921][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:48:29:3855][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 64 mappings in 'requestMappingHandlerMapping'
+[2025-09-23 14:48:29:3930][restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /imgs/**, /logs/**] in 'resourceHandlerMapping'
+[2025-09-23 14:48:29:4030][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[2025-09-23 14:48:29:4079][restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+[2025-09-23 14:48:33:7847][https-jsse-nio-8443-exec-6] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2025-09-23 14:48:33:7847][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+[2025-09-23 14:48:33:7848][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+[2025-09-23 14:48:33:7848][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+[2025-09-23 14:48:33:7849][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3e5162e7
+[2025-09-23 14:48:33:7850][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@7121f04f
+[2025-09-23 14:48:33:7850][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+[2025-09-23 14:48:33:7851][https-jsse-nio-8443-exec-6] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+[2025-09-23 14:48:33:7894][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=36", parameters={masked}
+[2025-09-23 14:48:33:7895][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:48:33:7925][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:48:33:7927][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:48:33:7932][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:48:35:9816][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/access.log", parameters={}
+[2025-09-23 14:48:35:9817][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:35:9820][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/error.log", parameters={}
+[2025-09-23 14:48:35:9820][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:35:9826][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:35:9826][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:35:9831][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource error.log.]
+[2025-09-23 14:48:35:9831][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource access.log.]
+[2025-09-23 14:48:35:9831][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:35:9831][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:35:9838][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:35:9838][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:35:9838][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:35:9838][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:35:9841][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/sales.log", parameters={}
+[2025-09-23 14:48:35:9842][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/user.log", parameters={}
+[2025-09-23 14:48:35:9842][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:35:9842][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:35:9843][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:35:9843][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:35:9843][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user.log.]
+[2025-09-23 14:48:35:9843][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sales.log.]
+[2025-09-23 14:48:35:9843][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:35:9843][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:35:9846][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:35:9846][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:35:9846][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:35:9847][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:35:9857][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:35:9857][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:35:9857][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:35:9857][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:35:9857][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:35 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:35:9857][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:35 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:35:9857][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:35 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:35:9858][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:35 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:35:9902][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:35:9902][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:35:9902][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:35:9902][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:35:9962][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=70", parameters={masked}
+[2025-09-23 14:48:35:9963][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:48:35:9963][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:48:35:9963][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:48:35:9964][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:48:37:11914][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/access.log", parameters={}
+[2025-09-23 14:48:37:11914][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/user.log", parameters={}
+[2025-09-23 14:48:37:11914][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/error.log", parameters={}
+[2025-09-23 14:48:37:11914][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/sales.log", parameters={}
+[2025-09-23 14:48:37:11914][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:37:11915][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:37:11915][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:37:11915][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:37:11915][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:37:11916][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource access.log.]
+[2025-09-23 14:48:37:11916][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:37:11916][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:37:11916][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:37:11916][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:37:11918][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource error.log.]
+[2025-09-23 14:48:37:11918][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user.log.]
+[2025-09-23 14:48:37:11918][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sales.log.]
+[2025-09-23 14:48:37:11918][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:37:11918][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:37:11918][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:37:11920][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:37:11920][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:37:11920][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:37:11920][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:37:11921][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:37:11921][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:37:11921][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:37 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:37:11921][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:37:11921][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:37:11921][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:37:11921][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:37 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:37:11921][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:37 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:37:11922][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:37:11922][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:37:11922][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:37:11923][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:37:11923][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:37:11923][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:37:11924][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:37 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:37:11926][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:37:12000][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=40", parameters={masked}
+[2025-09-23 14:48:37:12000][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:48:37:12001][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:48:37:12001][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:48:37:12001][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:48:37:12388][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/access.log", parameters={}
+[2025-09-23 14:48:37:12389][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:37:12389][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:37:12390][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource access.log.]
+[2025-09-23 14:48:37:12390][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:37:12392][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:37:12392][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:37:12392][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:37:12392][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:37 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:37:12393][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:37:12405][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/sales.log", parameters={}
+[2025-09-23 14:48:37:12405][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:37:12406][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:37:12406][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sales.log.]
+[2025-09-23 14:48:37:12406][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:37:12409][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:37:12409][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:37:12409][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:37:12409][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:37 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:37:12411][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:37:12418][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/error.log", parameters={}
+[2025-09-23 14:48:37:12418][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:37:12419][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:37:12419][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource error.log.]
+[2025-09-23 14:48:37:12419][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:37:12420][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:37:12420][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:37:12421][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:37:12421][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:37 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:37:12422][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:37:12430][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/user.log", parameters={}
+[2025-09-23 14:48:37:12430][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:37:12430][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:37:12430][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user.log.]
+[2025-09-23 14:48:37:12430][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:37:12433][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:37:12433][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:37:12434][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:37:12434][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:37 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:37:12435][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:39:14033][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=52", parameters={masked}
+[2025-09-23 14:48:39:14033][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:48:39:14034][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:48:39:14034][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:48:39:14034][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:48:39:14446][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/access.log", parameters={}
+[2025-09-23 14:48:39:14446][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:39:14447][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:39:14447][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource access.log.]
+[2025-09-23 14:48:39:14447][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:39:14448][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:39:14448][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:39:14449][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:39:14449][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:39 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:39:14449][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:39:14453][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/sales.log", parameters={}
+[2025-09-23 14:48:39:14453][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/user.log", parameters={}
+[2025-09-23 14:48:39:14453][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:39:14453][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:39:14453][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/error.log", parameters={}
+[2025-09-23 14:48:39:14454][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:39:14454][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:39:14454][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:39:14454][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sales.log.]
+[2025-09-23 14:48:39:14454][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:39:14454][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user.log.]
+[2025-09-23 14:48:39:14454][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:39:14454][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:39:14455][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource error.log.]
+[2025-09-23 14:48:39:14455][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:39:14455][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:39:14457][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:39:14457][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:39:14457][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:39:14457][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:39:14458][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:39:14458][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:39:14458][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:39 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:39:14458][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:39 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:39:14458][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:39:14459][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:39:14459][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:39:14459][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:39:14459][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:39 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:40:14460][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:41:16059][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=86", parameters={masked}
+[2025-09-23 14:48:41:16059][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:48:41:16060][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:48:41:16060][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:48:41:16060][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:48:42:16466][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/access.log", parameters={}
+[2025-09-23 14:48:42:16467][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:42:16467][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:42:16468][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource access.log.]
+[2025-09-23 14:48:42:16468][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:42:16470][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:42:16470][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:42:16471][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:42:16471][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:42 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:42:16473][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:42:16475][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/sales.log", parameters={}
+[2025-09-23 14:48:42:16475][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:42:16476][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:42:16476][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sales.log.]
+[2025-09-23 14:48:42:16476][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:42:16477][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:42:16478][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:42:16478][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:42:16478][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:42 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:42:16479][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:42:16483][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/user.log", parameters={}
+[2025-09-23 14:48:42:16483][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:42:16484][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:42:16484][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user.log.]
+[2025-09-23 14:48:42:16484][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:42:16486][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:42:16486][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:42:16487][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:42:16487][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:42 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:42:16487][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/error.log", parameters={}
+[2025-09-23 14:48:42:16487][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:42:16487][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:42:16489][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource error.log.]
+[2025-09-23 14:48:42:16489][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:42:16489][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:42:16489][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:42:16490][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:42:16490][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:42:16490][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:42 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:42:16491][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:42:17109][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/access.log", parameters={}
+[2025-09-23 14:48:42:17109][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:42:17110][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:42:17110][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource access.log.]
+[2025-09-23 14:48:42:17110][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:42:17112][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:42:17112][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:42:17113][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:42:17113][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:42 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:42:17114][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:42:17117][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/sales.log", parameters={}
+[2025-09-23 14:48:42:17118][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:42:17118][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:42:17119][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sales.log.]
+[2025-09-23 14:48:42:17119][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:42:17121][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:42:17121][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:42:17122][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:42:17122][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:42 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:42:17123][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:42:17123][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/error.log", parameters={}
+[2025-09-23 14:48:42:17124][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:42:17124][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:42:17125][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource error.log.]
+[2025-09-23 14:48:42:17125][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:42:17126][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:42:17126][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:42:17127][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:42:17127][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:42 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:42:17129][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:42:17131][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/user.log", parameters={}
+[2025-09-23 14:48:42:17131][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:42:17132][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:42:17132][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user.log.]
+[2025-09-23 14:48:42:17132][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:42:17134][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:42:17134][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:42:17135][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:42:17135][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:42 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:42:17136][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:43:18086][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=83", parameters={masked}
+[2025-09-23 14:48:43:18087][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:48:43:18087][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:48:43:18087][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:48:43:18088][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:48:44:19144][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/error.log", parameters={}
+[2025-09-23 14:48:44:19144][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/sales.log", parameters={}
+[2025-09-23 14:48:44:19144][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/access.log", parameters={}
+[2025-09-23 14:48:44:19144][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/user.log", parameters={}
+[2025-09-23 14:48:44:19144][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:44:19144][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:44:19144][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:44:19144][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:44:19144][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:44:19144][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sales.log.]
+[2025-09-23 14:48:44:19144][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:44:19144][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:44:19144][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:44:19144][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource error.log.]
+[2025-09-23 14:48:44:19146][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:44:19146][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:44:19146][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource access.log.]
+[2025-09-23 14:48:44:19146][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:44:19146][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user.log.]
+[2025-09-23 14:48:44:19146][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:44:19147][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:44:19147][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:44:19147][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:44:19147][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:44:19148][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:44:19148][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:44:19148][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:44:19148][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:44 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:44:19148][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:44:19148][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:44:19148][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:44 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:44:19149][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:44:19148][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:44:19149][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:44 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:44:19149][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:44:19149][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:44:19149][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:44:19150][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:44 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:44:19150][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:44:19151][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:45:20110][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=46", parameters={masked}
+[2025-09-23 14:48:45:20110][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:48:45:20111][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:48:45:20111][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:48:45:20112][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:48:46:21165][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/error.log", parameters={}
+[2025-09-23 14:48:46:21165][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/sales.log", parameters={}
+[2025-09-23 14:48:46:21165][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/access.log", parameters={}
+[2025-09-23 14:48:46:21165][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/user.log", parameters={}
+[2025-09-23 14:48:46:21166][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:46:21166][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:46:21166][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:46:21166][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:48:46:21166][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:46:21166][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:46:21166][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:46:21166][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:48:46:21166][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource error.log.]
+[2025-09-23 14:48:46:21166][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource access.log.]
+[2025-09-23 14:48:46:21166][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:46:21166][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sales.log.]
+[2025-09-23 14:48:46:21166][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:46:21166][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user.log.]
+[2025-09-23 14:48:46:21166][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:46:21166][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:48:46:21169][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:46:21169][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:46:21169][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:46:21169][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:46 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:46:21169][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:46:21170][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:46:21170][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:46:21170][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:46:21171][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:46:21171][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:46 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:46:21171][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:46:21171][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:46:21171][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:48:46:21171][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:46 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:46:21172][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:48:46:21172][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:46:21172][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:48:46:21174][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:48:46 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:48:46:21174][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:46:21174][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:48:47:22140][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=69", parameters={masked}
+[2025-09-23 14:48:47:22140][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:48:47:22140][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:48:47:22140][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:48:47:22141][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:48:49:24172][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=65", parameters={masked}
+[2025-09-23 14:48:49:24172][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:48:49:24172][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:48:49:24172][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:48:49:24173][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:48:51:26194][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=37", parameters={masked}
+[2025-09-23 14:48:51:26194][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:48:51:26195][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:48:51:26195][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:48:51:26195][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:48:53:28228][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=39", parameters={masked}
+[2025-09-23 14:48:53:28228][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:48:53:28229][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:48:53:28229][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:48:53:28229][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:48:55:30265][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=12", parameters={masked}
+[2025-09-23 14:48:55:30265][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:48:55:30266][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:48:55:30266][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:48:55:30267][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:48:57:32298][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=44", parameters={masked}
+[2025-09-23 14:48:57:32298][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:48:57:32298][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:48:57:32298][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:48:57:32299][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:00:35434][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=13", parameters={masked}
+[2025-09-23 14:49:00:35434][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:00:35436][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:00:35436][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:00:35436][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:02:37127][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/access.log", parameters={}
+[2025-09-23 14:49:02:37128][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:49:02:37128][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:49:02:37128][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource access.log.]
+[2025-09-23 14:49:02:37128][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:49:02:37130][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:49:02:37130][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:49:02:37132][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:49:02:37132][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:49:02 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:49:02:37133][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:49:02:37136][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/sales.log", parameters={}
+[2025-09-23 14:49:02:37137][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:49:02:37137][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:49:02:37137][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sales.log.]
+[2025-09-23 14:49:02:37138][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:49:02:37139][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:49:02:37139][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:49:02:37140][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:49:02:37140][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:49:02 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:49:02:37142][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:49:02:37144][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/error.log", parameters={}
+[2025-09-23 14:49:02:37144][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:49:02:37145][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:49:02:37145][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource error.log.]
+[2025-09-23 14:49:02:37145][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:49:02:37147][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:49:02:37147][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:49:02:37147][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:49:02:37149][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:49:02 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:49:02:37150][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:49:02:37153][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/user.log", parameters={}
+[2025-09-23 14:49:02:37153][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:49:02:37155][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:49:02:37155][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user.log.]
+[2025-09-23 14:49:02:37155][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:49:02:37157][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:49:02:37157][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:49:02:37158][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:49:02:37158][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:49:02 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:49:02:37160][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:49:03:37470][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=29", parameters={masked}
+[2025-09-23 14:49:03:37470][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:03:37471][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:03:37471][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:03:37471][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:04:39167][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/access.log", parameters={}
+[2025-09-23 14:49:04:39168][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:49:04:39168][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/sales.log", parameters={}
+[2025-09-23 14:49:04:39169][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:49:04:39169][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:49:04:39169][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource access.log.]
+[2025-09-23 14:49:04:39169][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:49:04:39170][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:49:04:39170][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sales.log.]
+[2025-09-23 14:49:04:39170][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:49:04:39173][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:49:04:39174][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:49:04:39175][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:49:04:39175][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:49:04:39175][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:49:04 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:49:04:39175][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:49:04:39177][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:49:04:39177][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:49:04:39177][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:49:04 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:49:04:39179][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:49:04:39180][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/user.log", parameters={}
+[2025-09-23 14:49:04:39181][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:49:04:39181][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:49:04:39182][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user.log.]
+[2025-09-23 14:49:04:39182][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:49:04:39183][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/error.log", parameters={}
+[2025-09-23 14:49:04:39184][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:49:04:39184][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:49:04:39184][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:49:04:39185][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:49:04:39185][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource error.log.]
+[2025-09-23 14:49:04:39185][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:49:04:39185][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:49:04:39185][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:49:04 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:49:04:39187][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:49:04:39188][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:49:04:39188][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:49:04:39188][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:49:04:39188][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:49:04 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:49:04:39189][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:49:05:39506][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=1", parameters={masked}
+[2025-09-23 14:49:05:39506][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:05:39507][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:05:39509][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:05:39509][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:06:41185][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/access.log", parameters={}
+[2025-09-23 14:49:06:41185][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:49:06:41185][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:49:06:41186][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource access.log.]
+[2025-09-23 14:49:06:41186][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:49:06:41186][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:49:06:41187][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:49:06:41187][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:49:06:41187][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:49:06 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:49:06:41188][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:49:06:41191][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/sales.log", parameters={}
+[2025-09-23 14:49:06:41191][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/user.log", parameters={}
+[2025-09-23 14:49:06:41192][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:49:06:41192][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:49:06:41192][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:49:06:41192][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:49:06:41192][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user.log.]
+[2025-09-23 14:49:06:41192][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sales.log.]
+[2025-09-23 14:49:06:41192][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:49:06:41192][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:49:06:41193][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:49:06:41194][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:49:06:41194][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:49:06:41194][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:49:06:41194][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:49:06:41194][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:49:06 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:49:06:41194][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:49:06:41195][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:49:06 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:49:06:41195][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:49:06:41195][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:49:06:41200][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/logs/error.log", parameters={}
+[2025-09-23 14:49:06:41202][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:/C:/smspring/logs/]]
+[2025-09-23 14:49:06:41203][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2025-09-23 14:49:06:41204][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource error.log.]
+[2025-09-23 14:49:06:41204][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+[2025-09-23 14:49:06:41206][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+[2025-09-23 14:49:06:41206][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+[2025-09-23 14:49:06:41207][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2025-09-23 14:49:06:41207][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Tue Sep 23 14:49:06 KST 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+[2025-09-23 14:49:06:41208][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+[2025-09-23 14:49:07:41537][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=80", parameters={masked}
+[2025-09-23 14:49:07:41537][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:07:41538][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:07:41538][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:07:41538][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:09:43562][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=74", parameters={masked}
+[2025-09-23 14:49:09:43562][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:09:43563][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:09:43563][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:09:43564][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:11:45587][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=6", parameters={masked}
+[2025-09-23 14:49:11:45587][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:11:45589][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:11:45589][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:11:45589][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:13:47612][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=76", parameters={masked}
+[2025-09-23 14:49:13:47612][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:13:47613][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:13:47613][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:13:47613][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:15:49637][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=5", parameters={masked}
+[2025-09-23 14:49:15:49638][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:15:49638][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:15:49638][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:15:49639][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:17:51658][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=57", parameters={masked}
+[2025-09-23 14:49:17:51658][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:17:51658][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:17:51658][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:17:51659][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:19:53677][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=6", parameters={masked}
+[2025-09-23 14:49:19:53677][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:19:53677][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:19:53677][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:19:53678][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:22:56888][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=82", parameters={masked}
+[2025-09-23 14:49:22:56888][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:22:56889][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:22:56889][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:22:56890][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:24:58915][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=36", parameters={masked}
+[2025-09-23 14:49:24:58916][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:24:58916][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:24:58916][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:24:58917][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:26:60947][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=17", parameters={masked}
+[2025-09-23 14:49:26:60948][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:26:60948][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:26:60948][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:26:60949][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:28:62970][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=90", parameters={masked}
+[2025-09-23 14:49:28:62970][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:28:62970][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:28:62970][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:28:62970][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:30:65000][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=23", parameters={masked}
+[2025-09-23 14:49:30:65000][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:30:65001][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:30:65001][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:30:65001][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:32:67037][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=85", parameters={masked}
+[2025-09-23 14:49:32:67037][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:32:67048][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:32:67048][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:32:67048][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:34:69068][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=32", parameters={masked}
+[2025-09-23 14:49:34:69068][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:34:69069][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:34:69069][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:34:69069][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:36:71091][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=55", parameters={masked}
+[2025-09-23 14:49:36:71091][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:36:71092][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:36:71092][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:36:71092][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:38:73117][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=61", parameters={masked}
+[2025-09-23 14:49:38:73117][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:38:73117][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:38:73117][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:38:73118][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:40:75143][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=73", parameters={masked}
+[2025-09-23 14:49:40:75143][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:40:75143][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:40:75143][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:40:75144][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:42:77171][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=68", parameters={masked}
+[2025-09-23 14:49:42:77171][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:42:77171][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:42:77171][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:42:77173][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:44:79194][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=51", parameters={masked}
+[2025-09-23 14:49:44:79194][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:44:79194][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:44:79195][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:44:79195][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:46:81224][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=15", parameters={masked}
+[2025-09-23 14:49:46:81224][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:46:81224][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:46:81224][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:46:81225][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:48:83252][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=57", parameters={masked}
+[2025-09-23 14:49:48:83252][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:48:83252][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:48:83252][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:48:83252][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:50:85273][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=12", parameters={masked}
+[2025-09-23 14:49:50:85273][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:50:85274][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:50:85274][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:50:85275][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:52:87298][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=42", parameters={masked}
+[2025-09-23 14:49:52:87298][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:52:87299][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:52:87299][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:52:87299][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:54:89331][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=67", parameters={masked}
+[2025-09-23 14:49:54:89331][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:54:89332][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:54:89332][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:54:89332][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:56:91365][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=80", parameters={masked}
+[2025-09-23 14:49:56:91365][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:56:91366][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:56:91366][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:56:91367][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:49:58:93395][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=67", parameters={masked}
+[2025-09-23 14:49:58:93395][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:49:58:93395][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:49:58:93396][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:49:58:93396][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:50:00:95426][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=14", parameters={masked}
+[2025-09-23 14:50:00:95426][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:50:00:95426][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:50:00:95426][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:50:00:95426][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:50:02:97444][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=41", parameters={masked}
+[2025-09-23 14:50:02:97444][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:50:02:97446][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:50:02:97446][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:50:02:97446][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:50:05:99481][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=58", parameters={masked}
+[2025-09-23 14:50:05:99481][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:50:05:99481][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:50:05:99481][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:50:05:99482][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:50:07:101510][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=12", parameters={masked}
+[2025-09-23 14:50:07:101510][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:50:07:101511][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:50:07:101511][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:50:07:101511][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:50:09:103545][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=25", parameters={masked}
+[2025-09-23 14:50:09:103545][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:50:09:103547][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:50:09:103547][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:50:09:103547][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:50:11:105571][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=2", parameters={masked}
+[2025-09-23 14:50:11:105571][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:50:11:105572][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:50:11:105572][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:50:11:105573][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:50:13:107611][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=75", parameters={masked}
+[2025-09-23 14:50:13:107611][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:50:13:107612][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:50:13:107612][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:50:13:107613][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:50:15:109642][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=67", parameters={masked}
+[2025-09-23 14:50:15:109642][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:50:15:109643][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:50:15:109643][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:50:15:109643][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:50:17:111674][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=92", parameters={masked}
+[2025-09-23 14:50:17:111674][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:50:17:111674][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:50:17:111674][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:50:17:111675][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:50:19:113694][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=30", parameters={masked}
+[2025-09-23 14:50:19:113694][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:50:19:113694][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:50:19:113695][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:50:19:113695][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:50:21:115712][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=77", parameters={masked}
+[2025-09-23 14:50:21:115714][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:50:21:115714][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:50:21:115714][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:50:21:115714][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:50:23:117753][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=54", parameters={masked}
+[2025-09-23 14:50:23:117753][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:50:23:117753][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:50:23:117753][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:50:23:117754][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:50:25:119791][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=64", parameters={masked}
+[2025-09-23 14:50:25:119791][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:50:25:119791][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:50:25:119791][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:50:25:119792][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-23 14:50:27:121832][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/savedata?data=20", parameters={masked}
+[2025-09-23 14:50:27:121832][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#saveaudio(String)
+[2025-09-23 14:50:27:121833][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, image/gif, image/jpeg, */*;q=0.2] and supported [text/plain, */*, application/json, application/*+json]
+[2025-09-23 14:50:27:121833][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["OK"]
+[2025-09-23 14:50:27:121834][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK

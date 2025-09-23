@@ -1,60 +1,28 @@
-package util;
+package iot3.src.util;
 
-import javax.net.ssl.*;
-import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.X509Certificate;
 
 public class HttpSendData {
+    public static void sendData(String url, int data) {
+        try {
+            URL obj = new URL(url);
+            HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+            con.setRequestMethod("POST");
+            con.setRequestProperty("Content-Type", "application/json; charset=utf-8");
+            con.setDoOutput(true);
 
-    // ssl security Exception 방지
-    public static void disableSslVerification(){
-        // TODO Auto-generated method stub
-        try
-        {
-            // Create a trust manager that does not validate certificate chains
-            TrustManager[] trustAllCerts = new TrustManager[] {new X509TrustManager() {
-                public java.security.cert.X509Certificate[] getAcceptedIssuers() {
-                    return null;
-                }
-                public void checkClientTrusted(X509Certificate[] certs, String authType){
-                }
-                public void checkServerTrusted(X509Certificate[] certs, String authType){
-                }
-            }
-            };
+            // Send POST request
+            OutputStreamWriter wr = new OutputStreamWriter(con.getOutputStream());
+            wr.write("data=" + data);
+            wr.flush();
+            wr.close();
 
-            // Install the all-trusting trust manager
-            SSLContext sc = SSLContext.getInstance("SSL");
-            sc.init(null, trustAllCerts, new java.security.SecureRandom());
-            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
-
-            // Create all-trusting host name verifier
-            HostnameVerifier allHostsValid = new HostnameVerifier() {
-                public boolean verify(String hostname, SSLSession session){
-                    return true;
-                }
-            };
-
-            // Install the all-trusting host verifier
-            HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (KeyManagementException e) {
+            int responseCode = con.getResponseCode();
+            System.out.println("POST Response Code :: " + responseCode);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-    public static void send(String url, String data) throws IOException {
-        disableSslVerification();
-        HttpURLConnection httpClient =
-                (HttpURLConnection) new URL(url + data).openConnection();
-        // optional default is GET
-        httpClient.setRequestMethod("GET");
-        int responseCode = httpClient.getResponseCode();
-    }
-
 }
