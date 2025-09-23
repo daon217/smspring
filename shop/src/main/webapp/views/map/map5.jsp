@@ -10,9 +10,8 @@
 </style>
 
 <script>
-    // 지도에 추가된 지도타입 정보를 가지고 있을 변수입니다. 전역 변수로 선언합니다.
     var currentTypeId;
-    var map; // 지도 객체를 저장할 전역 변수입니다.
+    var map;
 
     let map5 = {
         init: function() {
@@ -22,12 +21,10 @@
                 level: 7
             };
 
-            // 지도를 생성하여 전역 변수 'map'에 할당합니다.
             map = new kakao.maps.Map(mapContainer, mapOption);
         }
     };
 
-    // setOverlayMapTypeId 함수를 전역 스코프에 정의합니다.
     function setOverlayMapTypeId(maptype) {
         var changeMaptype;
 
@@ -52,8 +49,6 @@
     $(function() {
         map5.init();
 
-        // 버튼 클릭 이벤트를 추가합니다.
-        // 예를 들어, HTML에 <button onclick="setOverlayMapTypeId('traffic')">교통정보</button> 와 같은 버튼이 있어야 합니다.
     });
 </script>
 

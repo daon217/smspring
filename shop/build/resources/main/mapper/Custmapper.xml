@@ -11,21 +11,18 @@
                 cust_name like concat('%',#{custName},'%')
             </if>
             <if test="startDate != null and !startDate.equals('')">
-                <!--and cust_regdate &gt;= #{startDate} -->
-                <![CDATA[
-                  and cust_regdate  >=  #{startDate}
-
-                 ]]>
+                <![CDATA[ and cust_regdate  >=  #{startDate} ]]>
             </if>
             <if test="endDate != null and !endDate.equals('')">
-                <!--and date(cust_regdate) &lt;= #{endDate} -->
                 <![CDATA[ and date(cust_regdate) <=  #{endDate} ]]>
             </if>
         </where>
     </select>
+
     <select id="getpage" resultType="Cust">
         SELECT * FROM cust
     </select>
+
     <select id="getpageSearch" parameterType="CustSearch" resultType="Cust">
         select * from cust
         <where>
@@ -33,32 +30,31 @@
                 cust_name like concat('%',#{custName},'%')
             </if>
             <if test="startDate != null and !startDate.equals('')">
-                <!--and cust_regdate &gt;= #{startDate} -->
-                <![CDATA[
-                  and cust_regdate  >=  #{startDate}
-
-                 ]]>
+                <![CDATA[ and cust_regdate  >=  #{startDate} ]]>
             </if>
             <if test="endDate != null and !endDate.equals('')">
-                <!--and date(cust_regdate) &lt;= #{endDate} -->
                 <![CDATA[ and date(cust_regdate) <=  #{endDate} ]]>
             </if>
         </where>
     </select>
+
     <select id="select" parameterType="String" resultType="Cust">
         SELECT * FROM cust WHERE cust_id=#{custId}
     </select>
+
     <select id="selectAll" resultType="Cust">
         SELECT * FROM cust
     </select>
+
     <insert id="insert" parameterType="Cust">
         INSERT INTO cust VALUES (#{custId},#{custPwd},#{custName},#{custAddr}, NOW(), NOW())
     </insert>
+
     <update id="update" parameterType="Cust">
         UPDATE cust SET cust_pwd=#{custPwd},cust_name=#{custName},cust_addr=#{custAddr}, cust_update=NOW() WHERE cust_id=#{custId}
     </update>
+
     <delete id="delete" parameterType="String">
         DELETE FROM cust WHERE cust_id=#{custId}
     </delete>
-
 </mapper>

@@ -9,26 +9,26 @@ server:
     encoding:
       charset: UTF-8
       force: true
+
 spring:
-  spring:
-    messages:
-      basename: message
-      encoding: utf-8
-      cache-duration: 10
-      fallback-to-system-locale: false
+  messages:
+    basename: message
+    encoding: utf-8
+    cache-duration: 10
+    fallback-to-system-locale: false
   config:
     import: optional:file:.env[.properties]
   mvc:
     view:
       prefix: /views/
       suffix: .jsp
+
   datasource:
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
     url: jdbc:log4jdbc:mysql://127.0.0.1:3306/shopdb?characterEncoding=utf8
     username: root
     password: ENC(idIWCdznEM3ggslDeTmLJw==)
 
-# MyBatis 설정 부분
 mybatis:
   type-aliases-package: edu.sm.app.dto
   mapper-locations: classpath:/mapper/*.xml
@@ -39,7 +39,6 @@ logging:
   level:
     root: info
 
-# Application Config
 app:
   dir:
     imgsdir: file:///C:/smspring/imgs/

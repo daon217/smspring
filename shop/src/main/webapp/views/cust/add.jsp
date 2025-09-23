@@ -8,7 +8,9 @@
             });
         },
         send:function(){
+            [cite_start]
             $('#cust_add_form').attr('method','post');
+            [cite_start]
             $('#cust_add_form').attr('action','<c:url value="/cust/addimpl"/>');
             $('#cust_add_form').submit();
         }
@@ -41,7 +43,6 @@
                 </div>
             </form>
             <button id="cust_add_btn" class="btn btn-primary">Add</button>
-
         </div>
         <div class="col-sm-4">
             <p id="msg">Cust를 입력 하세요.</p>

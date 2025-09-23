@@ -1,3 +1,4 @@
+<%-- 이 페이지는 웹캠을 사용하여 사진을 찍고 서버로 전송하는 기능을 제공합니다. --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -6,7 +7,6 @@
     myVideoStream:null,
     init:function(){
       this.myVideoStream = document.querySelector('#myVideo');
-
     },
     getVideo:function(){
       navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
@@ -72,6 +72,4 @@
   <input type=button value="get Video" onclick="pic.getVideo();">
   <input type=button value="get Pic" onclick="pic.takeSnapshot();">
   <input type=button value="send Pic" onclick="pic.send();"><br>
-  <%--  <input type=button value="Auto Pic" onclick="pic.takeAuto(5000);">--%>
-
 </div>

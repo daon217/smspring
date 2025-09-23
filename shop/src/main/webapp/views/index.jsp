@@ -14,7 +14,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8ebb7e444a8cd5d1f3bbc02bbacb744a&libraries=services"></script>
 
-    <%-- highchart lib   --%>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/data.js"></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
@@ -28,7 +27,6 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script src="https://code.highcharts.com/modules/non-cartesian-zoom.js"></script>
     <script src="https://code.highcharts.com/themes/adaptive.js"></script>
-
 </head>
 <body>
 
@@ -86,7 +84,6 @@
 </nav>
 <div class="container" style="margin-top:30px; margin-bottom: 30px;">
     <div class="row">
-        <%-- Left Menu Start ........  --%>
         <c:choose>
             <c:when test="${left == null}">
                 <jsp:include page="left.jsp"/>
@@ -96,7 +93,6 @@
             </c:otherwise>
         </c:choose>
 
-        <%-- Left Menu End ........  --%>
         <c:choose>
             <c:when test="${center == null}">
                 <jsp:include page="center.jsp"/>
@@ -105,9 +101,6 @@
                 <jsp:include page="${center}.jsp"/>
             </c:otherwise>
         </c:choose>
-        <%-- Center Start ........  --%>
-
-        <%-- Center End ........  --%>
     </div>
 </div>
 

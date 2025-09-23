@@ -9,6 +9,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class PlaceService {
+
     final PlaceRepository placeRepository;
 
     public List<Place> findNearby(double lat, double lng, String category) {

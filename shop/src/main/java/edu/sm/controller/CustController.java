@@ -33,12 +33,14 @@ public class CustController {
         model.addAttribute("left",dir+"left");
         return "index";
     }
+
     @RequestMapping("/add")
     public String add(Model model) {
         model.addAttribute("center",dir+"add");
         model.addAttribute("left",dir+"left");
         return "index";
     }
+
     @RequestMapping("/addimpl")
     public String addimpl(Model model, Cust cust) throws Exception {
         cust.setCustPwd(bCryptPasswordEncoder.encode(cust.getCustPwd()));
@@ -46,51 +48,38 @@ public class CustController {
         custService.register(cust);
         return "redirect:/cust/get";
     }
+
     @RequestMapping("/get")
     public String get(Model model) throws Exception {
         List<Cust> list = null;
         list = custService.get();
-
         model.addAttribute("clist", list);
         model.addAttribute("left", dir+"left");
         model.addAttribute("center", dir+"get");
         return "index";
     }
+
     @RequestMapping("/search")
     public String search(Model model, CustSearch custSearch ) throws Exception {
         List<Cust> list = null;
         list = custService.searchCustList(custSearch);
-
         model.addAttribute("custName", custSearch.getCustName());
         model.addAttribute("startDate", custSearch.getStartDate());
         model.addAttribute("endDate", custSearch.getEndDate());
-
         model.addAttribute("clist", list);
         model.addAttribute("left", dir+"left");
         model.addAttribute("center", dir+"get");
-
         return "index";
     }
-    //    @RequestMapping("/getpage")
-//    public String getpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model) throws Exception {
-//        PageInfo<Cust> p = null;
-//        p = new PageInfo<>(custService.getPage(pageNo), 3); // 5:하단 네비게이션 개수
-//        model.addAttribute("target","/cust");
-//        model.addAttribute("clist",p);
-//        model.addAttribute("left", dir+"left");
-//        model.addAttribute("center", dir+"getpage");
-//        return "index";
-//    }
+
     @RequestMapping("/searchpage")
     public String searchpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model,
                              CustSearch custSearch) throws Exception {
         PageInfo<Cust> p = null;
-        p = new PageInfo<>(custService.getPageSearch(pageNo, custSearch), 3); // 5:하단 네비게이션 개수
-
+        p = new PageInfo<>(custService.getPageSearch(pageNo, custSearch), 3);
         model.addAttribute("custName", custSearch.getCustName());
         model.addAttribute("startDate", custSearch.getStartDate());
         model.addAttribute("endDate", custSearch.getEndDate());
-
         model.addAttribute("target","/cust");
         model.addAttribute("cpage",p);
         model.addAttribute("left", dir+"left");

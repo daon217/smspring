@@ -19,9 +19,14 @@
         url:'<c:url value="/getwt1"/>',
         data:{'loc':loc},
         success:(data)=>{
-          alert(data);
+          console.log(data);
+          this.display(data);
         }
       });
+    },
+    display:function(data){
+      let txt = data.response.body.items.item[0].wfSv;
+      $('#result').html(txt);
     }
   }
   $(function(){
@@ -33,8 +38,8 @@
   <h2>Weather 1 Page</h2>
   <select id="loc">
     <option value="108">전국</option>
-    <option value="109">서울</option>
-    <option value="110">인천</option>
+    <option value="109">서울 인천 경기</option>
+    <option value="131">충청</option>
   </select>
   <button id="get_btn">Get</button>
   <h5 id="status"></h5>

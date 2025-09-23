@@ -34,12 +34,18 @@ public class MainRestController {
         return WeatherUtil.getWeather(loc,wkey);
     }
 
+    @RequestMapping("/savedata")
+    public Object saveaudio(@RequestParam("data") String data) throws IOException {
+        log.info(data);
+        return "OK";
+    }
 
     @RequestMapping("/saveaudio")
     public Object saveaudio(@RequestParam("file") MultipartFile file) throws IOException {
         FileUploadUtil.saveFile(file, "C:/smspring/audios/");
         return "OK";
     }
+
     @RequestMapping("/saveimg")
     public Object saveimg(@RequestParam("file") MultipartFile file) throws IOException {
         FileUploadUtil.saveFile(file, "C:/smspring/imgs/");

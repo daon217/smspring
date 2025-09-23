@@ -1,8 +1,8 @@
+<%-- 이 페이지는 페이징 컴포넌트를 표시합니다. --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-<!-- pagination start -->
 <div class="col text-center ">
     <ul class="pagination justify-content-center">
         <c:choose>
@@ -31,8 +31,8 @@
                     </li>
                 </c:otherwise>
             </c:choose>
-
         </c:forEach>
+
         <c:choose>
             <c:when test="${cpage.getNextPage() != 0}">
                 <li class="page-item">
@@ -48,4 +48,3 @@
 
     </ul>
 </div>
-<!-- pagination end -->

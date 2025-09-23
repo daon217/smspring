@@ -2,22 +2,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <style>
-    /* 1. 지도를 감싸는 컨테이너 - 가로 정렬을 위해 flexbox 사용 */
     #mapWrapper {
-        width: 100%; /* 전체 너비를 사용하도록 변경 */
+        width: 100%;
         height: 400px;
         margin-top: 20px;
-        display: flex; /* flexbox 사용 */
-        justify-content: space-between; /* 요소 사이의 간격 조정 */
+        display: flex;
+        justify-content: space-between;
     }
 
-    /* 2. 지도와 로드뷰 영역 - 가로 50%씩 차지하도록 변경 */
     #map, #roadview {
         width: 50%;
         height: 100%;
     }
 
-    /* 3. 로드뷰 워커 아이콘 스타일 (이 부분은 동일) */
     .MapWalker {
         width: 50px;
         height: 50px;
@@ -88,7 +85,6 @@
         this.content = content;
     }
 
-    // 로드뷰의 pan(좌우 각도)값에 따라 map walker의 백그라운드 이미지를 변경 시키는 함수
     MapWalker.prototype.setAngle = function(angle) {
         var threshold = 22.5;
         for (var i = 0; i < 16; i++) {
@@ -101,22 +97,18 @@
         }
     };
 
-    // map walker의 위치를 변경시키는 함수
     MapWalker.prototype.setPosition = function(position) {
         this.walker.setPosition(position);
     };
 
-    // map walker를 지도위에 올리는 함수
     MapWalker.prototype.setMap = function(map) {
         this.walker.setMap(map);
     };
 
-    // 로드뷰와 지도 객체를 저장할 전역 변수
     var map;
     var roadview;
     var roadviewClient;
 
-    // 초기화 함수
     let map7 = {
         init: function() {
             var mapContainer = document.getElementById('map');

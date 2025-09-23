@@ -25,6 +25,7 @@ public class MapController {
         model.addAttribute("left",dir+"left");
         return "index";
     }
+
     @RequestMapping("/go")
     public String go(Model model, @RequestParam("target") int target) throws Exception {
         Marker marker = markerService.get(target);
@@ -33,6 +34,7 @@ public class MapController {
         model.addAttribute("left",dir+"left");
         return "index";
     }
+
     @RequestMapping("/map1")
     public String map1(Model model) {
         model.addAttribute("center",dir+"map1");

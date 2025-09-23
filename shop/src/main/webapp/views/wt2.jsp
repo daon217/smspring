@@ -25,7 +25,6 @@
     function setCenter(lat, lng) {
         var moveLatLon = new kakao.maps.LatLng(lat, lng);
         map.setCenter(moveLatLon);
-
         if (marker) {
             marker.setPosition(moveLatLon);
         }
@@ -37,7 +36,6 @@
             center: new kakao.maps.LatLng(37.5665, 126.9780),
             level: 3
         };
-
         map = new kakao.maps.Map(mapContainer, mapOption);
 
         var zoomControl = new kakao.maps.ZoomControl();
@@ -84,17 +82,14 @@
     $(document).ready(function() {
         initMap();
 
-        // 서울: 육상예보(11B00000), 기온예보(11B10101)
         $('#btn-seoul').click(function() {
             setCenter(37.537385, 126.989246);
             getWeather('서울', '11B00000', '11B10101');
         });
-        // 충청북도: 육상예보(11C10000), 기온예보(11C10301)
         $('#btn-cb').click(function() {
             setCenter(36.996997, 127.915834);
             getWeather('충청북도', '11C10000', '11C10301');
         });
-        // 경상남도: 육상예보(11H20000), 기온예보(11H20101)
         $('#btn-gn').click(function() {
             setCenter(35.126505, 129.036911);
             getWeather('경상남도', '11H20000', '11H20101');

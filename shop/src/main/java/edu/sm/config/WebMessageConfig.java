@@ -33,7 +33,6 @@ public class WebMessageConfig implements ApplicationContextAware {
     }
 }
 
-// 사용자가 사용하는 브라우져의 사용 언어 확인
 @Configuration
 class LocaleResolve implements LocaleContextResolver {
 
@@ -55,7 +54,6 @@ class LocaleResolve implements LocaleContextResolver {
 
 }
 
-// 언어펙 적용
 @Configuration
 class MessageByLocale {
 

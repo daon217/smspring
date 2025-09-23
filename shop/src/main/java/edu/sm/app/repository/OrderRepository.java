@@ -10,6 +10,8 @@ import java.util.List;
 @Repository
 @Mapper
 public interface OrderRepository {
+
     List<ChartData> findMonthlyTotalSales();
+
     List<ChartData> findMonthlyAverageSales();
 }

@@ -1,3 +1,4 @@
+<%-- 이 페이지는 새로운 사용자를 등록하기 위한 양식을 제공합니다. --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -42,7 +43,6 @@
                 </div>
             </form>
             <button id="cust_register_btn" class="btn btn-primary">Add</button>
-
         </div>
         <div class="col-sm-4">
             <p id="msg">Cust를 입력 하세요.</p>

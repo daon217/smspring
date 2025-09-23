@@ -41,15 +41,19 @@ public class CustService implements SmService<Cust, String> {
     public Cust get(String s) throws Exception {
         return custRepository.select(s);
     }
+
     public List<Cust> searchCustList(CustSearch custSearch) throws Exception {
         return custRepository.searchCustList(custSearch);
     }
+
     public Page<Cust> getPage(int pageNo) throws Exception {
-        PageHelper.startPage(pageNo, 3); // 3: 한화면에 출력되는 개수
+        // PageHelper.startPage(페이지 번호, 한 페이지당 아이템 수)
+        PageHelper.startPage(pageNo, 3);
         return custRepository.getpage();
     }
+
     public Page<Cust> getPageSearch(int pageNo, CustSearch custSearch) throws Exception {
-        PageHelper.startPage(pageNo, 3); // 3: 한화면에 출력되는 개수
+        PageHelper.startPage(pageNo, 3);
         return custRepository.getpageSearch(custSearch);
     }
 }

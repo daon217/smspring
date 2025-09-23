@@ -1,4 +1,6 @@
+<%-- 이 페이지는 고객 목록을 페이징 처리하여 표시합니다. --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%-- JSTL Core 및 FMT 라이브러리를 사용하기 위해 태그 라이브러리를 선언합니다. --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -6,7 +8,8 @@
     <h2>Cust GetPage Page</h2>
 
     <form action="/cust/searchpage" method="get"
-          style="margin-bottom: 30px;" id="search_form" class="form-inline well">
+          style="margin-bottom: 30px;"
+          id="search_form" class="form-inline well">
         <div class="form-group">
             <label for="id">Name:</label>
             <input type="text" name="custName" class="form-control" id="id"
@@ -51,13 +54,11 @@
                 <td>${c.custId}</td>
                 <td>${c.custName}</td>
                 <td>
-                    <fmt:parseDate value="${ c.custRegdate }"
-                                   pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
+                    <fmt:parseDate value="${ c.custRegdate }" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
                     <fmt:formatDate pattern="yyyy년MM월dd일 HH:mm" value="${ parsedDateTime }" />
                 </td>
                 <td>
-                    <fmt:parseDate value="${c.custUpdate}"
-                                   pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
+                    <fmt:parseDate value="${c.custUpdate}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
                     <fmt:formatDate pattern="yyyy년MM월dd일 HH:mm" value="${ parsedDateTime }" />
                 </td>
             </tr>

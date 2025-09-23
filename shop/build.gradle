@@ -1,76 +1,107 @@
+// 플러그인: 프로젝트에 핵심 기능을 추가합니다.
+// 'java': 자바 개발 환경을 활성화합니다.
+// 'war': 프로젝트를 웹 애플리케이션 아카이브(WAR) 파일로 빌드할 수 있게 합니다.
+// 'org.springframework.boot': Spring Boot의 주요 플러그인으로, 실행 가능한 JAR/WAR 생성, 의존성 관리 및 자동 구성을 제공합니다.
+// 'io.spring.dependency-management': Spring 및 기타 라이브러리 버전의 호환성을 관리합니다.
 plugins {
     id 'java'
     id 'war'
     id 'org.springframework.boot' version '3.4.10-SNAPSHOT'
     id 'io.spring.dependency-management' version '1.1.7'
 }
-
+// ------------------------------------------------------------------------------------------------------
+// 프로젝트 메타데이터: 프로젝트에 대한 기본 정보입니다.
+// 'group': 프로젝트의 그룹 ID를 정의하며, 보통 역 도메인 이름을 사용합니다.
+// 'version': 프로젝트의 현재 버전입니다. 'SNAPSHOT'은 개발 중인 버전을 의미합니다.
+// 'description': 프로젝트에 대한 간략한 설명입니다.
 group = 'edu.sm'
 version = '0.0.1-SNAPSHOT'
 description = 'shop'
-
+// ------------------------------------------------------------------------------------------------------
+// 자바 설정: 컴파일 및 실행에 사용할 자바 버전을 지정합니다.
+// 'toolchain': 프로젝트의 모든 작업에 일관된 자바 버전을 사용하도록 보장합니다.
+// 'languageVersion': 자바 버전을 17로 설정합니다.
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
     }
 }
-
+// ------------------------------------------------------------------------------------------------------
+// 의존성 설정: 의존성을 위한 커스텀 설정입니다.
+// 'compileOnly': 컴파일 시에만 필요하고 런타임에는 필요하지 않은 의존성을 지정합니다.
+// 'extendsFrom annotationProcessor': 'compileOnly' 의존성이 'annotationProcessor' 설정도 상속하도록 하여 Lombok과 같은 라이브러리에 필요합니다.
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
     }
 }
-
+// ------------------------------------------------------------------------------------------------------
+// 저장소: Gradle이 의존성을 찾는 위치입니다.
+// 'mavenCentral()': 오픈 소스 자바 라이브러리를 위한 주요 저장소입니다.
+// 'maven { url = ... }': Spring의 스냅샷 버전을 위한 커스텀 저장소로, 개발용으로 사용됩니다.
 repositories {
     mavenCentral()
     maven { url = 'https://repo.spring.io/snapshot' }
 }
-
+// ------------------------------------------------------------------------------------------------------
+// 의존성: 프로젝트를 빌드, 실행, 테스트하는 데 필요한 라이브러리입니다.
+// 'implementation': 컴파일 및 런타임에 필요한 의존성입니다.
+// 'compileOnly': 컴파일 시에만 필요한 의존성 (예: Lombok).
+// 'developmentOnly': 개발 시에만 필요한 의존성 (예: Spring Boot DevTools).
+// 'annotationProcessor': 컴파일 시에 어노테이션을 처리하는 라이브러리 (예: Lombok).
+// 'providedRuntime': 서블릿 컨테이너에 의해 제공되는 런타임 환경 의존성 (예: Tomcat).
+// 'runtimeOnly': 런타임에만 필요한 의존성.
+// 'testImplementation': 테스트 실행 시에만 필요한 의존성.
+// 'testAnnotationProcessor': 테스트 코드용 어노테이션 프로세서.
+// 'testRuntimeOnly': 테스트용 런타임 전용 의존성.
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // 기본 Spring Boot 스타터
+    implementation 'org.springframework.boot:spring-boot-starter-web' // 웹 애플리케이션 (REST API, MVC) 개발용.
+    implementation 'org.springframework.boot:spring-boot-starter-security' // 인증 및 권한 부여용.
+    implementation 'org.springframework.boot:spring-boot-starter-tomcat' // 내장형 Tomcat 서버 제공.
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat' // 특히 WAR 배포용.
+
+    // Lombok: Getter, Setter, 생성자 등과 같은 상용구 코드를 자동 생성하는 라이브러리입니다.
     compileOnly 'org.projectlombok:lombok'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'
-    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-
-    // Properties Encryption
-    implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.3'
-    // Security
-    implementation 'org.springframework.boot:spring-boot-starter-security'
-    testImplementation 'org.springframework.security:spring-security-test'
-
-    // logback
-    implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
-    //tomcat
-    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
-    implementation 'jakarta.servlet:jakarta.servlet-api'
-    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
-    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl'
-
-    // Mybatis & MySQL Driver
-    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
-    runtimeOnly 'com.mysql:mysql-connector-j'
-    // Mysql handler
-//    implementation 'org.mybatis:mybatis-typehandlers-jsr310:1.0.2'
-    // JSON
-    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
-    // pageing
-    implementation 'com.github.pagehelper:pagehelper-spring-boot-starter:1.4.6'
-    //openCsv 라이브러리
-    implementation 'com.opencsv:opencsv:5.5.2'
-    // test
     testImplementation 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-}
+    // 개발 도구
+    developmentOnly 'org.springframework.boot:spring-boot-devtools' // 코드 변경 시 애플리케이션을 자동으로 재시작/리로드합니다.
 
-// 메인 클래스를 명시적으로 지정하여 bootRun 오류를 해결합니다.
+    // 속성 암호화
+    implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.3' // application.properties 파일의 속성을 암호화합니다.
+
+    // 로깅 및 데이터베이스 드라이버
+    implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16' // 실행된 SQL 쿼리를 실제 값과 함께 로깅합니다.
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3' // MyBatis와 Spring Boot를 통합합니다.
+    runtimeOnly 'com.mysql:mysql-connector-j' // MySQL 데이터베이스 드라이버.
+
+    // JSP/JSTL 의존성
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper' // JSP 페이지를 서블릿으로 컴파일합니다.
+    implementation 'jakarta.servlet:jakarta.servlet-api' // 웹 애플리케이션용 서블릿 API.
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api' // JSTL (JSP Standard Tag Library) API.
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl' // JSTL 구현체.
+
+    // 유틸리티 라이브러리
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1' // JSON 작업을 위한 간단한 라이브러리입니다.
+    implementation 'com.github.pagehelper:pagehelper-spring-boot-starter:1.4.6' // 데이터베이스 페이징을 간소화합니다.
+    implementation 'com.opencsv:opencsv:5.5.2' // CSV 파일을 읽고 쓰기 위한 라이브러리입니다.
+
+    // 테스트
+    testImplementation 'org.springframework.boot:spring-boot-starter-test' // Spring Boot 테스트를 위한 포괄적인 유틸리티를 제공합니다.
+    testImplementation 'org.springframework.security:spring-security-test' // Spring Security 설정을 테스트하기 위한 라이브러리입니다.
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher' // JUnit 5 테스트를 실행하는 데 필요한 런처입니다.
+}
+// ------------------------------------------------------------------------------------------------------
+// 태스크 설정: Gradle 태스크의 동작을 사용자 정의합니다.
+// 'bootRun': 메인 클래스를 명시적으로 지정하여 애플리케이션 실행 시 오류를 해결합니다.
 tasks.named('bootRun') {
     mainClass = 'edu.sm.ShopApplication'
 }
 
+// 'test': JUnit Platform을 사용하여 테스트를 실행하도록 설정합니다.
 tasks.named('test') {
     useJUnitPlatform()
 }

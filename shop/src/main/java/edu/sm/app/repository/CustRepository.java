@@ -13,7 +13,10 @@ import java.util.List;
 @Repository
 @Mapper
 public interface CustRepository extends SmRepository<Cust, String> {
+
     Page<Cust> getpage() throws Exception;
+
     Page<Cust> getpageSearch(CustSearch custSearch) throws Exception;
+
     List<Cust> searchCustList(CustSearch custSearch) throws Exception;
 }

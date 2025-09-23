@@ -18,9 +18,7 @@ public class MainController {
     @RequestMapping("/")
     public String main(Model model) {
         Random random = new Random();
-
-        log.info(""+random.nextInt(100)+1);
-        // Database 데이터를 가지고 온다.
+//        log.info(""+random.nextInt(100)+1);
         return "index";
     }
 
@@ -35,16 +33,19 @@ public class MainController {
         model.addAttribute("center", "pic");
         return "index";
     }
+
     @RequestMapping("/wt1")
     public String wt1(Model model) {
         model.addAttribute("center", "wt1");
         return "index";
     }
+
     @RequestMapping("/wt2")
     public String wt2(Model model) {
         model.addAttribute("center", "wt2");
         return "index";
     }
+
     @RequestMapping("/wt3")
     public String wt3(Model model) {
         model.addAttribute("center", "wt3");

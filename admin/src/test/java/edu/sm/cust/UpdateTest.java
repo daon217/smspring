@@ -15,13 +15,13 @@ class UpdateTest {
     @Test
     void contextLoads() throws Exception {
         Cust cust = Cust.builder()
-                .custId("id04")
-                .custName("박말수")
-                .custAddr("천안시")
+                .custId("id22")
+                .custName("황말자")
+                .custAddr("아산시")
                 .build();
         custService.modify(cust);
 
-        log.info(custService.get("id04").toString());
+        log.info(custService.get("id22").toString());
     }
 
 }

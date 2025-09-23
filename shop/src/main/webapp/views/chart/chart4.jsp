@@ -14,27 +14,15 @@
         },
         createChart:function(){
             Highcharts.chart('container', {
-chart: {
-                                    type: 'areaspline'
-                },
-                lang: {
-                    locale: 'en-GB'
-                },
-                title: {
-                    text: 'Live Data'
-                },
+                chart: { type: 'areaspline' },
+                lang: { locale: 'en-GB' },
+                title: { text: 'Live Data' },
                 accessibility: {
                     announceNewData: {
                         enabled: true,
                         minAnnounceInterval: 15000,
-                        announcementFormatter: function (
-                            allSeries,
-                            newSeries,
-                            newPoint
-                        ) {
-                            if (newPoint) {
-                                return 'New point added. Value: ' + newPoint.y;
-                            }
+                        announcementFormatter: function (allSeries, newSeries, newPoint) {
+                            if (newPoint) { return 'New point added. Value: ' + newPoint.y; }
                             return false;
                         }
                     }
@@ -44,17 +32,10 @@ chart: {
                         color: '#32CD32',
                         fillColor: {
                             linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
-                            stops: [
-                                [0, '#32CD32'],
-                                [1, '#32CD3200']
-                            ]
+                            stops: [ [0, '#32CD32'], [1, '#32CD3200'] ]
                         },
                         threshold: null,
-                        marker: {
-                            lineWidth: 1,
-                            lineColor: null,
-                            fillColor: 'white'
-                        }
+                        marker: { lineWidth: 1, lineColor: null, fillColor: 'white' }
                     }
                 },
                 data: {
@@ -74,4 +55,3 @@ chart: {
     <h2>chart4</h2>
     <div id="container"></div>
 </div>
-

@@ -10,5 +10,5 @@ public class Place {
     private String address;
     private double lat;
     private double lng;
-    private double distance; // 현재 위치로부터의 거리 (계산 결과)
+    private double distance;
 }

@@ -14,7 +14,7 @@ class InsertTests {
 	CateService cateService;
 	@Test
 	void contextLoads() {
-		Cate cate = Cate.builder().cateId(50).cateName("가방").build();
+		Cate cate = Cate.builder().cateName("가방").build();
 		try {
 			cateService.register(cate);
 			log.info("OK");

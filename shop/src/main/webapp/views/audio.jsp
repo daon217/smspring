@@ -1,8 +1,8 @@
+<%-- 이 페이지는 웹 브라우저를 사용하여 음성 녹음 및 서버로 전송하는 기능을 제공합니다. --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <script>
-
     let ad = {
         mediaRecorder:null,
         audioChunks:[],
@@ -13,21 +13,17 @@
                 navigator.mediaDevices.getUserMedia({ audio: true })
                     .then(stream => {
                         this.mediaRecorder = new MediaRecorder(stream);
-
                         this.mediaRecorder.addEventListener("stop", () => {
                             $('#sendBtn').attr({disabled:false});
                         });
                         this.mediaRecorder.start();
-
                         this.audioChunks = [];
                         $('#recordBtn').attr({disabled:true});
                         $('#stopBtn').attr({disabled:false});
                         $('#statusMessage').html("Recording...");
-
                         this.mediaRecorder.addEventListener("dataavailable", event => {
                             this.audioChunks.push(event.data);
                         });
-
                         this.mediaRecorder.addEventListener("stop", () => {
                             this.audioBlob = new Blob(this.audioChunks, { type: 'audio/mp3' });
                             const audioUrl = URL.createObjectURL(this.audioBlob);
@@ -74,17 +70,11 @@
                 statusMessage.textContent = "No audio recorded to send.";
             }
         }
-
     }
-
     $(function(){
         ad.init();
     });
-
 </script>
-
-
-
 <div class="col-sm-10">
     <h1>Voice Recorder</h1>
     <div class="recorder">

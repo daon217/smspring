@@ -33,7 +33,6 @@ public class ChartRestController {
 
     @RequestMapping("/chart2_1")
     public Object chart2_1() throws Exception {
-        //[[],[]]
         JSONArray jsonArray = new JSONArray();
         String [] nation = {"Kor","Eng","Jap","Chn","Usa"};
         Random random = new Random();
@@ -45,9 +44,9 @@ public class ChartRestController {
         }
         return jsonArray;
     }
+
     @RequestMapping("/chart2_2")
     public Object chart2_2() throws Exception {
-        //{cate:[],data:[]}
         JSONObject jsonObject = new JSONObject();
         String arr [] = {"0-9", "10-19", "20-29", "30-39", "40-49", "50-59", "60-69", "70-79", "80-89", "90+"};
         jsonObject.put("cate",arr);
@@ -59,19 +58,19 @@ public class ChartRestController {
         jsonObject.put("data",jsonArray);
         return jsonObject;
     }
+
     @RequestMapping("/chart2_3")
     public Object chart2_3() throws Exception {
         CSVReader reader =
                 new CSVReader(new InputStreamReader(new FileInputStream(dir+"click.log"), "UTF-8"));
         String[] line;
-//        reader.readNext();  // 헤더 건너뜀
         StringBuffer sb = new StringBuffer();
-
         while ((line = reader.readNext()) != null) {
             sb.append(line[2]+" ");
         }
         return sb.toString();
     }
+
     @RequestMapping("/chart2_4")
     public Object chart2_4() throws Exception {
         JSONObject resultObject = new JSONObject();
@@ -113,7 +112,6 @@ public class ChartRestController {
         return resultObject;
     }
 
-    // 월별 매출 합계 차트 데이터 반환
     @RequestMapping("/chart3_1")
     public Object chart3_1() throws Exception {
         List<ChartData> totalSalesList = orderService.getMonthlyTotalSales();
@@ -127,7 +125,6 @@ public class ChartRestController {
         return result;
     }
 
-    // 월별 매출 평균 차트 데이터 반환
     @RequestMapping("/chart3_2")
     public Object chart3_2() throws Exception {
         List<ChartData> averageSalesList = orderService.getMonthlyAverageSales();
@@ -145,17 +142,15 @@ public class ChartRestController {
 
     @RequestMapping("/chart1")
     public Object chart1() throws Exception {
-        // []
         JSONArray jsonArray = new JSONArray();
 
-        // {}
         JSONObject jsonObject1 = new JSONObject();
         JSONObject jsonObject2 = new JSONObject();
         JSONObject jsonObject3 = new JSONObject();
         jsonObject1.put("name","Korea");
         jsonObject2.put("name","Japan");
         jsonObject3.put("name","China");
-        // []
+
         JSONArray data1Array = new JSONArray();
         JSONArray data2Array = new JSONArray();
         JSONArray data3Array = new JSONArray();

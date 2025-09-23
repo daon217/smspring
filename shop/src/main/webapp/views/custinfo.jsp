@@ -44,7 +44,6 @@
                 </div>
             </form>
             <button id="update_btn" class="btn btn-primary">Update</button>
-
         </div>
         <div class="col-sm-4">
             <c:choose>
@@ -57,5 +56,4 @@
             </c:choose>
         </div>
     </div>
-
 </div>

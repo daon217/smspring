@@ -1,8 +1,6 @@
 package edu.sm.controller;
 
 import com.github.pagehelper.PageInfo;
-import edu.sm.app.dto.Cust;
-import edu.sm.app.dto.CustSearch;
 import edu.sm.app.dto.Product;
 import edu.sm.app.dto.ProductSearch;
 import edu.sm.app.service.ProductService;
@@ -51,16 +49,7 @@ public class ProductController {
         productService.register(product);
         return "redirect:/product/get";
     }
-    //    @RequestMapping("/getpage")
-//    public String getpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model) throws Exception {
-//        PageInfo<Product> p = null;
-//        p = new PageInfo<>(productService.getPage(pageNo), 3); // 5:하단 네비게이션 개수
-//        model.addAttribute("target","/product");
-//        model.addAttribute("clist",p);
-//        model.addAttribute("left", dir+"left");
-//        model.addAttribute("center", dir+"getpage");
-//        return "index";
-//    }
+
     @RequestMapping("/searchpage")
     public String searchpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model,
                              ProductSearch productSearch) throws Exception {

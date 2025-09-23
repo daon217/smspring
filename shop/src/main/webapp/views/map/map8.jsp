@@ -19,7 +19,7 @@
     let map8 = {
         map: null,
         geocoder: null,
-        init: function() { // init 함수 시작
+        init: function() {
             let mapContainer = document.getElementById('map8');
             let mapOption = {
                 center: new kakao.maps.LatLng(36.908587, 127.975860),
@@ -36,20 +36,17 @@
 
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
-                    // 성공 시 콜백 함수
                     (position) => {
                         let lat = position.coords.latitude;
                         let lon = position.coords.longitude;
                         let locPosition = new kakao.maps.LatLng(lat, lon);
 
-                        // 마커를 생성하고 지도에 표시
                         let marker = new kakao.maps.Marker({
                             position: locPosition
                         });
                         marker.setMap(this.map);
-                        this.map.panTo(locPosition); // 지도 중심 이동
+                        this.map.panTo(locPosition);
 
-                        // 좌표로 주소 정보를 요청하고, 결과를 HTML에 표시
                         this.searchAddrFromCoords(locPosition, (result, status) => {
                             if (status === kakao.maps.services.Status.OK) {
                                 let addressSpan = document.getElementById('address');
@@ -58,7 +55,6 @@
                             }
                         });
                     },
-                    // 실패 시 콜백 함수
                     (error) => {
                         console.error("Geolocation 오류:", error);
                         alert("위치 정보를 가져오는 데 실패했습니다. 브라우저의 위치 권한을 확인해주세요.");
@@ -69,14 +65,13 @@
             } else {
                 alert('이 브라우저는 위치 정보를 지원하지 않습니다.');
             }
-        }, // init 함수 끝
+        },
 
         searchAddrFromCoords: function(coords, callback) {
             this.geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
         }
     };
 
-    // HTML 문서가 준비되면 map8.init() 함수를 호출하여 모든 것을 시작
     $(function() {
         map8.init();
     });

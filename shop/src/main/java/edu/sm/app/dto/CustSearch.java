@@ -2,7 +2,6 @@ package edu.sm.app.dto;
 
 import lombok.*;
 
-
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString

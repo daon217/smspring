@@ -42,14 +42,3 @@ public class MarkerService implements SmService<Marker, Integer> {
         return markerRepository.select(integer);
     }
 }
-
-
-
-
-
-
-
-
-
-
-

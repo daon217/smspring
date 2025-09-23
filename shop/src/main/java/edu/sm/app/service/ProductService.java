@@ -70,7 +70,7 @@ public class ProductService implements SmService<Product, Integer> {
         return productRepository.searchProductList(productSearch);
     }
     public Page<Product> getPage(int pageNo) throws Exception {
-        PageHelper.startPage(pageNo, 3); // 3: 한화면에 출력되는 개수
+        PageHelper.startPage(pageNo, 3);
         return productRepository.getpage();
     }
     public Page<Product> getPageSearch(int pageNo, ProductSearch productSearch) throws Exception {

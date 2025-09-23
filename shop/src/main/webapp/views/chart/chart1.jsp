@@ -1,3 +1,4 @@
+<%-- 이 페이지는 Highcharts를 사용하여 월별 평균 온도 차트를 표시합니다. --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <style>
@@ -10,6 +11,7 @@
     chart1 = {
         init:function(){
             this.getdata();
+            [cite_start]
             setInterval(()=>{
                 this.getdata();
             },4000);
@@ -36,10 +38,7 @@
                         'target="_blank">Wikipedia.com</a>'
                 },
                 xAxis: {
-                    categories: [
-                        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
-                        'Oct', 'Nov', 'Dec'
-                    ]
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
                 },
                 yAxis: {
                     title: {
@@ -66,5 +65,4 @@
 <div class="col-sm-10">
     <h2>Chart1</h2>
     <div id="container"></div>
-
 </div>
