@@ -39,6 +39,62 @@
         </rollingPolicy>
     </appender>
 
+    <appender name="FILE3" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS_DIR}/maininfo1.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss}, %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS_DIR}/maininfo1.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1kb</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="FILE4" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS_DIR}/maininfo2.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss}, %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS_DIR}/maininfo2.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1kb</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="FILE5" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS_DIR}/maininfo3.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss}, %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS_DIR}/maininfo3.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1kb</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="FILE6" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS_DIR}/maininfo4.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss}, %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS_DIR}/maininfo4.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1kb</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
     <appender name="LOGIN" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOGS_DIR}/login.log</file>
         <encoder>
@@ -52,6 +108,7 @@
             <maxHistory>30</maxHistory>
         </rollingPolicy>
     </appender>
+
     <appender name="CLICK" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOGS_DIR}/click.log</file>
         <encoder>
@@ -68,12 +125,25 @@
 
 
 
+
     <logger name="org.springframework.web" level="DEBUG">
         <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE" />
     </logger>
     <logger name="edu.sm.controller.MainRestController" level="INFO">
         <appender-ref ref="FILE2" />
+    </logger>
+    <logger name="edu.sm.controller.MainRestController" level="INFO">
+        <appender-ref ref="FILE3" />
+    </logger>
+    <logger name="edu.sm.controller.MainRestController2" level="INFO">
+        <appender-ref ref="FILE4" />
+    </logger>
+    <logger name="edu.sm.controller.MainRestController3" level="INFO">
+        <appender-ref ref="FILE5" />
+    </logger>
+    <logger name="edu.sm.controller.MainRestController4" level="INFO">
+        <appender-ref ref="FILE6" />
     </logger>
     <logger name="edu.sm.controller.LoginController" level="INFO">
         <appender-ref ref="LOGIN" />
