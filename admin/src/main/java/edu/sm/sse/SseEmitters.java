@@ -1,5 +1,6 @@
 package edu.sm.sse;
 
+
 import edu.sm.app.dto.AdminMsg;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -15,12 +16,12 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SseEmitters {
     private final Map<String, SseEmitter> emitters = new ConcurrentHashMap<>();
 
-    public void sendData(AdminMsg adminMsg){
+    public void sendData(AdminMsg adminMsg) {
 
-        emitters.keySet().stream().filter(s->s.contains("admin") || s.contains("admin2")).forEach(key -> {
+        this.emitters.keySet().stream().filter(s->s.contains("admin") || s.contains("admin2")).forEach(key -> {
             try {
                 log.info("-------------------------------------"+key.toString());
-                emitters.get(key).send(SseEmitter.event()
+                this.emitters.get(key).send(SseEmitter.event()
                         .name("adminmsg")
                         .data(adminMsg));
             } catch ( IOException e) {
@@ -28,15 +29,13 @@ public class SseEmitters {
             }
         });
     }
-    public void count() {
-        Random random = new Random();
+    public void count(int num) {
 
-        long count = random.nextInt(1000)+1;
-        emitters.values().forEach(emitter -> {
+        this.emitters.values().forEach(emitter -> {
             try {
                 emitter.send(SseEmitter.event()
                         .name("count")
-                        .data(count));
+                        .data(num));
             } catch ( IOException e) {
                 throw new RuntimeException(e);
             }
@@ -49,10 +48,14 @@ public class SseEmitters {
 
         // 연결 완료, 오류, 타임아웃 이벤트 핸들러 등록
         emitter.onCompletion(() -> {
+            log.info("onCompletion: {}", emitter);
+
             emitters.remove(clientId);
             cleanupEmitter(emitter);
         });
         emitter.onError((ex) -> {
+            log.info("onError:---------------------------- ");
+
             emitters.remove(clientId);
             cleanupEmitter(emitter);
         });
@@ -61,6 +64,10 @@ public class SseEmitters {
             cleanupEmitter(emitter);
         });
         return emitter;
+    }
+    public void close(String clientId) {
+        emitters.remove(clientId);
+        log.info("new emitter close...........: {}", clientId);
     }
     private void cleanupEmitter(SseEmitter emitter) {
         try {

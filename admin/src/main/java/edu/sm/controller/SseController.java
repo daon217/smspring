@@ -30,4 +30,10 @@ public class SseController {
         }
         return ResponseEntity.ok(emitter);
     }
+
+    @GetMapping("/count")
+    public void count(@RequestParam("num") int num) {
+        sseEmitters.count(num);
+        //return ResponseEntity.ok().build();
+    }
 }

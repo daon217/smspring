@@ -16,6 +16,14 @@ public class SSEScheduler {
 
     private final SseEmitters sseEmitters;
 
+    @Scheduled(cron = "*/10 * * * * *")
+    public void sendCount() {
+
+        Random r = new Random();
+        int count = r.nextInt(1000)+1;
+        sseEmitters.count(count);
+    }
+
     @Scheduled(cron = "*/5 * * * * *")
     public void cronJobDailyUpdate() {
         log.info("====================================================");
@@ -31,7 +39,7 @@ public class SSEScheduler {
         adminMsg.setContent4(content4);
 
         sseEmitters.sendData(adminMsg);
-//        sseEmitters.count();
+        // sseEmitters.count();
 //        simpMessageSendingOperations.convertAndSend("/send2",adminMsg);
     }
 
