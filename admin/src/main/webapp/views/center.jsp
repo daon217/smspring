@@ -4,12 +4,12 @@
 
 <script>
     let center = {
-        init: function () {
+        init:function(){
             this.connect();
         },
-        sse: function () {
-            //connect/admin
-            let url = '${sseUrl}'+'connect/admin';
+        connect:function(){
+            // http://127.0.0.1:8088/connect/admin
+            let url = '${sseUrl}'+'connect/admin' ;
             const sse = new EventSource(url);
             sse.addEventListener('connect', (e) => {
                 const { data: receivedConnectData } = e;
@@ -20,7 +20,7 @@
                 const { data: receivedData } = e;
                 console.log("count event data",receivedData);
                 console.log("count event data2",JSON.parse(receivedData).content1);
-                // this.display(JSON.parse(receivedData));
+                //this.display(JSON.parse(receivedData));
             });
         }
     };
@@ -28,6 +28,7 @@
     $(function(){
         center.init();
     });
+
 </script>
 
 <!-- Begin Page Content -->
@@ -35,13 +36,13 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+        <h1 class="h3 mb-0 text-gray-800">Dashboard <span id="count"></span></h1>
         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
     </div>
 
     <!-- Content Row -->
-    <div class="row">
+    <div class="row d-none d-md-flex">
 
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
