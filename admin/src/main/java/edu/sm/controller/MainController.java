@@ -15,8 +15,12 @@ import java.util.Random;
 @Slf4j
 public class MainController {
 
+    @Value("${app.url.sse}")
+    String sseUrl;
+
     @RequestMapping("/")
     public String main(Model model) {
+        model.addAttribute("sseUrl",sseUrl);
         return "index";
     }
 

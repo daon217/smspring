@@ -3,8 +3,30 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <script>
-    $(function(){
+    let center = {
+        init: function () {
+            this.connect();
+        },
+        sse: function () {
+            //connect/admin
+            let url = '${sseUrl}'+'connect/admin';
+            const sse = new EventSource(url);
+            sse.addEventListener('connect', (e) => {
+                const { data: receivedConnectData } = e;
+                console.log('connect event data: ',receivedConnectData);  // "connected!"
+            });
 
+            sse.addEventListener('adminmsg', e => {
+                const { data: receivedData } = e;
+                console.log("count event data",receivedData);
+                console.log("count event data2",JSON.parse(receivedData).content1);
+                // this.display(JSON.parse(receivedData));
+            });
+        }
+    };
+
+    $(function(){
+        center.init();
     });
 </script>
 
