@@ -1,0 +1,38 @@
+
+#스프링 부트 내장환경설정
+#부트와르 실행시에만 적용
+#와르 톰캣에서 실행할때는 적용 안됨
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: classpath:keystore.p12
+    key-store-password: ENC(yhQZ3EEWrRPqoKdAGlyWAA==)
+    key-store-type: PKCS12
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+#      여기까지
+spring:
+  mvc:
+    view:
+      prefix: /views/
+      suffix: .jsp
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/shopdb?serverTimezone=Asia/Seoul
+    username: root
+    password: ENC(yhQZ3EEWrRPqoKdAGlyWAA==)
+mybatis:
+  type-aliases-package: edu.sm.app.dto
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    root: info
+
+#Application Config
+app:
+  key:
+    skey: ${MY_KEY}
