@@ -5,7 +5,6 @@
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
-            <!--<Pattern>[%d{MM-dd HH:mm:ss}][%thread] %-5level %logger{36} - %msg%n</Pattern>-->
             <Pattern>[%d{MM-dd HH:mm:ss}] %-5level %logger{36} - %msg%n</Pattern>
         </layout>
     </appender>
@@ -124,25 +123,23 @@
     </appender>
 
 
-
-
     <logger name="org.springframework.web" level="DEBUG">
         <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE" />
     </logger>
-    <logger name="edu.sm.controller.MainRestController" level="INFO">
+    <logger name="edu.sm.app.service.LoggerService1" level="INFO">
         <appender-ref ref="FILE2" />
     </logger>
-    <logger name="edu.sm.controller.MainRestController" level="INFO">
+    <logger name="edu.sm.app.service.LoggerService2" level="INFO">
         <appender-ref ref="FILE3" />
     </logger>
-    <logger name="edu.sm.controller.MainRestController2" level="INFO">
+    <logger name="edu.sm.app.service.LoggerService3" level="INFO">
         <appender-ref ref="FILE4" />
     </logger>
-    <logger name="edu.sm.controller.MainRestController3" level="INFO">
+    <logger name="edu.sm.app.service.LoggerService4" level="INFO">
         <appender-ref ref="FILE5" />
     </logger>
-    <logger name="edu.sm.controller.MainRestController4" level="INFO">
+    <logger name="edu.sm.app.service.LoggerService5" level="INFO">
         <appender-ref ref="FILE6" />
     </logger>
     <logger name="edu.sm.controller.LoginController" level="INFO">
@@ -163,5 +160,4 @@
     <logger name="jdbc.resultset" level="OFF" />
     <logger name="jdbc.resultsettable" level="INFO" />
     <logger name="jdbc.connection" level="OFF" />
-    <!-- INFO(trace > debug > info > warn > error)  -->
 </configuration>

@@ -3,6 +3,10 @@ package edu.sm.controller;
 import edu.sm.app.dto.Content;
 import edu.sm.app.dto.Marker;
 import edu.sm.app.dto.Search;
+import edu.sm.app.service.LoggerService1;
+import edu.sm.app.service.LoggerService2;
+import edu.sm.app.service.LoggerService3;
+import edu.sm.app.service.LoggerService4;
 import edu.sm.app.service.MarkerService;
 import edu.sm.util.FileUploadUtil;
 import edu.sm.util.WeatherUtil;
@@ -26,17 +30,40 @@ import java.util.List;
 @Slf4j
 public class MainRestController {
 
+    private final LoggerService1 loggerService1;
+    private final LoggerService2 loggerService2;
+    private final LoggerService3 loggerService3;
+    private final LoggerService4 loggerService4;
+
     @Value("${app.key.wkey}")
     String wkey;
 
     @RequestMapping("/getwt1")
     public Object getwt1(@RequestParam("loc") String loc) throws IOException, ParseException {
-        return WeatherUtil.getWeather(loc,wkey);
+        return WeatherUtil.getWeather(loc, wkey);
     }
 
     @RequestMapping("/savedata1")
-    public Object savedata(@RequestParam("data") String data) throws IOException {
-        log.info(data);
+    public Object savedata1(@RequestParam("data") String data) throws IOException {
+        loggerService1.logData(data);
+        return "OK";
+    }
+
+    @RequestMapping("/savedata2")
+    public Object savedata2(@RequestParam("data") String data) throws IOException {
+        loggerService2.logData(data);
+        return "OK";
+    }
+
+    @RequestMapping("/savedata3")
+    public Object savedata3(@RequestParam("data") String data) throws IOException {
+        loggerService3.logData(data);
+        return "OK";
+    }
+
+    @RequestMapping("/savedata4")
+    public Object savedata4(@RequestParam("data") String data) throws IOException {
+        loggerService4.logData(data);
         return "OK";
     }
 
