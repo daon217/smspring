@@ -18,15 +18,20 @@ public class MainController {
     @Value("${app.url.sse}")
     String sseUrl;
 
+    @Value("${app.url.shop-sse}")
+    String shopSseUrl;
+
     @RequestMapping("/")
     public String main(Model model) {
-        model.addAttribute("sseUrl",sseUrl);
+        model.addAttribute("sseUrl", sseUrl);
         return "index";
     }
 
     @RequestMapping("/chart")
     public String chart(Model model) {
-        model.addAttribute("center","chart");
+        model.addAttribute("center", "chart");
+        model.addAttribute("sseUrl", sseUrl);
+        model.addAttribute("shopSseUrl", shopSseUrl);
         return "index";
     }
 
