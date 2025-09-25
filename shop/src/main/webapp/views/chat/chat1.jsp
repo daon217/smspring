@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <style>
     #all {
         width: 400px;
@@ -36,6 +35,29 @@
             $('#disconnect').click(()=>{
                 this.disconnect();
             });
+            $('#sendall').click(()=>{
+                let msg = JSON.stringify({
+                    'sendid' : this.id,
+                    'content1' : $("#alltext").val()
+                });
+                this.stompClient.send("/receiveall", {}, msg);
+            });
+            $('#sendme').click(()=>{
+                let msg = JSON.stringify({
+                    'sendid' : this.id,
+                    'content1' : $("#metext").val()
+                });
+                this.stompClient.send("/receiveme", {}, msg);
+            });
+            $('#sendto').click(()=>{
+                var msg = JSON.stringify({
+                    'sendid' : this.id,
+                    'receiveid' : $('#target').val(),
+                    'content1' : $('#totext').val()
+                });
+                this.stompClient.send('/receiveto', {}, msg);
+            });
+
 
         },
         connect:function(){
@@ -62,34 +84,14 @@
                         JSON.parse(msg.body).content1
                         + "</h4>");
                 });
-            $('#sendall').click(()=>{
-                let msg = JSON.stringify({
-                    'sendid' : this.id,
-                    'content1' : $("#alltext").val()
-                });
-                this.stompClient.send("/receiveall", {}, msg);
-            });
-            $('#sendme').click(()=>{
-                let msg = JSON.stringify({
-                    'sendid' : this.id,
-                    'content1' : $("#metext").val()
-                });
-                this.stompClient.send("/receiveme", {}, msg);
-            });
-            $('#sendto').click(()=>{
-                var msg = JSON.stringify({
-                    'sendid' : this.id,
-                    'receiveid' : $('#target').val(),
-                    'content1' : $('#totext').val()
-                });
-                this.stompClient.send('/receiveto', {}, msg);
+
             });
         },
         disconnect:function(){
             if (this.stompClient !== null) {
                 this.stompClient.disconnect();
             }
-            websocket.setConnected(false);
+            this.setConnected(false);
             console.log("Disconnected");
         },
         setConnected:function(connected){
@@ -105,6 +107,8 @@
         chat1.init();
     })
 </script>
+
+
 
 <div class="col-sm-10">
     <h2>Chat1 Center</h2>
@@ -131,5 +135,6 @@
 
             </div>
         </div>
+
     </div>
 </div>
