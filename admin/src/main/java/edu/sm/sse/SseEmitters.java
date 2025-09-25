@@ -18,7 +18,7 @@ public class SseEmitters {
 
     public void sendData(AdminMsg adminMsg) {
 
-        this.emitters.keySet().stream().filter(s->s.contains("admin") || s.contains("admin2")).forEach(key -> {
+        this.emitters.keySet().stream().filter(s->s.equals("admin") || s.equals("admin2")).forEach(key -> {
             try {
                 log.info("-------------------------------------"+key.toString());
                 this.emitters.get(key).send(SseEmitter.event()

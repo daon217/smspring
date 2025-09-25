@@ -61,6 +61,13 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-tomcat' // 내장형 Tomcat 서버 제공.
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat' // 특히 WAR 배포용.
 
+    //websocket
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    implementation 'org.webjars:webjars-locator-core'
+    implementation 'org.webjars:sockjs-client:1.0.2'
+    implementation 'org.webjars:stomp-websocket:2.3.3'
+    implementation 'org.webjars:bootstrap:3.3.7'
+
     // Lombok: Getter, Setter, 생성자 등과 같은 상용구 코드를 자동 생성하는 라이브러리입니다.
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
