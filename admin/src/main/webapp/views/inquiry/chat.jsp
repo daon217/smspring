@@ -49,6 +49,9 @@
 </style>
 
 <script>
+    const adminEndChatUrl = '<c:url value="/" />';
+
+
     const adminInquiryChat = {
         inquiryId: ${inquiry.inquiryId},
         senderId: '${sessionScope.admin.adminId}',
@@ -99,6 +102,18 @@
             const history = document.getElementById('adminChatHistory');
             history.scrollTop = history.scrollHeight;
         },
+        endChat: function () {
+            const redirectUrl = adminEndChatUrl;
+            if (this.stompClient && typeof this.stompClient.disconnect === 'function') {
+                try {
+                    this.stompClient.disconnect();
+                } catch (error) {
+                    console.warn('채팅 연결 종료 중 오류', error);
+                }
+                this.stompClient = null;
+            }
+            window.location.href = redirectUrl;
+        },
         bind: function () {
             $('#adminSendInquiryMessage').click(() => this.send());
             $('#adminInquiryMessage').on('keypress', event => {
@@ -107,6 +122,7 @@
                     this.send();
                 }
             });
+            $('#adminEndChat').click(() => this.endChat());
         },
         init: function () {
             this.bind();
@@ -132,6 +148,9 @@
                 <h6 class="m-0 font-weight-bold text-primary">${inquiry.custId} 고객님과의 상담</h6>
                 <small class="text-muted">분류: ${inquiry.category} · 상태: ${inquiry.status}</small>
             </div>
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="adminEndChat">
+                <i class="fas fa-door-open mr-1"></i>채팅 종료
+            </button>
         </div>
         <div class="card-body">
             <div class="inquiry-chat-wrapper">

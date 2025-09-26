@@ -50,6 +50,8 @@
 </style>
 
 <script>
+  const inquiryEndChatUrl = '<c:url value="/" />';
+
   const inquiryChat = {
     inquiryId: ${inquiry.inquiryId},
     senderId: '${sessionScope.cust.custId}',
@@ -99,6 +101,18 @@
       const history = document.getElementById('chatHistory');
       history.scrollTop = history.scrollHeight;
     },
+    endChat: function () {
+      const redirectUrl = inquiryEndChatUrl;
+      if (this.stompClient && typeof this.stompClient.disconnect === 'function') {
+        try {
+          this.stompClient.disconnect();
+        } catch (error) {
+          console.warn('채팅 연결 종료 중 오류', error);
+        }
+        this.stompClient = null;
+      }
+      window.location.href = redirectUrl;
+    },
     bind: function () {
       $('#sendInquiryMessage').click(() => this.send());
       $('#inquiryMessage').on('keypress', event => {
@@ -107,6 +121,7 @@
           this.send();
         }
       });
+      $('#endInquiryChat').click(() => this.endChat());
     },
     init: function () {
       this.bind();
@@ -128,6 +143,9 @@
         <h5 class="mb-0">문의 채팅</h5>
         <small class="text-muted">분류: ${inquiry.category} · 상태: ${inquiry.status}</small>
       </div>
+      <button type="button" class="btn btn-outline-secondary btn-sm" id="endInquiryChat">
+        <i class="fas fa-door-open mr-1"></i>채팅 종료
+      </button>
     </div>
     <div class="card-body">
       <div class="inquiry-chat-wrapper">
