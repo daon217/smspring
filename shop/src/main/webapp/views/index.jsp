@@ -117,5 +117,64 @@
     <p>Footer</p>
 </div>
 
+<div class="position-fixed" style="right: 24px; bottom: 24px; z-index: 1050;">
+    <button class="btn btn-primary rounded-circle shadow" style="width: 64px; height: 64px;" data-toggle="modal" data-target="#inquiryModal">
+        문의사항
+    </button>
+</div>
+
+<div class="modal fade" id="inquiryModal" tabindex="-1" role="dialog" aria-labelledby="inquiryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="inquiryModalLabel">문의사항 보내기</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="inquiryForm">
+                    <div class="form-group">
+                        <label for="inquiryCategory">문의 분류</label>
+                        <select class="form-control" id="inquiryCategory" name="category" required>
+                            <option value="" disabled selected>선택하세요</option>
+                            <option value="상품파손">상품파손</option>
+                            <option value="배송지연">배송지연</option>
+                            <option value="환불문의">환불문의</option>
+                            <option value="취소문의">취소문의</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiryContent">문의 내용</label>
+                        <textarea class="form-control" id="inquiryContent" name="content" rows="4" required placeholder="문의 내용을 입력하세요"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                <button type="button" class="btn btn-primary" id="inquirySubmit">보내기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const inquiryModalHandler = {
+        init: function () {
+            $('#inquiryModal').on('hidden.bs.modal', function () {
+                $('#inquiryForm')[0].reset();
+            });
+            $('#inquirySubmit').click(function () {
+                $('#inquiryForm').attr('action', '<c:url value="/inquiry/submit"/>');
+                $('#inquiryForm').attr('method', 'post');
+                $('#inquiryForm')[0].submit();
+            });
+        }
+    };
+    $(function () {
+        inquiryModalHandler.init();
+    });
+</script>
+
 </body>
 </html>

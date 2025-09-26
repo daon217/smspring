@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.sm.app.repository.InquiryMessageRepository">
+
+    <resultMap id="InquiryMessageResultMap" type="edu.sm.app.dto.InquiryMessage">
+        <id property="messageId" column="message_id" />
+        <result property="inquiryId" column="inquiry_id" />
+        <result property="senderId" column="sender_id" />
+        <result property="senderType" column="sender_type" />
+        <result property="content" column="content" />
+        <result property="createdAt" column="created_at" />
+    </resultMap>
+
+    <sql id="inquiryMessageColumns">
+        message_id, inquiry_id, sender_id, sender_type, content, created_at
+    </sql>
+
+    <select id="selectAll" resultMap="InquiryMessageResultMap">
+        SELECT <include refid="inquiryMessageColumns"/>
+        FROM cust_inquiry_message
+        ORDER BY created_at DESC
+    </select>
+
+    <select id="select" parameterType="int" resultMap="InquiryMessageResultMap">
+        SELECT <include refid="inquiryMessageColumns"/>
+        FROM cust_inquiry_message
+        WHERE message_id = #{messageId}
+    </select>
+
+    <insert id="insert" parameterType="edu.sm.app.dto.InquiryMessage" useGeneratedKeys="true" keyProperty="messageId">
+        INSERT INTO cust_inquiry_message
+            (inquiry_id, sender_id, sender_type, content, created_at)
+        VALUES (#{inquiryId}, #{senderId}, #{senderType}, #{content}, NOW())
+    </insert>
+
+    <update id="update" parameterType="edu.sm.app.dto.InquiryMessage">
+        UPDATE cust_inquiry_message
+        SET content = #{content}
+        WHERE message_id = #{messageId}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM cust_inquiry_message WHERE message_id = #{messageId}
+    </delete>
+
+    <select id="selectByInquiry" parameterType="int" resultMap="InquiryMessageResultMap">
+        SELECT <include refid="inquiryMessageColumns"/>
+        FROM cust_inquiry_message
+        WHERE inquiry_id = #{inquiryId}
+        ORDER BY created_at ASC
+    </select>
+
+    <delete id="deleteByInquiry" parameterType="int">
+        DELETE FROM cust_inquiry_message WHERE inquiry_id = #{inquiryId}
+    </delete>
+</mapper>
