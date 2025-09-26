@@ -153,6 +153,9 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                <c:if test="${sessionScope.cust.custId != null}">
+                    <button type="button" class="btn btn-outline-primary" id="openInquiryList">내 문의</button>
+                </c:if>
                 <button type="button" class="btn btn-primary" id="inquirySubmit">보내기</button>
             </div>
         </div>
@@ -170,6 +173,13 @@
                 $('#inquiryForm').attr('method', 'post');
                 $('#inquiryForm')[0].submit();
             });
+            const openListButton = $('#openInquiryList');
+            if (openListButton.length) {
+                openListButton.click(function () {
+                    $('#inquiryModal').modal('hide');
+                    window.location.href = '<c:url value="/inquiry/list"/>';
+                });
+            }
         }
     };
     $(function () {

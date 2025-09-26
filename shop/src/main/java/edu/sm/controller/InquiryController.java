@@ -69,6 +69,22 @@ public class InquiryController {
         return "redirect:/inquiry/chat?inquiryId=" + inquiry.getInquiryId();
     }
 
+    @GetMapping("/list")
+    public String list(HttpSession session,
+                       Model model,
+                       RedirectAttributes redirectAttributes) throws Exception {
+        Cust cust = (Cust) session.getAttribute("cust");
+        if (cust == null) {
+            redirectAttributes.addFlashAttribute("msg", "로그인 후 문의 내역을 확인할 수 있습니다.");
+            return "redirect:/login";
+        }
+        List<Inquiry> inquiries = inquiryService.getByCust(cust.getCustId());
+        model.addAttribute("inquiries", inquiries);
+        model.addAttribute("center", dir + "inquiry_list");
+        model.addAttribute("left", "left");
+        return "index";
+    }
+
     @GetMapping("/chat")
     public String chat(@RequestParam("inquiryId") Integer inquiryId,
                        HttpSession session,
