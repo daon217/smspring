@@ -13,7 +13,7 @@
     chat2 = {
         id:'',
         init: function(){
-            this.id = $('#user_id').val();
+            this.id = $('#user_id').text();
             this.connect();
             $('#sendto').click(()=>{
                 var msg = JSON.stringify({
@@ -21,7 +21,7 @@
                     'receiveid' : $('#target').val(),
                     'content1' : $('#totext').val()
                 });
-                this.stompClient.send('/amdinreceiveto', {}, msg);
+                this.stompClient.send('/adminreceiveto', {}, msg);
             });
         },
         connect:function(){

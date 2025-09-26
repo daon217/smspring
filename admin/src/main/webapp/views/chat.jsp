@@ -13,7 +13,7 @@
     chat = {
         id:'',
         init: function(){
-            this.id = $('#user_id').val();
+            this.id = $('#user_id').text();
             this.connect();
             $('#sendto').click(()=>{
                 var msg = JSON.stringify({
@@ -21,17 +21,18 @@
                     'receiveid' : $('#target').val(),
                     'content1' : $('#totext').val()
                 });
-                this.stompClient.send('/amdinreceiveto', {}, msg);
+                this.stompClient.send('/adminreceiveto', {}, msg);
             });
         },
         connect:function(){
             let sid = this.id;
             let socket = new SockJS('${websocketurl}adminchat');
             this.stompClient = Stomp.over(socket);
-            this.setConnected(true);
-            this.stompClient.connect({}, function(frame) {
+            $("#status").text("Connecting...");
+            this.stompClient.connect({}, (frame) => {
                 console.log('Connected: ' + frame);
-                this.subscribe('/adminsend/to/'+sid, function(msg) {
+                this.setConnected(true);
+                this.stompClient.subscribe('/adminsend/to/'+sid, function(msg) {
                     $("#to").prepend(
                         "<h4>" + JSON.parse(msg.body).sendid +":"+
                         JSON.parse(msg.body).content1
