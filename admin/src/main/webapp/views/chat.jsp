@@ -1,3 +1,4 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <style>
@@ -8,9 +9,8 @@
         border: 2px solid green;
     }
 </style>
-
 <script>
-    chat2 = {
+    chat = {
         id:'',
         init: function(){
             this.id = $('#user_id').val();
@@ -50,25 +50,43 @@
     }
 
     $(()=>{
-        chat2.init();
+        chat.init();
     });
 </script>
 
-<div class="col-sm-10">
-    <h2>Chat1 Center</h2>
-    <div class="card-body">
-        <div class="table-responsive">
-            <div class="col-sm-5">
-                <h1 id="user_id">${sessionScope.cust.custId}</h1>
-                <H1 id="status">Status</H1>
+<!-- Begin Page Content -->
+<div class="container-fluid">
 
-                <h3>To</h3>
-                <input type="text" id="target" Value="admin">
-                <input type="text" id="totext"><button id="sendto">Send</button>
-                <div id="to"></div>
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Chat</h1>
+    </div>
 
+    <!-- Content Row -->
+    <div class="row d-none d-md-flex">
+        <div class="col-xl-8 col-lg-7">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Customer Chat</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <div class="col-sm-5">
+                            <h1 id="user_id">${sessionScope.admin.adminId}</h1>
+                            <H1 id="status">Status</H1>
+
+                            <h3>To</h3>
+                            <input type="text" id="target" value="1">
+                            <input type="text" id="totext"><button id="sendto">Send</button>
+                            <div id="to"></div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
+
 </div>
