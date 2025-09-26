@@ -15,12 +15,14 @@ public class AdminMsgController {
     SimpMessagingTemplate template;
 
     @MessageMapping("/adminreceiveto") // 특정 Id에게 전송
-    public void adminreceiveto(Msg msg) {
+    public void adminreceiveto(Msg msg, SimpMessageHeaderAccessor headerAccessor) {
         String id = msg.getSendid();
         String target = msg.getReceiveid();
-        log.info("-------------------------");
+        log.info("-------------------------1");
         log.info(target);
 
         template.convertAndSend("/adminsend/to/"+target,msg);
+        log.info("-------------------------2");
+
     }
 }
