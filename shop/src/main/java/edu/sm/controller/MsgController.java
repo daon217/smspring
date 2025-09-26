@@ -1,37 +1,70 @@
 package edu.sm.controller;
 
+import edu.sm.app.dto.InquiryMessage;
 import edu.sm.app.msg.Msg;
+import edu.sm.app.service.InquiryMessageService;
+import edu.sm.app.service.InquiryService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
+
+import java.time.LocalDateTime;
+
 @Slf4j
 @Controller
+@RequiredArgsConstructor
 public class MsgController {
-    @Autowired
-    SimpMessagingTemplate template;
+
+    private final SimpMessagingTemplate template;
+    private final InquiryMessageService inquiryMessageService;
+    private final InquiryService inquiryService;
 
     @MessageMapping("/receiveall") // 모두에게 전송
     public void receiveall(Msg msg, SimpMessageHeaderAccessor headerAccessor) {
-        System.out.println(msg);
-        template.convertAndSend("/send",msg);
+        msg.setCreatedAt(LocalDateTime.now());
+        log.debug("receiveall: {}", msg);
+        template.convertAndSend("/send", msg);
     }
+
     @MessageMapping("/receiveme") // 나에게만 전송 ex)Chatbot
     public void receiveme(Msg msg, SimpMessageHeaderAccessor headerAccessor) {
-        System.out.println(msg);
-
+        msg.setCreatedAt(LocalDateTime.now());
+        log.debug("receiveme: {}", msg);
         String id = msg.getSendid();
-        template.convertAndSend("/send/"+id,msg);
+        template.convertAndSend("/send/" + id, msg);
     }
+
     @MessageMapping("/receiveto") // 특정 Id에게 전송
     public void receiveto(Msg msg, SimpMessageHeaderAccessor headerAccessor) {
-        String id = msg.getSendid();
-        String target = msg.getReceiveid();
-        log.info("-------------------------");
-        log.info(target);
+        msg.setCreatedAt(LocalDateTime.now());
+        log.info("receive to: {}", msg);
+        template.convertAndSend("/send/to/" + msg.getReceiveid(), msg);
+        recordInquiryMessage(msg, "CUSTOMER");
+    }
 
-        template.convertAndSend("/send/to/"+target,msg);
+    private void recordInquiryMessage(Msg msg, String defaultSenderType) {
+        if (msg.getInquiryId() == null) {
+            return;
+        }
+        String senderType = (msg.getSenderType() == null || msg.getSenderType().isEmpty())
+                ? defaultSenderType
+                : msg.getSenderType();
+        InquiryMessage inquiryMessage = InquiryMessage.builder()
+                .inquiryId(msg.getInquiryId())
+                .senderId(msg.getSendid())
+                .senderType(senderType)
+                .content(msg.getContent1())
+                .build();
+        try {
+            inquiryMessageService.register(inquiryMessage);
+            if ("CUSTOMER".equalsIgnoreCase(senderType)) {
+                inquiryService.updateStatus(msg.getInquiryId(), "IN_PROGRESS");
+            }
+        } catch (Exception e) {
+            log.error("Failed to store inquiry message", e);
+        }
     }
 }

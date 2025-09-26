@@ -1,4 +1,4 @@
-package edu.sm.app.msg;
+package edu.sm.app.dto;
 
 import lombok.*;
 
@@ -10,11 +10,11 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Builder
-public class Msg {
-    private String sendid;
-    private String receiveid;
-    private String content1;
+public class InquiryMessage {
+    private Integer messageId;
     private Integer inquiryId;
+    private String senderId;
     private String senderType;
+    private String content;
     private LocalDateTime createdAt;
 }

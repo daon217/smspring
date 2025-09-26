@@ -575,6 +575,13 @@
 
 
 
+
+<div class="position-fixed" style="right: 24px; bottom: 24px; z-index: 1050;">
+    <a class="btn btn-success rounded-circle shadow" style="width: 72px; height: 72px; display: flex; align-items: center; justify-content: center;" href="<c:url value='/inquiry/board'/>">
+        문의사항
+    </a>
+</div>
+
 </body>
 
 </html>
