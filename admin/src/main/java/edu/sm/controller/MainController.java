@@ -39,8 +39,8 @@ public class MainController {
     }
     @RequestMapping("/chat")
     public String chat(Model model) {
-        model.addAttribute("websocketurl",wsUrl);
-        model.addAttribute("center","chat");
+        model.addAttribute("websocketurl", wsUrl);
+        model.addAttribute("center", "inquiry/chat");
         return "index";
     }
 
