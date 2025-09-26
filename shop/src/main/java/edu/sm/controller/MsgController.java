@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 @Slf4j
 @Controller
 @RequiredArgsConstructor
+// 고객 채팅 메시지를 웹소켓으로 중계하면서 DB에도 기록한다.
 public class MsgController {
 
     private final SimpMessagingTemplate template;
@@ -38,6 +39,7 @@ public class MsgController {
     }
 
     @MessageMapping("/receiveto") // 특정 Id에게 전송
+    // 고객이 관리자에게 보낸 메시지를 저장하고 대상 구독자에게 전달한다.
     public void receiveto(Msg msg, SimpMessageHeaderAccessor headerAccessor) {
         msg.setCreatedAt(LocalDateTime.now());
         log.info("receive to: {}", msg);
@@ -46,6 +48,7 @@ public class MsgController {
     }
 
     private void recordInquiryMessage(Msg msg, String defaultSenderType) {
+        // 채팅 메시지를 문의별 히스토리로 남긴다.
         if (msg.getInquiryId() == null) {
             return;
         }
@@ -61,6 +64,7 @@ public class MsgController {
         try {
             inquiryMessageService.register(inquiryMessage);
             if ("CUSTOMER".equalsIgnoreCase(senderType)) {
+                // 고객이 보낸 메시지가 도착하면 상담 진행 상태로 갱신한다.
                 inquiryService.updateStatus(msg.getInquiryId(), "IN_PROGRESS");
             }
         } catch (Exception e) {

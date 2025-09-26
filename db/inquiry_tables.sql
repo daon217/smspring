@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS cust_inquiry (
     updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     CONSTRAINT fk_cust_inquiry_customer FOREIGN KEY (cust_id) REFERENCES cust (cust_id)
         ON UPDATE CASCADE ON DELETE CASCADE,
+    -- 문의 진행 단계를 관리하기 위한 상태 값 제약
     CONSTRAINT chk_cust_inquiry_status CHECK (status IN ('OPEN', 'IN_PROGRESS', 'ANSWERED', 'CLOSED')),
     INDEX idx_cust_inquiry_cust (cust_id),
     INDEX idx_cust_inquiry_status (status)
@@ -23,6 +24,7 @@ CREATE TABLE IF NOT EXISTS cust_inquiry_message (
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_inquiry_message_inquiry FOREIGN KEY (inquiry_id) REFERENCES cust_inquiry (inquiry_id)
         ON UPDATE CASCADE ON DELETE CASCADE,
+    -- 메시지 발신 주체를 고객/관리자로 한정
     CONSTRAINT chk_inquiry_message_sender CHECK (sender_type IN ('CUSTOMER', 'ADMIN')),
     INDEX idx_inquiry_message_inquiry (inquiry_id),
     INDEX idx_inquiry_message_sender (sender_id)

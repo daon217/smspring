@@ -19,6 +19,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/inquiry")
 @RequiredArgsConstructor
+// 관리자용 문의 게시판과 채팅 화면을 연결하는 컨트롤러다.
 public class InquiryController {
 
     private final InquiryService inquiryService;
@@ -28,6 +29,7 @@ public class InquiryController {
     String wsUrl;
 
     @GetMapping("/board")
+    // 신규 문의를 빠르게 파악할 수 있도록 전체 목록을 전달한다.
     public String board(Model model) throws Exception {
         List<Inquiry> inquiries = inquiryService.get();
         model.addAttribute("inquiries", inquiries);
@@ -36,6 +38,7 @@ public class InquiryController {
     }
 
     @GetMapping("/chat")
+    // 선택된 문의의 상세 대화 내용을 채팅 화면에 세팅한다.
     public String chat(@RequestParam("id") Integer inquiryId,
                        Model model) throws Exception {
         Inquiry inquiry = inquiryService.get(inquiryId);
@@ -54,6 +57,7 @@ public class InquiryController {
     @ResponseBody
     public ResponseEntity<List<InquiryMessage>> messages(@RequestParam("inquiryId") Integer inquiryId) throws Exception {
         List<InquiryMessage> messages = inquiryMessageService.getByInquiry(inquiryId);
+        // 채팅창이 열린 상태에서 주기적으로 메시지를 새로고침할 때 사용한다.
         return ResponseEntity.ok(messages);
     }
 }

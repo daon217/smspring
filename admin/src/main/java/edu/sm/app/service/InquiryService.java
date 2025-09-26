@@ -10,11 +10,13 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+// 관리자 포털에서 문의 데이터를 다루기 위한 서비스 계층이다.
 public class InquiryService implements SmService<Inquiry, Integer> {
 
     private final InquiryRepository inquiryRepository;
 
     @Override
+    // 새 문의가 저장될 때 기본 진행 상태를 보정한다.
     public void register(Inquiry inquiry) throws Exception {
         if (inquiry.getStatus() == null || inquiry.getStatus().isEmpty()) {
             inquiry.setStatus("OPEN");
@@ -43,10 +45,12 @@ public class InquiryService implements SmService<Inquiry, Integer> {
     }
 
     public List<Inquiry> getByCust(String custId) throws Exception {
+        // 특정 고객의 문의 이력을 조회해 상담 대상자를 파악한다.
         return inquiryRepository.selectByCust(custId);
     }
 
     public void updateStatus(Integer inquiryId, String status) throws Exception {
+        // 상담 처리 단계 변경 요청을 저장한다.
         inquiryRepository.updateStatus(inquiryId, status);
     }
 }

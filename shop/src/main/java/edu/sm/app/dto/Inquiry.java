@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Builder
+// 고객 문의 기본 정보를 보관해 문의 목록과 채팅창에서 공통으로 활용하는 DTO다.
 public class Inquiry {
     private Integer inquiryId;
     private String custId;

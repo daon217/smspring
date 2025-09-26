@@ -3,6 +3,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.sm.app.repository.InquiryMessageRepository">
 
+    <!-- 관리자 채팅 로그를 조회·저장하기 위한 매퍼 설정 -->
+
     <resultMap id="InquiryMessageResultMap" type="edu.sm.app.dto.InquiryMessage">
         <id property="messageId" column="message_id" />
         <result property="inquiryId" column="inquiry_id" />
@@ -45,6 +47,7 @@
     </delete>
 
     <select id="selectByInquiry" parameterType="int" resultMap="InquiryMessageResultMap">
+        <!-- 관리자 화면에서 문의별 메시지를 시간순으로 출력 -->
         SELECT <include refid="inquiryMessageColumns"/>
         FROM cust_inquiry_message
         WHERE inquiry_id = #{inquiryId}
@@ -52,6 +55,7 @@
     </select>
 
     <delete id="deleteByInquiry" parameterType="int">
+        <!-- 문의 삭제 시 연관 메시지를 함께 제거 -->
         DELETE FROM cust_inquiry_message WHERE inquiry_id = #{inquiryId}
     </delete>
 </mapper>

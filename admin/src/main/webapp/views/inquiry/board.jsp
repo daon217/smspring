@@ -3,6 +3,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <div class="container-fluid">
+    <%-- 관리자용 문의 게시판 테이블 --%>
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">이용자 문의 게시판</h1>
     </div>
@@ -26,6 +27,7 @@
                     </thead>
                     <tbody>
                     <c:forEach var="inquiry" items="${inquiries}">
+                        <%-- 문의 상세 채팅으로 이동하는 링크 --%>
                         <tr>
                             <td>${inquiry.inquiryId}</td>
                             <td>${inquiry.custId}</td>
@@ -38,6 +40,7 @@
                         </tr>
                     </c:forEach>
                     <c:if test="${empty inquiries}">
+                        <%-- 문의가 없을 때 안내 행 --%>
                         <tr>
                             <td colspan="6" class="text-center text-muted">등록된 문의가 없습니다.</td>
                         </tr>

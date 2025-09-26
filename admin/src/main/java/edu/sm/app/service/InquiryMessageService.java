@@ -10,11 +10,13 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+// 관리자 채팅 화면에서 메시지를 적재·조회하기 위한 서비스다.
 public class InquiryMessageService implements SmService<InquiryMessage, Integer> {
 
     private final InquiryMessageRepository inquiryMessageRepository;
 
     @Override
+    // 관리자가 남긴 답변도 동일한 저장 흐름을 사용한다.
     public void register(InquiryMessage inquiryMessage) throws Exception {
         inquiryMessageRepository.insert(inquiryMessage);
     }
@@ -40,10 +42,12 @@ public class InquiryMessageService implements SmService<InquiryMessage, Integer>
     }
 
     public List<InquiryMessage> getByInquiry(Integer inquiryId) throws Exception {
+        // 선택한 문의방의 전체 대화 내용을 불러온다.
         return inquiryMessageRepository.selectByInquiry(inquiryId);
     }
 
     public void removeByInquiry(Integer inquiryId) throws Exception {
+        // 문의 삭제 시 대화 로그를 함께 정리한다.
         inquiryMessageRepository.deleteByInquiry(inquiryId);
     }
 }

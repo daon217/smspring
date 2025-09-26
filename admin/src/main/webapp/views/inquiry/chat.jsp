@@ -3,6 +3,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <style>
+    /* 관리자용 문의 채팅 레이아웃 */
     .inquiry-chat-wrapper {
         height: 520px;
         border: 1px solid #e0e0e0;
@@ -50,12 +51,14 @@
 
 <script>
     const adminInquiryChat = {
+        // 관리자 채팅 화면에서 웹소켓 통신을 담당하는 객체
         inquiryId: ${inquiry.inquiryId},
         senderId: '${sessionScope.admin.adminId}',
         targetId: '${inquiry.custId}',
         channel: 'inquiry-' + ${inquiry.inquiryId},
         stompClient: null,
         connect: function () {
+            // 고객과 동일 채널로 구독해 실시간 메시지를 받는다.
             const socket = new SockJS('${websocketurl}adminchat');
             this.stompClient = Stomp.over(socket);
             this.stompClient.connect({}, frame => {
@@ -70,6 +73,7 @@
             });
         },
         send: function () {
+            // 입력한 답변을 고객에게 전송한다.
             if (!this.stompClient) {
                 return;
             }
@@ -88,6 +92,7 @@
             $('#adminInquiryMessage').val('');
         },
         appendMessage: function (payload) {
+            // 채팅 이력 영역에 메시지를 추가한다.
             const isMine = payload.sendid === this.senderId;
             const wrapper = $('<div class="mb-2"></div>').addClass(isMine ? 'text-right' : 'text-left');
             const bubble = $('<div class="chat-bubble"></div>').addClass(isMine ? 'me' : 'other').text(payload.content1);
@@ -100,6 +105,7 @@
             history.scrollTop = history.scrollHeight;
         },
         bind: function () {
+            // 버튼 클릭과 엔터 입력을 전송 이벤트에 연결한다.
             $('#adminSendInquiryMessage').click(() => this.send());
             $('#adminInquiryMessage').on('keypress', event => {
                 if (event.which === 13 && !event.shiftKey) {
@@ -109,6 +115,7 @@
             });
         },
         init: function () {
+            // 초기 로딩 시 기존 히스토리를 하단으로 스크롤하고 연결한다.
             this.bind();
             this.connect();
             const history = document.getElementById('adminChatHistory');
@@ -122,6 +129,7 @@
 </script>
 
 <div class="container-fluid">
+    <%-- 관리자 상담 화면 카드 --%>
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">문의 채팅</h1>
     </div>
@@ -136,6 +144,7 @@
         <div class="card-body">
             <div class="inquiry-chat-wrapper">
                 <div class="inquiry-chat-messages" id="adminChatHistory">
+                    <%-- 저장된 상담 메시지 출력 --%>
                     <c:forEach var="message" items="${messages}">
                         <c:set var="isMe" value="${message.senderId == sessionScope.admin.adminId}" />
                         <div class="mb-2 ${isMe ? 'text-right' : 'text-left'}">
@@ -155,6 +164,7 @@
                     </c:forEach>
                 </div>
                 <div class="inquiry-chat-input">
+                    <%-- 관리자 답변 입력 영역 --%>
                     <div class="input-group">
                         <textarea class="form-control" id="adminInquiryMessage" rows="2" placeholder="답변을 입력하세요" style="resize: none;"></textarea>
                         <div class="input-group-append">

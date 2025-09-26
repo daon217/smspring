@@ -3,6 +3,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.sm.app.repository.InquiryRepository">
 
+    <!-- 관리자 화면에서 사용할 문의 기본 정보 매핑 설정 -->
+
     <resultMap id="InquiryResultMap" type="edu.sm.app.dto.Inquiry">
         <id property="inquiryId" column="inquiry_id" />
         <result property="custId" column="cust_id" />
@@ -47,6 +49,7 @@
     </delete>
 
     <select id="selectByCust" parameterType="string" resultMap="InquiryResultMap">
+        <!-- 특정 고객 문의 이력을 조회 -->
         SELECT <include refid="inquiryColumns"/>
         FROM cust_inquiry
         WHERE cust_id = #{custId}
@@ -54,6 +57,7 @@
     </select>
 
     <update id="updateStatus">
+        <!-- 상담 진행 상황에 맞춰 상태를 업데이트 -->
         UPDATE cust_inquiry
         SET status = #{status},
             updated_at = NOW()

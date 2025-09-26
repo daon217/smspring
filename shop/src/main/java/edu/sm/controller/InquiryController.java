@@ -26,6 +26,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/inquiry")
 @RequiredArgsConstructor
+// 고객 문의 등록과 채팅 화면 진입을 처리하는 컨트롤러다.
 public class InquiryController {
 
     private final InquiryService inquiryService;
@@ -37,6 +38,7 @@ public class InquiryController {
     String dir = "chat/";
 
     @PostMapping("/submit")
+    // 문의 모달에서 전달된 내용을 저장하고 채팅 화면으로 이동시킨다.
     public String submit(@RequestParam("category") String category,
                          @RequestParam("content") String content,
                          HttpSession session,
@@ -79,6 +81,7 @@ public class InquiryController {
             return "redirect:/login";
         }
         List<Inquiry> inquiries = inquiryService.getByCust(cust.getCustId());
+        // 상담 이력 화면 구성에 필요한 문의 목록을 모델에 담는다.
         model.addAttribute("inquiries", inquiries);
         model.addAttribute("center", dir + "inquiry_list");
         model.addAttribute("left", "left");
@@ -101,6 +104,7 @@ public class InquiryController {
             return "redirect:/";
         }
         List<InquiryMessage> messages = inquiryMessageService.getByInquiry(inquiryId);
+        // 기존 대화 내용을 채팅 화면에서 바로 볼 수 있게 전달한다.
         model.addAttribute("inquiry", inquiry);
         model.addAttribute("messages", messages);
         model.addAttribute("websocketurl", webSocketUrl);
@@ -126,6 +130,7 @@ public class InquiryController {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body(response);
         }
         List<InquiryMessage> messages = inquiryMessageService.getByInquiry(inquiryId);
+        // 프론트에서 주기적으로 호출해 최신 메시지 목록을 받을 때 사용한다.
         return ResponseEntity.ok(messages);
     }
 }

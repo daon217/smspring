@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 @Slf4j
 @Controller
 @RequiredArgsConstructor
+// 관리자 채팅 메시지를 브로드캐스팅하고 문의 상태를 관리한다.
 public class AdminMsgController {
 
     private final SimpMessagingTemplate template;
@@ -23,6 +24,7 @@ public class AdminMsgController {
     private final InquiryService inquiryService;
 
     @MessageMapping("/adminreceiveto") // 특정 Id에게 전송
+    // 관리자가 고객에게 보낸 답변을 저장하고 실시간으로 전달한다.
     public void adminreceiveto(Msg msg, SimpMessageHeaderAccessor headerAccessor) {
         msg.setCreatedAt(LocalDateTime.now());
         log.info("admin receive to: {}", msg);
@@ -31,6 +33,7 @@ public class AdminMsgController {
     }
 
     private void recordInquiryMessage(Msg msg) {
+        // 관리자 발신 메시지를 문의 히스토리에 적재한다.
         if (msg.getInquiryId() == null) {
             return;
         }
@@ -46,6 +49,7 @@ public class AdminMsgController {
         try {
             inquiryMessageService.register(inquiryMessage);
             if ("ADMIN".equalsIgnoreCase(senderType)) {
+                // 답변이 등록되면 문의 상태를 답변 완료로 바꾼다.
                 inquiryService.updateStatus(msg.getInquiryId(), "ANSWERED");
             }
         } catch (Exception e) {

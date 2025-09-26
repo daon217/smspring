@@ -3,6 +3,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <div class="container-fluid">
+    <%-- 고객이 조회하는 문의 목록 표 --%>
     <div class="row mb-3">
         <div class="col">
             <h3 class="font-weight-bold">내 문의 내역</h3>
@@ -23,6 +24,7 @@
                     </thead>
                     <tbody>
                     <c:forEach var="inquiry" items="${inquiries}">
+                        <%-- 문의 별 채팅 화면으로 이동할 링크 제공 --%>
                         <tr>
                             <td>${inquiry.inquiryId}</td>
                             <td>${inquiry.category}</td>
@@ -34,6 +36,7 @@
                         </tr>
                     </c:forEach>
                     <c:if test="${empty inquiries}">
+                        <%-- 문의가 없을 때 안내 메시지 --%>
                         <tr>
                             <td colspan="5" class="text-center text-muted py-4">등록된 문의가 없습니다.</td>
                         </tr>

@@ -577,6 +577,7 @@
 
 
 <div class="position-fixed" style="right: 24px; bottom: 24px; z-index: 1050;">
+    <%-- 관리자에게 문의 게시판을 바로 열어주는 플로팅 버튼 --%>
     <a class="btn btn-success rounded-circle shadow" style="width: 72px; height: 72px; display: flex; align-items: center; justify-content: center;" href="<c:url value='/inquiry/board'/>">
         문의사항
     </a>

@@ -119,12 +119,14 @@
 
 
 <div class="position-fixed" style="right: 24px; bottom: 24px; z-index: 1050;">
+    <%-- 고객이 문의 모달을 열 수 있는 플로팅 버튼 --%>
     <button class="btn btn-primary rounded-circle shadow" style="width: 64px; height: 64px;" data-toggle="modal" data-target="#inquiryModal">
         문의사항
     </button>
 </div>
 
 <div class="modal fade" id="inquiryModal" tabindex="-1" role="dialog" aria-labelledby="inquiryModalLabel" aria-hidden="true">
+    <%-- 문의 분류와 내용을 입력하는 모달 폼 --%>
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -154,6 +156,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
                 <c:if test="${sessionScope.cust.custId != null}">
+                    <%-- 로그인 고객에게 기존 문의 목록으로 이동 버튼 제공 --%>
                     <button type="button" class="btn btn-outline-primary" id="openInquiryList">내 문의</button>
                 </c:if>
                 <button type="button" class="btn btn-primary" id="inquirySubmit">보내기</button>
@@ -164,11 +167,14 @@
 
 <script>
     const inquiryModalHandler = {
+        // 문의 모달 동작을 초기화하는 헬퍼
         init: function () {
             $('#inquiryModal').on('hidden.bs.modal', function () {
+                // 모달을 닫을 때 입력값 초기화
                 $('#inquiryForm')[0].reset();
             });
             $('#inquirySubmit').click(function () {
+                // 문의 폼을 서버 제출로 전송
                 $('#inquiryForm').attr('action', '<c:url value="/inquiry/submit"/>');
                 $('#inquiryForm').attr('method', 'post');
                 $('#inquiryForm')[0].submit();
@@ -176,6 +182,7 @@
             const openListButton = $('#openInquiryList');
             if (openListButton.length) {
                 openListButton.click(function () {
+                    // 내 문의 버튼을 누르면 모달을 닫고 목록 페이지로 이동
                     $('#inquiryModal').modal('hide');
                     window.location.href = '<c:url value="/inquiry/list"/>';
                 });

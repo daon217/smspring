@@ -4,6 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <style>
+    /* 고객이 보는 문의 채팅 화면 레이아웃 */
     .inquiry-chat-wrapper {
         height: 480px;
         border: 1px solid #e0e0e0;
@@ -51,11 +52,13 @@
 
 <script>
     const inquiryChat = {
+        // 문의 채팅과 웹소켓 연결 상태를 관리하는 클라이언트 객체
         inquiryId: ${inquiry.inquiryId},
         senderId: '${sessionScope.cust.custId}',
         channel: 'inquiry-' + ${inquiry.inquiryId},
         stompClient: null,
         connect: function () {
+            // 관리자 채널과 연결해 실시간 답변을 수신한다.
             const socket = new SockJS('${websocketurl}adminchat');
             this.stompClient = Stomp.over(socket);
             this.stompClient.connect({}, frame => {
@@ -70,6 +73,7 @@
             });
         },
         send: function () {
+            // 입력한 메시지를 서버로 전송한다.
             if (!this.stompClient) {
                 return;
             }
@@ -88,6 +92,7 @@
             $('#inquiryMessage').val('');
         },
         appendMessage: function (payload) {
+            // 수신한 메시지를 채팅 히스토리에 렌더링한다.
             const isMine = payload.sendid === this.senderId;
             const wrapper = $('<div class="mb-2"></div>').addClass(isMine ? 'text-right' : 'text-left');
             const bubble = $('<div class="chat-bubble"></div>').addClass(isMine ? 'me' : 'other').text(payload.content1);
@@ -100,6 +105,7 @@
             history.scrollTop = history.scrollHeight;
         },
         bind: function () {
+            // 버튼 클릭과 엔터 입력을 전송 동작에 묶는다.
             $('#sendInquiryMessage').click(() => this.send());
             $('#inquiryMessage').on('keypress', event => {
                 if (event.which === 13 && !event.shiftKey) {
@@ -109,6 +115,7 @@
             });
         },
         init: function () {
+            // 초기 히스토리를 스크롤 끝으로 맞추고 연결을 시작한다.
             this.bind();
             this.connect();
             const history = document.getElementById('chatHistory');
@@ -122,6 +129,7 @@
 </script>
 
 <div class="col-sm-10">
+    <%-- 문의 채팅 본문 카드 --%>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
             <div>
@@ -132,6 +140,7 @@
         <div class="card-body">
             <div class="inquiry-chat-wrapper">
                 <div class="inquiry-chat-messages" id="chatHistory">
+                    <%-- 저장된 메시지를 순서대로 출력 --%>
                     <c:forEach var="message" items="${messages}">
                         <c:set var="isMe" value="${message.senderId == sessionScope.cust.custId}" />
                         <div class="mb-2 ${isMe ? 'text-right' : 'text-left'}">
@@ -151,6 +160,7 @@
                     </c:forEach>
                 </div>
                 <div class="inquiry-chat-input">
+                    <%-- 메시지 입력창과 전송 버튼 --%>
                     <div class="input-group">
                         <textarea class="form-control" id="inquiryMessage" rows="2" placeholder="메시지를 입력하세요" style="resize: none;"></textarea>
                         <div class="input-group-append">

@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Builder
+// 웹소켓으로 오가는 채팅 메시지를 문의 ID와 함께 전달하기 위한 모델이다.
 public class Msg {
     private String sendid;
     private String receiveid;
