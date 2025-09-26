@@ -55,7 +55,7 @@
 </script>
 
 <div class="col-sm-10">
-    <h2>Chat1 Center</h2>
+    <h2>Chat2 Center</h2>
     <div class="card-body">
         <div class="table-responsive">
             <div class="col-sm-5">

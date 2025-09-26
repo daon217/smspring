@@ -12,8 +12,8 @@
 <script>
     chat = {
         id:'',
-        init: function(){
-            this.id = $('#user_id').text();
+        init:function(){
+            this.id = '${sessionScope.admin.adminId}';
             this.connect();
             $('#sendto').click(()=>{
                 var msg = JSON.stringify({
@@ -28,17 +28,16 @@
             let sid = this.id;
             let socket = new SockJS('${websocketurl}adminchat');
             this.stompClient = Stomp.over(socket);
-            $("#status").text("Connecting...");
-            this.stompClient.connect({}, (frame) => {
+            this.setConnected(true);
+            this.stompClient.connect({}, function(frame) {
                 console.log('Connected: ' + frame);
-                this.setConnected(true);
-                this.stompClient.subscribe('/adminsend/to/'+sid, function(msg) {
+
+                this.subscribe('/adminsend/to/'+sid, function(msg) {
                     $("#to").prepend(
                         "<h4>" + JSON.parse(msg.body).sendid +":"+
                         JSON.parse(msg.body).content1
                         + "</h4>");
                 });
-
             });
         },
         setConnected:function(connected){
@@ -79,7 +78,7 @@
                             <H1 id="status">Status</H1>
 
                             <h3>To</h3>
-                            <input type="text" id="target" value="1">
+                            <input type="text" id="target" value="id07">
                             <input type="text" id="totext"><button id="sendto">Send</button>
                             <div id="to"></div>
 
