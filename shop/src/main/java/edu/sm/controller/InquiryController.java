@@ -2,8 +2,6 @@ package edu.sm.controller;
 
 import edu.sm.app.dto.Cust;
 import edu.sm.app.dto.Inquiry;
-import edu.sm.app.dto.InquiryMessage;
-import edu.sm.app.service.InquiryMessageService;
 import edu.sm.app.service.InquiryService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -19,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -29,7 +27,6 @@ import java.util.Map;
 public class InquiryController {
 
     private final InquiryService inquiryService;
-    private final InquiryMessageService inquiryMessageService;
 
     @Value("${app.url.websocketurl}")
     String webSocketUrl;
@@ -57,13 +54,6 @@ public class InquiryController {
                 .status("OPEN")
                 .build();
         inquiryService.register(inquiry);
-        InquiryMessage message = InquiryMessage.builder()
-                .inquiryId(inquiry.getInquiryId())
-                .senderId(cust.getCustId())
-                .senderType("CUSTOMER")
-                .content(trimmedContent)
-                .build();
-        inquiryMessageService.register(message);
         inquiryService.updateStatus(inquiry.getInquiryId(), "IN_PROGRESS");
         redirectAttributes.addFlashAttribute("inquiryCreated", true);
         return "redirect:/inquiry/chat?inquiryId=" + inquiry.getInquiryId();
@@ -84,9 +74,7 @@ public class InquiryController {
             redirectAttributes.addFlashAttribute("msg", "문의 내역을 확인할 수 없습니다.");
             return "redirect:/";
         }
-        List<InquiryMessage> messages = inquiryMessageService.getByInquiry(inquiryId);
         model.addAttribute("inquiry", inquiry);
-        model.addAttribute("messages", messages);
         model.addAttribute("websocketurl", webSocketUrl);
         model.addAttribute("center", dir + "inquiry");
         model.addAttribute("left", "left");
@@ -109,7 +97,6 @@ public class InquiryController {
             response.put("error", "조회 권한이 없습니다.");
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body(response);
         }
-        List<InquiryMessage> messages = inquiryMessageService.getByInquiry(inquiryId);
-        return ResponseEntity.ok(messages);
+        return ResponseEntity.ok(Collections.emptyList());
     }
 }

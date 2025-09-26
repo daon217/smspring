@@ -1,7 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <style>
   .inquiry-chat-wrapper {
@@ -150,23 +148,7 @@
     <div class="card-body">
       <div class="inquiry-chat-wrapper">
         <div class="inquiry-chat-messages" id="chatHistory">
-          <c:forEach var="message" items="${messages}">
-            <c:set var="isMe" value="${message.senderId == sessionScope.cust.custId}" />
-            <div class="mb-2 ${isMe ? 'text-right' : 'text-left'}">
-              <div class="chat-bubble ${isMe ? 'me' : 'other'}">
-                  ${message.content}
-              </div>
-              <br/>
-              <div class="chat-meta">
-                <c:choose>
-                  <c:when test="${isMe}">나</c:when>
-                  <c:otherwise>관리자</c:otherwise>
-                </c:choose>
-                ·
-                <c:out value="${fn:substring(fn:replace(message.createdAt, 'T', ' '), 0, 16)}" />
-              </div>
-            </div>
-          </c:forEach>
+
         </div>
         <div class="inquiry-chat-input">
           <div class="input-group">

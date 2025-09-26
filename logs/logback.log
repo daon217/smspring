@@ -5256,3 +5256,490 @@ Caused by: java.nio.channels.ClosedChannelException: null
 [2025-09-26 17:09:13:83939][clientInboundChannel-23] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=l1z540s0
 [2025-09-26 17:09:13:83939][clientOutboundChannel-6] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={org.springframework.messaging.simp.SimpAttributes.COMPLETED=true}, simpSessionId=l1z540s0}], simpSessionId=l1z540s0}]
 [2025-09-26 17:09:21:91548][MessageBroker-4] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Closed 1 sessions: [l1z540s0]
+[2025-09-26 17:33:39:4633][restartedMain] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Patterns [/chat/**, /adminchat/**] in 'stompWebSocketHandlerMapping'
+[2025-09-26 17:33:39:4728][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 75 mappings in 'requestMappingHandlerMapping'
+[2025-09-26 17:33:40:5063][restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /imgs/**, /logs/**] in 'resourceHandlerMapping'
+[2025-09-26 17:33:40:5179][restartedMain] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - 
+	e.s.c.AdminMsgController:
+	{[MESSAGE],[/adminreceiveto]}: adminreceiveto(Msg,SimpMessageHeaderAccessor)
+[2025-09-26 17:33:40:5180][restartedMain] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - 
+	e.s.c.ChartController:
+	
+[2025-09-26 17:33:40:5180][restartedMain] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - 
+	e.s.c.ChartRestController:
+	
+[2025-09-26 17:33:40:5180][restartedMain] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - 
+	e.s.c.ChatController:
+	
+[2025-09-26 17:33:40:5180][restartedMain] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - 
+	e.s.c.CustController:
+	
+[2025-09-26 17:33:40:5180][restartedMain] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - 
+	e.s.c.InquiryController:
+	
+[2025-09-26 17:33:40:5180][restartedMain] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - 
+	e.s.c.LoginController:
+	
+[2025-09-26 17:33:40:5180][restartedMain] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - 
+	e.s.c.MainController:
+	
+[2025-09-26 17:33:40:5180][restartedMain] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - 
+	e.s.c.MainRestController:
+	
+[2025-09-26 17:33:40:5180][restartedMain] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - 
+	e.s.c.MapController:
+	
+[2025-09-26 17:33:40:5180][restartedMain] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - 
+	e.s.c.MapRestController:
+	
+[2025-09-26 17:33:40:5180][restartedMain] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - 
+	e.s.c.MsgController:
+	{[MESSAGE],[/receiveto]}: receiveto(Msg,SimpMessageHeaderAccessor)
+	{[MESSAGE],[/receiveme]}: receiveme(Msg,SimpMessageHeaderAccessor)
+	{[MESSAGE],[/receiveall]}: receiveall(Msg,SimpMessageHeaderAccessor)
+[2025-09-26 17:33:40:5180][restartedMain] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - 
+	e.s.c.ProductController:
+	
+[2025-09-26 17:33:40:5180][restartedMain] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - 
+	e.s.c.WeatherController:
+	
+[2025-09-26 17:33:40:5181][restartedMain] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+[2025-09-26 17:33:40:5238][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[2025-09-26 17:33:40:5296][restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+[2025-09-26 17:33:40:5468][restartedMain] DEBUG o.springframework.web.SimpLogging - clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+[2025-09-26 17:33:40:5468][restartedMain] DEBUG o.springframework.web.SimpLogging - clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[]]
+[2025-09-26 17:33:40:5468][restartedMain] DEBUG o.springframework.web.SimpLogging - clientInboundChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@6023127f]
+[2025-09-26 17:33:40:5468][restartedMain] DEBUG o.springframework.web.SimpLogging - brokerChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@6023127f]
+[2025-09-26 17:33:40:5471][restartedMain] DEBUG o.springframework.web.SimpLogging - clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+[2025-09-26 17:33:40:5471][restartedMain] DEBUG o.springframework.web.SimpLogging - brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+[2025-09-26 17:33:49:14541][https-jsse-nio-8443-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2025-09-26 17:33:49:14541][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+[2025-09-26 17:33:49:14541][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+[2025-09-26 17:33:49:14541][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+[2025-09-26 17:33:49:14542][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7b23f6fa
+[2025-09-26 17:33:49:14542][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@c4ae479
+[2025-09-26 17:33:49:14542][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+[2025-09-26 17:33:49:14542][https-jsse-nio-8443-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2025-09-26 17:33:49:14585][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
+[2025-09-26 17:33:49:14588][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainController#main(Model)
+[2025-09-26 17:33:49:14618][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-26 17:33:49:14618][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {}
+[2025-09-26 17:33:49:14623][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-26 17:33:51:15902][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:33:51:15968][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/sockjs-client/sockjs.min.js", parameters={}
+[2025-09-26 17:33:51:15969][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:33:51:15991][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:33:51:15994][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/stomp-websocket/stomp.min.js", parameters={}
+[2025-09-26 17:33:51:15994][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:33:51:15999][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:34:23:48169][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+[2025-09-26 17:34:23:48169][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.LoginController#add(Model)
+[2025-09-26 17:34:23:48172][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-26 17:34:23:48172][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {center=login, left=left}
+[2025-09-26 17:34:23:48172][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-26 17:34:23:48266][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:34:23:48288][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/sockjs-client/sockjs.min.js", parameters={}
+[2025-09-26 17:34:23:48288][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:34:23:48294][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:34:23:48297][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/stomp-websocket/stomp.min.js", parameters={}
+[2025-09-26 17:34:23:48298][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:34:23:48301][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:34:27:51919][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - POST "/loginimpl", parameters={masked}
+[2025-09-26 17:34:27:51919][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.LoginController#loginimpl(Model, String, String, HttpSession)
+[2025-09-26 17:34:27:52319][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
+[2025-09-26 17:34:27:52319][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+[2025-09-26 17:34:27:52326][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
+[2025-09-26 17:34:27:52326][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainController#main(Model)
+[2025-09-26 17:34:27:52327][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-26 17:34:27:52327][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {}
+[2025-09-26 17:34:27:52327][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-26 17:34:27:52343][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:34:27:52358][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/stomp-websocket/stomp.min.js", parameters={}
+[2025-09-26 17:34:27:52358][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/sockjs-client/sockjs.min.js", parameters={}
+[2025-09-26 17:34:27:52358][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:34:27:52359][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:34:27:52361][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:34:27:52365][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:34:40:65469][MessageBroker-1] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2025-09-26 17:35:16:101471][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/info?t=1758875716651", parameters={masked}
+[2025-09-26 17:35:16:101472][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:35:16:101482][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/info?t=1758875716651
+[2025-09-26 17:35:16:101483][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:35:16:101534][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/192/hv31lsh3/websocket", parameters={}
+[2025-09-26 17:35:16:101534][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:35:16:101535][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/192/hv31lsh3/websocket
+[2025-09-26 17:35:16:101588][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 101 SWITCHING_PROTOCOLS
+[2025-09-26 17:35:16:101609][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - New WebSocketServerSockJsSession[id=hv31lsh3]
+[2025-09-26 17:35:16:101670][clientInboundChannel-2] DEBUG o.springframework.web.SimpLogging - Processing CONNECT session=hv31lsh3
+[2025-09-26 17:35:16:101679][clientInboundChannel-5] DEBUG o.springframework.web.SimpLogging - Processing SUBSCRIBE /adminsend/to/inquiry-8 id=sub-0 session=hv31lsh3
+[2025-09-26 17:35:16:101679][clientInboundChannel-4] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Searching methods to handle SUBSCRIBE /adminsend/to/inquiry-8 id=sub-0 session=hv31lsh3, lookupDestination='/adminsend/to/inquiry-8'
+[2025-09-26 17:35:16:101680][clientInboundChannel-4] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - No matching message handler methods.
+[2025-09-26 17:35:21:105924][clientInboundChannel-7] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Searching methods to handle SEND /adminreceiveto session=hv31lsh3, lookupDestination='/adminreceiveto'
+[2025-09-26 17:35:21:105928][clientInboundChannel-7] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Invoking AdminMsgController#adminreceiveto[2 args]
+[2025-09-26 17:35:21:106068][clientInboundChannel-7] DEBUG o.springframework.web.SimpLogging - Processing MESSAGE destination=/adminsend/to/inquiry-8 session=null payload={"sendid":"admin","receiveid":"inquiry-8","content1":"ㅁㄴㅇㄴㅇ","inquiryI...(truncated)
+[2025-09-26 17:35:21:106070][clientInboundChannel-7] DEBUG o.springframework.web.SimpLogging - Broadcasting to 1 sessions.
+[2025-09-26 17:35:27:112054][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - POST "/inquiry/submit", parameters={masked}
+[2025-09-26 17:35:27:112054][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.InquiryController#submit(String, String, HttpSession, RedirectAttributes)
+[2025-09-26 17:35:27:112058][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
+[2025-09-26 17:35:27:112060][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+[2025-09-26 17:35:27:112064][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+[2025-09-26 17:35:27:112065][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.LoginController#add(Model)
+[2025-09-26 17:35:27:112066][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-26 17:35:27:112066][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {msg=로그인 후 문의를 등록할 수 있습니다., center=login, left=left}
+[2025-09-26 17:35:27:112066][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-26 17:35:27:112077][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:35:27:112093][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/sockjs-client/sockjs.min.js", parameters={}
+[2025-09-26 17:35:27:112095][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:35:27:112100][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:35:27:112102][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/stomp-websocket/stomp.min.js", parameters={}
+[2025-09-26 17:35:27:112103][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:35:27:112106][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:35:31:116337][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - POST "/loginimpl", parameters={masked}
+[2025-09-26 17:35:31:116337][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.LoginController#loginimpl(Model, String, String, HttpSession)
+[2025-09-26 17:35:31:116342][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-26 17:35:31:116343][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {center=login, msg=로그인 실패!!!}
+[2025-09-26 17:35:31:116343][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-26 17:35:31:116354][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:35:31:116371][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/sockjs-client/sockjs.min.js", parameters={}
+[2025-09-26 17:35:31:116372][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:35:31:116378][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:35:31:116380][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/stomp-websocket/stomp.min.js", parameters={}
+[2025-09-26 17:35:31:116380][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:35:31:116382][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:35:34:119674][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST "/loginimpl", parameters={masked}
+[2025-09-26 17:35:34:119674][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.LoginController#loginimpl(Model, String, String, HttpSession)
+[2025-09-26 17:35:35:119757][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
+[2025-09-26 17:35:35:119758][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+[2025-09-26 17:35:35:119763][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
+[2025-09-26 17:35:35:119763][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainController#main(Model)
+[2025-09-26 17:35:35:119763][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-26 17:35:35:119763][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {}
+[2025-09-26 17:35:35:119764][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-26 17:35:35:119769][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:35:35:119784][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/sockjs-client/sockjs.min.js", parameters={}
+[2025-09-26 17:35:35:119784][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/stomp-websocket/stomp.min.js", parameters={}
+[2025-09-26 17:35:35:119784][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:35:35:119784][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:35:35:119787][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:35:35:119789][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:35:38:123660][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - POST "/inquiry/submit", parameters={masked}
+[2025-09-26 17:35:38:123660][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.InquiryController#submit(String, String, HttpSession, RedirectAttributes)
+[2025-09-26 17:35:38:123700][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
+[2025-09-26 17:35:38:123701][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+[2025-09-26 17:35:38:123706][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/inquiry/chat?inquiryId=9", parameters={masked}
+[2025-09-26 17:35:38:123707][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.InquiryController#chat(Integer, HttpSession, Model, RedirectAttributes)
+[2025-09-26 17:35:38:123713][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-26 17:35:38:123714][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {inquiryCreated=true, inquiry=Inquiry(inquiryId=9, custId=1, category=배송지연, status=IN_PROGRESS, createdAt=2025-09-26T17:35:38, updatedAt=2025-09-26T17:35:38), websocketurl=https://127.0.0.1:8443/, center=chat/inquiry, left=left, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+[2025-09-26 17:35:38:123714][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-26 17:35:39:123805][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:35:39:123824][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/stomp-websocket/stomp.min.js", parameters={}
+[2025-09-26 17:35:39:123824][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/sockjs-client/sockjs.min.js", parameters={}
+[2025-09-26 17:35:39:123824][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:35:39:123824][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:35:39:123827][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:35:39:123830][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:35:39:123867][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/info?t=1758875739108", parameters={masked}
+[2025-09-26 17:35:39:123867][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:35:39:123868][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/info?t=1758875739108
+[2025-09-26 17:35:39:123868][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:35:39:123906][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/382/ozuyvv2r/websocket", parameters={}
+[2025-09-26 17:35:39:123907][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:35:39:123907][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/382/ozuyvv2r/websocket
+[2025-09-26 17:35:39:123908][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 101 SWITCHING_PROTOCOLS
+[2025-09-26 17:35:39:123909][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - New WebSocketServerSockJsSession[id=ozuyvv2r]
+[2025-09-26 17:35:39:123912][clientInboundChannel-11] DEBUG o.springframework.web.SimpLogging - Processing CONNECT session=ozuyvv2r
+[2025-09-26 17:35:39:123915][clientInboundChannel-14] DEBUG o.springframework.web.SimpLogging - Processing SUBSCRIBE /adminsend/to/inquiry-9 id=sub-0 session=ozuyvv2r
+[2025-09-26 17:35:39:123917][clientInboundChannel-13] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Searching methods to handle SUBSCRIBE /adminsend/to/inquiry-9 id=sub-0 session=ozuyvv2r, lookupDestination='/adminsend/to/inquiry-9'
+[2025-09-26 17:35:39:123917][clientInboundChannel-13] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - No matching message handler methods.
+[2025-09-26 17:35:42:127195][clientInboundChannel-16] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Searching methods to handle SEND /adminreceiveto session=ozuyvv2r, lookupDestination='/adminreceiveto'
+[2025-09-26 17:35:42:127195][clientInboundChannel-16] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Invoking AdminMsgController#adminreceiveto[2 args]
+[2025-09-26 17:35:42:127196][clientInboundChannel-16] DEBUG o.springframework.web.SimpLogging - Processing MESSAGE destination=/adminsend/to/inquiry-9 session=null payload={"sendid":"1","receiveid":"inquiry-9","content1":"ㅁㅇ","inquiryId":9,"senderT...(truncated)
+[2025-09-26 17:35:42:127196][clientInboundChannel-16] DEBUG o.springframework.web.SimpLogging - Broadcasting to 1 sessions.
+[2025-09-26 17:35:54:138889][clientInboundChannel-20] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=hv31lsh3
+[2025-09-26 17:35:54:138891][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - WebSocketServerSockJsSession[id=hv31lsh3] closed with CloseStatus[code=1000, reason=null]
+[2025-09-26 17:35:54:138892][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - Clearing session hv31lsh3
+[2025-09-26 17:35:54:138894][clientInboundChannel-23] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=hv31lsh3
+[2025-09-26 17:35:54:138894][clientOutboundChannel-6] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={org.springframework.messaging.simp.SimpAttributes.COMPLETED=true}, simpSessionId=hv31lsh3}], simpSessionId=hv31lsh3}]
+[2025-09-26 17:35:54:138891][clientOutboundChannel-5] DEBUG o.s.w.s.m.StompSubProtocolHandler - Failed to send WebSocket message to client in session hv31lsh3
+java.lang.IllegalStateException: Cannot send a message when session is closed
+	at org.springframework.util.Assert.state(Assert.java:79)
+	at org.springframework.web.socket.sockjs.transport.session.AbstractSockJsSession.sendMessage(AbstractSockJsSession.java:144)
+	at org.springframework.web.socket.handler.ConcurrentWebSocketSessionDecorator.tryFlushMessageBuffer(ConcurrentWebSocketSessionDecorator.java:198)
+	at org.springframework.web.socket.handler.ConcurrentWebSocketSessionDecorator.sendMessage(ConcurrentWebSocketSessionDecorator.java:171)
+	at org.springframework.web.socket.messaging.StompSubProtocolHandler.sendToClient(StompSubProtocolHandler.java:529)
+	at org.springframework.web.socket.messaging.StompSubProtocolHandler.handleMessageToClient(StompSubProtocolHandler.java:516)
+	at org.springframework.web.socket.messaging.SubProtocolWebSocketHandler.handleMessage(SubProtocolWebSocketHandler.java:387)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:152)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+[2025-09-26 17:36:01:146545][MessageBroker-1] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Closed 1 sessions: [hv31lsh3]
+[2025-09-26 17:36:05:149869][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/info?t=1758875765083", parameters={masked}
+[2025-09-26 17:36:05:149870][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:36:05:149870][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/info?t=1758875765083
+[2025-09-26 17:36:05:149871][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:36:05:149923][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/031/4l4srqua/websocket", parameters={}
+[2025-09-26 17:36:05:149924][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:36:05:149925][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/031/4l4srqua/websocket
+[2025-09-26 17:36:05:149925][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 101 SWITCHING_PROTOCOLS
+[2025-09-26 17:36:05:149927][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - New WebSocketServerSockJsSession[id=4l4srqua]
+[2025-09-26 17:36:05:149929][clientInboundChannel-26] DEBUG o.springframework.web.SimpLogging - Processing CONNECT session=4l4srqua
+[2025-09-26 17:36:05:149933][clientInboundChannel-28] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Searching methods to handle SUBSCRIBE /adminsend/to/inquiry-9 id=sub-0 session=4l4srqua, lookupDestination='/adminsend/to/inquiry-9'
+[2025-09-26 17:36:05:149933][clientInboundChannel-28] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - No matching message handler methods.
+[2025-09-26 17:36:05:149933][clientInboundChannel-29] DEBUG o.springframework.web.SimpLogging - Processing SUBSCRIBE /adminsend/to/inquiry-9 id=sub-0 session=4l4srqua
+[2025-09-26 17:36:06:151546][clientInboundChannel-31] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Searching methods to handle SEND /adminreceiveto session=4l4srqua, lookupDestination='/adminreceiveto'
+[2025-09-26 17:36:06:151546][clientInboundChannel-31] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Invoking AdminMsgController#adminreceiveto[2 args]
+[2025-09-26 17:36:06:151546][clientInboundChannel-31] DEBUG o.springframework.web.SimpLogging - Processing MESSAGE destination=/adminsend/to/inquiry-9 session=null payload={"sendid":"admin","receiveid":"inquiry-9","content1":"ㅁㄴㅇ","inquiryId":9,"...(truncated)
+[2025-09-26 17:36:06:151546][clientInboundChannel-31] DEBUG o.springframework.web.SimpLogging - Broadcasting to 2 sessions.
+[2025-09-26 17:36:08:153634][clientInboundChannel-1] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Searching methods to handle SEND /adminreceiveto session=ozuyvv2r, lookupDestination='/adminreceiveto'
+[2025-09-26 17:36:08:153634][clientInboundChannel-1] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Invoking AdminMsgController#adminreceiveto[2 args]
+[2025-09-26 17:36:08:153634][clientInboundChannel-1] DEBUG o.springframework.web.SimpLogging - Processing MESSAGE destination=/adminsend/to/inquiry-9 session=null payload={"sendid":"1","receiveid":"inquiry-9","content1":"ㄴㅁㅇ","inquiryId":9,"send...(truncated)
+[2025-09-26 17:36:08:153635][clientInboundChannel-1] DEBUG o.springframework.web.SimpLogging - Broadcasting to 2 sessions.
+[2025-09-26 17:36:10:155618][clientInboundChannel-5] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=ozuyvv2r
+[2025-09-26 17:36:10:155618][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - WebSocketServerSockJsSession[id=ozuyvv2r] closed with CloseStatus[code=1000, reason=null]
+[2025-09-26 17:36:10:155619][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - Clearing session ozuyvv2r
+[2025-09-26 17:36:10:155619][clientOutboundChannel-12] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={}, simpHeartbeat=[J@31a5e506, simpSessionId=ozuyvv2r}], simpSessionId=ozuyvv2r}]
+[2025-09-26 17:36:10:155621][clientInboundChannel-9] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=ozuyvv2r
+[2025-09-26 17:36:10:155622][clientOutboundChannel-13] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={org.springframework.messaging.simp.SimpAttributes.COMPLETED=true}, simpSessionId=ozuyvv2r}], simpSessionId=ozuyvv2r}]
+[2025-09-26 17:36:10:155658][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
+[2025-09-26 17:36:10:155658][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainController#main(Model)
+[2025-09-26 17:36:10:155659][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-26 17:36:10:155659][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {}
+[2025-09-26 17:36:10:155659][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-26 17:36:10:155672][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:36:10:155688][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/sockjs-client/sockjs.min.js", parameters={}
+[2025-09-26 17:36:10:155688][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:36:10:155692][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:36:10:155696][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/stomp-websocket/stomp.min.js", parameters={}
+[2025-09-26 17:36:10:155696][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:36:10:155699][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:36:16:161313][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - WebSocketServerSockJsSession[id=4l4srqua] closed with CloseStatus[code=1000, reason=null]
+[2025-09-26 17:36:16:161313][clientInboundChannel-11] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=4l4srqua
+[2025-09-26 17:36:16:161313][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - Clearing session 4l4srqua
+[2025-09-26 17:36:16:161314][clientOutboundChannel-14] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={}, simpHeartbeat=[J@6c716cfe, simpSessionId=4l4srqua}], simpSessionId=4l4srqua}]
+[2025-09-26 17:36:16:161315][clientInboundChannel-15] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=4l4srqua
+[2025-09-26 17:36:16:161315][clientOutboundChannel-15] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={org.springframework.messaging.simp.SimpAttributes.COMPLETED=true}, simpSessionId=4l4srqua}], simpSessionId=4l4srqua}]
+[2025-09-26 17:36:16:161537][MessageBroker-13] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Closed 1 sessions: [ozuyvv2r]
+[2025-09-26 17:36:21:166552][MessageBroker-13] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Closed 1 sessions: [4l4srqua]
+[2025-09-26 17:36:22:167323][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/info?t=1758875782538", parameters={masked}
+[2025-09-26 17:36:22:167323][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:36:22:167324][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/info?t=1758875782538
+[2025-09-26 17:36:22:167324][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:36:22:167361][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/805/i3b0xxbo/websocket", parameters={}
+[2025-09-26 17:36:22:167361][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:36:22:167362][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/805/i3b0xxbo/websocket
+[2025-09-26 17:36:22:167362][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 101 SWITCHING_PROTOCOLS
+[2025-09-26 17:36:22:167365][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - New WebSocketServerSockJsSession[id=i3b0xxbo]
+[2025-09-26 17:36:22:167368][clientInboundChannel-18] DEBUG o.springframework.web.SimpLogging - Processing CONNECT session=i3b0xxbo
+[2025-09-26 17:36:22:167372][clientInboundChannel-21] DEBUG o.springframework.web.SimpLogging - Processing SUBSCRIBE /adminsend/to/inquiry-9 id=sub-0 session=i3b0xxbo
+[2025-09-26 17:36:22:167372][clientInboundChannel-19] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Searching methods to handle SUBSCRIBE /adminsend/to/inquiry-9 id=sub-0 session=i3b0xxbo, lookupDestination='/adminsend/to/inquiry-9'
+[2025-09-26 17:36:22:167373][clientInboundChannel-19] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - No matching message handler methods.
+[2025-09-26 17:36:24:169409][clientInboundChannel-22] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=i3b0xxbo
+[2025-09-26 17:36:24:169409][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - WebSocketServerSockJsSession[id=i3b0xxbo] closed with CloseStatus[code=1000, reason=null]
+[2025-09-26 17:36:24:169409][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - Clearing session i3b0xxbo
+[2025-09-26 17:36:24:169410][clientOutboundChannel-17] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={}, simpHeartbeat=[J@6fcc80d3, simpSessionId=i3b0xxbo}], simpSessionId=i3b0xxbo}]
+[2025-09-26 17:36:24:169411][clientInboundChannel-25] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=i3b0xxbo
+[2025-09-26 17:36:24:169411][clientOutboundChannel-18] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={org.springframework.messaging.simp.SimpAttributes.COMPLETED=true}, simpSessionId=i3b0xxbo}], simpSessionId=i3b0xxbo}]
+[2025-09-26 17:36:31:176550][MessageBroker-13] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Closed 1 sessions: [i3b0xxbo]
+[2025-09-26 17:37:40:245564][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/info?t=1758875860787", parameters={masked}
+[2025-09-26 17:37:40:245565][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:37:40:245565][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/info?t=1758875860787
+[2025-09-26 17:37:40:245565][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:37:40:245603][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/942/efuviitb/websocket", parameters={}
+[2025-09-26 17:37:40:245603][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:37:40:245604][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/942/efuviitb/websocket
+[2025-09-26 17:37:40:245605][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 101 SWITCHING_PROTOCOLS
+[2025-09-26 17:37:40:245606][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - New WebSocketServerSockJsSession[id=efuviitb]
+[2025-09-26 17:37:40:245608][clientInboundChannel-35] DEBUG o.springframework.web.SimpLogging - Processing CONNECT session=efuviitb
+[2025-09-26 17:37:40:245613][clientInboundChannel-37] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Searching methods to handle SUBSCRIBE /adminsend/to/inquiry-9 id=sub-0 session=efuviitb, lookupDestination='/adminsend/to/inquiry-9'
+[2025-09-26 17:37:40:245613][clientInboundChannel-38] DEBUG o.springframework.web.SimpLogging - Processing SUBSCRIBE /adminsend/to/inquiry-9 id=sub-0 session=efuviitb
+[2025-09-26 17:37:40:245613][clientInboundChannel-37] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - No matching message handler methods.
+[2025-09-26 17:37:41:246322][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - WebSocketServerSockJsSession[id=efuviitb] closed with CloseStatus[code=1000, reason=null]
+[2025-09-26 17:37:41:246322][clientInboundChannel-41] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=efuviitb
+[2025-09-26 17:37:41:246323][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - Clearing session efuviitb
+[2025-09-26 17:37:41:246323][clientOutboundChannel-20] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={}, simpHeartbeat=[J@323dcca, simpSessionId=efuviitb}], simpSessionId=efuviitb}]
+[2025-09-26 17:37:41:246324][clientInboundChannel-44] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=efuviitb
+[2025-09-26 17:37:41:246325][clientOutboundChannel-21] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={org.springframework.messaging.simp.SimpAttributes.COMPLETED=true}, simpSessionId=efuviitb}], simpSessionId=efuviitb}]
+[2025-09-26 17:37:43:248517][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/connect/admin", parameters={}
+[2025-09-26 17:37:43:248517][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainRestController#connect(String)
+[2025-09-26 17:37:43:248534][https-jsse-nio-8443-exec-8] DEBUG o.s.w.c.r.async.WebAsyncManager - Started async request for "/connect/admin"
+[2025-09-26 17:37:43:248546][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Exiting but response remains open for further handling
+[2025-09-26 17:37:44:249137][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/info?t=1758875864379", parameters={masked}
+[2025-09-26 17:37:44:249137][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:37:44:249138][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/info?t=1758875864379
+[2025-09-26 17:37:44:249138][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:37:44:249172][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/672/ohdih4zc/websocket", parameters={}
+[2025-09-26 17:37:44:249172][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:37:44:249173][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/672/ohdih4zc/websocket
+[2025-09-26 17:37:44:249173][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 101 SWITCHING_PROTOCOLS
+[2025-09-26 17:37:44:249175][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - New WebSocketServerSockJsSession[id=ohdih4zc]
+[2025-09-26 17:37:44:249177][clientInboundChannel-47] DEBUG o.springframework.web.SimpLogging - Processing CONNECT session=ohdih4zc
+[2025-09-26 17:37:44:249180][clientInboundChannel-49] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Searching methods to handle SUBSCRIBE /adminsend/to/admin id=sub-0 session=ohdih4zc, lookupDestination='/adminsend/to/admin'
+[2025-09-26 17:37:44:249180][clientInboundChannel-49] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - No matching message handler methods.
+[2025-09-26 17:37:44:249180][clientInboundChannel-50] DEBUG o.springframework.web.SimpLogging - Processing SUBSCRIBE /adminsend/to/admin id=sub-0 session=ohdih4zc
+[2025-09-26 17:37:46:250766][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - WebSocketServerSockJsSession[id=ohdih4zc] closed with CloseStatus[code=1000, reason=null]
+[2025-09-26 17:37:46:250766][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - Clearing session ohdih4zc
+[2025-09-26 17:37:46:250768][clientInboundChannel-53] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=ohdih4zc
+[2025-09-26 17:37:46:250769][clientOutboundChannel-23] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={org.springframework.messaging.simp.SimpAttributes.COMPLETED=true}, simpSessionId=ohdih4zc}], simpSessionId=ohdih4zc}]
+[2025-09-26 17:37:46:251548][MessageBroker-6] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Closed 1 sessions: [efuviitb]
+[2025-09-26 17:37:47:252132][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/info?t=1758875867352", parameters={masked}
+[2025-09-26 17:37:47:252132][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:37:47:252133][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/info?t=1758875867352
+[2025-09-26 17:37:47:252133][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:37:47:252172][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/439/riywpqr3/websocket", parameters={}
+[2025-09-26 17:37:47:252172][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:37:47:252173][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/439/riywpqr3/websocket
+[2025-09-26 17:37:47:252173][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 101 SWITCHING_PROTOCOLS
+[2025-09-26 17:37:47:252175][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - New WebSocketServerSockJsSession[id=riywpqr3]
+[2025-09-26 17:37:47:252178][clientInboundChannel-56] DEBUG o.springframework.web.SimpLogging - Processing CONNECT session=riywpqr3
+[2025-09-26 17:37:47:252181][clientInboundChannel-58] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Searching methods to handle SUBSCRIBE /adminsend/to/inquiry-9 id=sub-0 session=riywpqr3, lookupDestination='/adminsend/to/inquiry-9'
+[2025-09-26 17:37:47:252181][clientInboundChannel-59] DEBUG o.springframework.web.SimpLogging - Processing SUBSCRIBE /adminsend/to/inquiry-9 id=sub-0 session=riywpqr3
+[2025-09-26 17:37:47:252181][clientInboundChannel-58] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - No matching message handler methods.
+[2025-09-26 17:37:49:254402][clientInboundChannel-61] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Searching methods to handle SEND /adminreceiveto session=riywpqr3, lookupDestination='/adminreceiveto'
+[2025-09-26 17:37:49:254402][clientInboundChannel-61] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Invoking AdminMsgController#adminreceiveto[2 args]
+[2025-09-26 17:37:49:254402][clientInboundChannel-61] DEBUG o.springframework.web.SimpLogging - Processing MESSAGE destination=/adminsend/to/inquiry-9 session=null payload={"sendid":"admin","receiveid":"inquiry-9","content1":"ㅁㄴㅇㅁㄴㅇ","inqui...(truncated)
+[2025-09-26 17:37:49:254403][clientInboundChannel-61] DEBUG o.springframework.web.SimpLogging - Broadcasting to 1 sessions.
+[2025-09-26 17:37:50:255282][clientInboundChannel-65] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=riywpqr3
+[2025-09-26 17:37:50:255282][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - WebSocketServerSockJsSession[id=riywpqr3] closed with CloseStatus[code=1000, reason=null]
+[2025-09-26 17:37:50:255282][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - Clearing session riywpqr3
+[2025-09-26 17:37:50:255282][clientOutboundChannel-26] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={}, simpHeartbeat=[J@616e3680, simpSessionId=riywpqr3}], simpSessionId=riywpqr3}]
+[2025-09-26 17:37:50:255283][clientInboundChannel-35] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=riywpqr3
+[2025-09-26 17:37:50:255284][clientOutboundChannel-27] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={org.springframework.messaging.simp.SimpAttributes.COMPLETED=true}, simpSessionId=riywpqr3}], simpSessionId=riywpqr3}]
+[2025-09-26 17:37:51:256542][MessageBroker-6] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Closed 1 sessions: [ohdih4zc]
+[2025-09-26 17:37:53:258278][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/login", parameters={}
+[2025-09-26 17:37:53:258278][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.LoginController#add(Model)
+[2025-09-26 17:37:53:258278][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-26 17:37:53:258278][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {center=login, left=left}
+[2025-09-26 17:37:53:258279][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-26 17:37:53:258289][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:37:53:258304][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/sockjs-client/sockjs.min.js", parameters={}
+[2025-09-26 17:37:53:258304][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:37:53:258310][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:37:53:258314][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/stomp-websocket/stomp.min.js", parameters={}
+[2025-09-26 17:37:53:258314][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:37:53:258316][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:37:56:261541][MessageBroker-6] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Closed 1 sessions: [riywpqr3]
+[2025-09-26 17:37:57:261897][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - POST "/loginimpl", parameters={masked}
+[2025-09-26 17:37:57:261897][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.LoginController#loginimpl(Model, String, String, HttpSession)
+[2025-09-26 17:37:57:261981][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
+[2025-09-26 17:37:57:261981][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+[2025-09-26 17:37:57:261986][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
+[2025-09-26 17:37:57:261986][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainController#main(Model)
+[2025-09-26 17:37:57:261986][https-jsse-nio-8443-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-26 17:37:57:261987][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {}
+[2025-09-26 17:37:57:261987][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-26 17:37:57:261992][https-jsse-nio-8443-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:37:57:262007][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/stomp-websocket/stomp.min.js", parameters={}
+[2025-09-26 17:37:57:262007][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/sockjs-client/sockjs.min.js", parameters={}
+[2025-09-26 17:37:57:262008][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:37:57:262008][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:37:57:262011][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:37:57:262013][https-jsse-nio-8443-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:37:58:263016][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/chat", parameters={}
+[2025-09-26 17:37:58:263016][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.ChatController#main(Model)
+[2025-09-26 17:37:58:263017][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-26 17:37:58:263017][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {center=chat/center, left=chat/left}
+[2025-09-26 17:37:58:263017][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-26 17:37:58:263123][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:37:58:263136][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/sockjs-client/sockjs.min.js", parameters={}
+[2025-09-26 17:37:58:263136][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/stomp-websocket/stomp.min.js", parameters={}
+[2025-09-26 17:37:58:263136][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:37:58:263136][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:37:58:263138][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:37:58:263140][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:37:59:264174][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/chat/chat2", parameters={}
+[2025-09-26 17:37:59:264174][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.ChatController#chat2(Model)
+[2025-09-26 17:37:59:264174][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-26 17:37:59:264174][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {websocketurl=https://127.0.0.1:8443/, center=chat/chat2, left=chat/left}
+[2025-09-26 17:37:59:264174][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-26 17:37:59:264234][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:37:59:264251][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/sockjs-client/sockjs.min.js", parameters={}
+[2025-09-26 17:37:59:264251][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/stomp-websocket/stomp.min.js", parameters={}
+[2025-09-26 17:37:59:264252][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:37:59:264252][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:37:59:264255][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:37:59:264258][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:37:59:264298][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/info?t=1758875879539", parameters={masked}
+[2025-09-26 17:37:59:264298][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:37:59:264299][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/info?t=1758875879539
+[2025-09-26 17:37:59:264299][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:37:59:264334][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/241/2w0qate1/websocket", parameters={}
+[2025-09-26 17:37:59:264334][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:37:59:264334][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/241/2w0qate1/websocket
+[2025-09-26 17:37:59:264335][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 101 SWITCHING_PROTOCOLS
+[2025-09-26 17:37:59:264336][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - New WebSocketServerSockJsSession[id=2w0qate1]
+[2025-09-26 17:37:59:264339][clientInboundChannel-38] DEBUG o.springframework.web.SimpLogging - Processing CONNECT session=2w0qate1
+[2025-09-26 17:37:59:264342][clientInboundChannel-41] DEBUG o.springframework.web.SimpLogging - Processing SUBSCRIBE /adminsend/to/1 id=sub-0 session=2w0qate1
+[2025-09-26 17:37:59:264342][clientInboundChannel-42] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Searching methods to handle SUBSCRIBE /adminsend/to/1 id=sub-0 session=2w0qate1, lookupDestination='/adminsend/to/1'
+[2025-09-26 17:37:59:264342][clientInboundChannel-42] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - No matching message handler methods.
+[2025-09-26 17:38:00:265282][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/chat/chat3", parameters={}
+[2025-09-26 17:38:00:265282][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.ChatController#map2(Model)
+[2025-09-26 17:38:00:265283][https-jsse-nio-8443-exec-9] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-26 17:38:00:265283][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {center=chat/chat3, left=chat/left}
+[2025-09-26 17:38:00:265283][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-26 17:38:00:265344][https-jsse-nio-8443-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:38:00:265348][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - WebSocketServerSockJsSession[id=2w0qate1] closed with CloseStatus[code=1000, reason=null]
+[2025-09-26 17:38:00:265348][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - Clearing session 2w0qate1
+[2025-09-26 17:38:00:265349][clientInboundChannel-45] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=2w0qate1
+[2025-09-26 17:38:00:265350][clientOutboundChannel-29] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={org.springframework.messaging.simp.SimpAttributes.COMPLETED=true}, simpSessionId=2w0qate1}], simpSessionId=2w0qate1}]
+[2025-09-26 17:38:00:265357][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/sockjs-client/sockjs.min.js", parameters={}
+[2025-09-26 17:38:00:265357][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/stomp-websocket/stomp.min.js", parameters={}
+[2025-09-26 17:38:00:265357][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:38:00:265357][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:38:00:265361][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:38:00:265363][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:38:05:270732][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - POST "/inquiry/submit", parameters={masked}
+[2025-09-26 17:38:05:270732][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.InquiryController#submit(String, String, HttpSession, RedirectAttributes)
+[2025-09-26 17:38:05:270747][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
+[2025-09-26 17:38:05:270747][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+[2025-09-26 17:38:05:270751][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/inquiry/chat?inquiryId=10", parameters={masked}
+[2025-09-26 17:38:05:270752][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.InquiryController#chat(Integer, HttpSession, Model, RedirectAttributes)
+[2025-09-26 17:38:06:270756][https-jsse-nio-8443-exec-10] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-26 17:38:06:270756][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {inquiryCreated=true, inquiry=Inquiry(inquiryId=10, custId=1, category=환불문의, status=IN_PROGRESS, createdAt=2025-09-26T17:38:05, updatedAt=2025-09-26T17:38:05), websocketurl=https://127.0.0.1:8443/, center=chat/inquiry, left=left, org.springframework.validation.BindingResult.inquiry=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+[2025-09-26 17:38:06:270756][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-26 17:38:06:270768][https-jsse-nio-8443-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:38:06:270787][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/sockjs-client/sockjs.min.js", parameters={}
+[2025-09-26 17:38:06:270787][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/stomp-websocket/stomp.min.js", parameters={}
+[2025-09-26 17:38:06:270788][https-jsse-nio-8443-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:38:06:270788][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:38:06:270792][https-jsse-nio-8443-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:38:06:270794][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:38:06:270827][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/info?t=1758875886067", parameters={masked}
+[2025-09-26 17:38:06:270827][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:38:06:270827][https-jsse-nio-8443-exec-3] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/info?t=1758875886067
+[2025-09-26 17:38:06:270827][https-jsse-nio-8443-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:38:06:270859][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/adminchat/827/ay0yreei/websocket", parameters={}
+[2025-09-26 17:38:06:270859][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.s.s.WebSocketHandlerMapping - Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@61e90cec
+[2025-09-26 17:38:06:270859][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Processing transport request: GET https://127.0.0.1:8443/adminchat/827/ay0yreei/websocket
+[2025-09-26 17:38:06:270861][https-jsse-nio-8443-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 101 SWITCHING_PROTOCOLS
+[2025-09-26 17:38:06:270862][https-jsse-nio-8443-exec-1] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - New WebSocketServerSockJsSession[id=ay0yreei]
+[2025-09-26 17:38:06:270864][clientInboundChannel-48] DEBUG o.springframework.web.SimpLogging - Processing CONNECT session=ay0yreei
+[2025-09-26 17:38:06:270866][clientInboundChannel-49] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Searching methods to handle SUBSCRIBE /adminsend/to/inquiry-10 id=sub-0 session=ay0yreei, lookupDestination='/adminsend/to/inquiry-10'
+[2025-09-26 17:38:06:270867][clientInboundChannel-50] DEBUG o.springframework.web.SimpLogging - Processing SUBSCRIBE /adminsend/to/inquiry-10 id=sub-0 session=ay0yreei
+[2025-09-26 17:38:06:270867][clientInboundChannel-49] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - No matching message handler methods.
+[2025-09-26 17:38:06:271538][MessageBroker-6] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Closed 1 sessions: [2w0qate1]
+[2025-09-26 17:38:08:273266][clientInboundChannel-54] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Searching methods to handle SEND /adminreceiveto session=ay0yreei, lookupDestination='/adminreceiveto'
+[2025-09-26 17:38:08:273266][clientInboundChannel-54] DEBUG o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Invoking AdminMsgController#adminreceiveto[2 args]
+[2025-09-26 17:38:08:273267][clientInboundChannel-54] DEBUG o.springframework.web.SimpLogging - Processing MESSAGE destination=/adminsend/to/inquiry-10 session=null payload={"sendid":"1","receiveid":"inquiry-10","content1":"ㅣㅏ;","inquiryId":10,"send...(truncated)
+[2025-09-26 17:38:08:273267][clientInboundChannel-54] DEBUG o.springframework.web.SimpLogging - Broadcasting to 1 sessions.
+[2025-09-26 17:38:12:276906][clientInboundChannel-57] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=ay0yreei
+[2025-09-26 17:38:12:276907][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.h.LoggingWebSocketHandlerDecorator - WebSocketServerSockJsSession[id=ay0yreei] closed with CloseStatus[code=1000, reason=null]
+[2025-09-26 17:38:12:276907][https-jsse-nio-8443-exec-7] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - Clearing session ay0yreei
+[2025-09-26 17:38:12:276907][clientOutboundChannel-32] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={}, simpHeartbeat=[J@6ffe1215, simpSessionId=ay0yreei}], simpSessionId=ay0yreei}]
+[2025-09-26 17:38:12:276908][clientInboundChannel-59] DEBUG o.springframework.web.SimpLogging - Processing DISCONNECT session=ay0yreei
+[2025-09-26 17:38:12:276909][clientOutboundChannel-33] DEBUG o.s.w.s.m.SubProtocolWebSocketHandler - No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={org.springframework.messaging.simp.SimpAttributes.COMPLETED=true}, simpSessionId=ay0yreei}], simpSessionId=ay0yreei}]
+[2025-09-26 17:38:12:276912][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
+[2025-09-26 17:38:12:276912][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to edu.sm.controller.MainController#main(Model)
+[2025-09-26 17:38:12:276913][https-jsse-nio-8443-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+[2025-09-26 17:38:12:276913][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.view.JstlView - View name [index], model {}
+[2025-09-26 17:38:12:276913][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.view.JstlView - Forwarding to [/views/index.jsp]
+[2025-09-26 17:38:12:276927][https-jsse-nio-8443-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:38:12:276941][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/stomp-websocket/stomp.min.js", parameters={}
+[2025-09-26 17:38:12:276941][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/webjars/sockjs-client/sockjs.min.js", parameters={}
+[2025-09-26 17:38:12:276941][https-jsse-nio-8443-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:38:12:276941][https-jsse-nio-8443-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+[2025-09-26 17:38:12:276945][https-jsse-nio-8443-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:38:12:276947][https-jsse-nio-8443-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2025-09-26 17:38:21:286543][MessageBroker-6] DEBUG o.s.w.s.s.t.h.DefaultSockJsService - Closed 1 sessions: [ay0yreei]

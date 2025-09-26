@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <style>
     .inquiry-chat-wrapper {
@@ -50,7 +49,6 @@
 
 <script>
     const adminEndChatUrl = '<c:url value="/" />';
-
 
     const adminInquiryChat = {
         inquiryId: ${inquiry.inquiryId},
@@ -155,23 +153,9 @@
         <div class="card-body">
             <div class="inquiry-chat-wrapper">
                 <div class="inquiry-chat-messages" id="adminChatHistory">
-                    <c:forEach var="message" items="${messages}">
-                        <c:set var="isMe" value="${message.senderId == sessionScope.admin.adminId}" />
-                        <div class="mb-2 ${isMe ? 'text-right' : 'text-left'}">
-                            <div class="chat-bubble ${isMe ? 'me' : 'other'}">
-                                    ${message.content}
-                            </div>
-                            <br/>
-                            <div class="chat-meta">
-                                <c:choose>
-                                    <c:when test="${isMe}">관리자</c:when>
-                                    <c:otherwise>고객</c:otherwise>
-                                </c:choose>
-                                ·
-                                <c:out value="${fn:substring(fn:replace(message.createdAt, 'T', ' '), 0, 16)}" />
-                            </div>
-                        </div>
-                    </c:forEach>
+                    <div class="text-center text-muted small py-2">
+                        이전 대화 내용은 저장되지 않습니다.
+                    </div>
                 </div>
                 <div class="inquiry-chat-input">
                     <div class="input-group">

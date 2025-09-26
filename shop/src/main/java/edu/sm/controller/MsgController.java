@@ -1,8 +1,6 @@
 package edu.sm.controller;
 
-import edu.sm.app.dto.InquiryMessage;
 import edu.sm.app.msg.Msg;
-import edu.sm.app.service.InquiryMessageService;
 import edu.sm.app.service.InquiryService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +17,6 @@ import java.time.LocalDateTime;
 public class MsgController {
 
     private final SimpMessagingTemplate template;
-    private final InquiryMessageService inquiryMessageService;
     private final InquiryService inquiryService;
 
     @MessageMapping("/receiveall") // 모두에게 전송
@@ -42,29 +39,22 @@ public class MsgController {
         msg.setCreatedAt(LocalDateTime.now());
         log.info("receive to: {}", msg);
         template.convertAndSend("/send/to/" + msg.getReceiveid(), msg);
-        recordInquiryMessage(msg, "CUSTOMER");
+        updateInquiryStatus(msg, "CUSTOMER");
     }
 
-    private void recordInquiryMessage(Msg msg, String defaultSenderType) {
+    private void updateInquiryStatus(Msg msg, String defaultSenderType) {
         if (msg.getInquiryId() == null) {
             return;
         }
         String senderType = (msg.getSenderType() == null || msg.getSenderType().isEmpty())
                 ? defaultSenderType
                 : msg.getSenderType();
-        InquiryMessage inquiryMessage = InquiryMessage.builder()
-                .inquiryId(msg.getInquiryId())
-                .senderId(msg.getSendid())
-                .senderType(senderType)
-                .content(msg.getContent1())
-                .build();
         try {
-            inquiryMessageService.register(inquiryMessage);
             if ("CUSTOMER".equalsIgnoreCase(senderType)) {
                 inquiryService.updateStatus(msg.getInquiryId(), "IN_PROGRESS");
             }
         } catch (Exception e) {
-            log.error("Failed to store inquiry message", e);
+            log.error("Failed to update inquiry status", e);
         }
     }
 }
