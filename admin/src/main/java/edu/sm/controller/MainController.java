@@ -40,12 +40,13 @@ public class MainController {
         model.addAttribute("shopSseUrl", shopSseUrl);
         return "index";
     }
-//    @RequestMapping("/chat")
-//    public String chat(Model model) {
-//        model.addAttribute("websocketurl", wsUrl);
-//        model.addAttribute("center", "inquiry/chat");
-//        return "index";
-//    }
+    @RequestMapping("/chat")
+    public String chat(Model model) {
+        model.addAttribute("center", "chat");
+        model.addAttribute("websocketurl", webSocketUrl);
+        return "index";
+    }
+
     @RequestMapping("/websocket")
     public String websocket(Model model) {
         model.addAttribute("websocketurl",webSocketUrl);
