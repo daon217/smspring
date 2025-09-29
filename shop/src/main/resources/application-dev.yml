@@ -24,9 +24,13 @@ spring:
       suffix: .jsp
 
   datasource:
-    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-    url: jdbc:log4jdbc:mysql://127.0.0.1:3306/shopdb?characterEncoding=utf8
-    username: root
+#    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+#    url: jdbc:log4jdbc:mysql://127.0.0.1:3306/shopdb?characterEncoding=utf8
+#    username: root
+#    password: ENC(idIWCdznEM3ggslDeTmLJw==)
+#    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
     password: ENC(idIWCdznEM3ggslDeTmLJw==)
 
 mybatis:

@@ -84,6 +84,7 @@ dependencies {
     implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16' // 실행된 SQL 쿼리를 실제 값과 함께 로깅합니다.
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3' // MyBatis와 Spring Boot를 통합합니다.
     runtimeOnly 'com.mysql:mysql-connector-j' // MySQL 데이터베이스 드라이버.
+    runtimeOnly 'org.postgresql:postgresql'
 
     // JSP/JSTL 의존성
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper' // JSP 페이지를 서블릿으로 컴파일합니다.
