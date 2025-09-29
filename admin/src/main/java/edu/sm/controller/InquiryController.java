@@ -19,7 +19,7 @@ public class InquiryController {
 
     private final InquiryService inquiryService;
 
-    @Value("${app.url.wsurl}")
+    @Value("${app.url.websocketurl}")
     String wsUrl;
 
     @GetMapping("/board")

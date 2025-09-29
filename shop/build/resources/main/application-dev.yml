@@ -41,7 +41,7 @@ logging:
 
 app:
   url:
-    websocketurl: https://10.20.36.133:8443/
+    websocketurl: https://127.0.0.1:8443/
   dir:
     imgsdir: file:///C:/smspring/imgs/
     uploadimgsdir: C:/smspring/imgs/
