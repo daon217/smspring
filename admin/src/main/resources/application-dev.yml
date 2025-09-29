@@ -32,9 +32,9 @@ logging:
 # @Value("${}")
 app:
   url:
-    sse: http://127.0.0.1:8088/
-    shop-sse: https://127.0.0.1:8443/
-    wsurl: https://127.0.0.1:8443/
+    sse: http://10.20.36.133:8088/
+    shop-sse: https://10.20.36.133:8443/
+    websocketurl: https://10.20.36.133:8443/
   dir:
     imgsdir: file:///C:/smspring/imgs/     # 화면 출력 용
     uploadimgsdir: C:/smspring/imgs/    # 파일 Write 용

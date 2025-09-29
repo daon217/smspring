@@ -43,6 +43,8 @@ public class ChatController {
     }
     @RequestMapping("/chat3")
     public String map2(Model model) {
+        model.addAttribute("websocketurl",webSocketUrl);
+
         model.addAttribute("center",dir+"chat3");
         model.addAttribute("left",dir+"left");
         return "index";

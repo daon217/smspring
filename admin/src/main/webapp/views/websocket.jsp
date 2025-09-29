@@ -60,7 +60,7 @@
     }
 </style>
 <script>
-    chat3 = {
+    websocketpage = {
         roomId: '1', // 하드코딩된 방 번호
         peerConnection:null,
         localStream:null,
@@ -244,7 +244,7 @@
         }
     }
     $(()=>{
-        chat3.init();
+        websocketpage.init();
     });
 
 </script>
@@ -253,17 +253,15 @@
 
 <div class="col-sm-10">
     <h2>Chat3 Center</h2>
-    <%--  <div class="controls">--%>
-    <%--    <button id="startVideoButton" class="control-button start-call">Start Video Button</button>--%>
-    <%--  </div>--%>
+
     <div class="admin-webrtc-container">
         <div class="video-grid">
             <div class="video-wrapper">
-                <video id="remoteVideo" autoplay playsinline muted class="video-stream"></video>
+                <video id="localVideo" autoplay playsinline muted class="video-stream"></video>
                 <div class="video-label">Admin Stream</div>
             </div>
             <div class="video-wrapper">
-                <video id="localVideo" autoplay playsinline class="video-stream"></video>
+                <video id="remoteVideo" autoplay playsinline class="video-stream"></video>
                 <div class="video-label">User Stream</div>
             </div>
         </div>
