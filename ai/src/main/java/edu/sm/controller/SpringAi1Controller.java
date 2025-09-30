@@ -12,7 +12,7 @@ public class SpringAi1Controller {
 
     String dir = "springai1/";
 
-    @RequestMapping("/")
+    @RequestMapping("")
     public String main(Model model) {
         model.addAttribute("center", dir+"center");
         model.addAttribute("left", dir+"left");

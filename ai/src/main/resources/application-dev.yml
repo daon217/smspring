@@ -20,7 +20,15 @@ spring:
       pgvector:
         initialize-schema: true
     openai:
-      api-key: ENC(0Kj9x1+PwawzGwkHhQqrxOVJ6sBpruTb729rKKniiRYIWNiFbUJD9uVPaCB1TRfMfl9IDNYT+pnynCT/X8Q7cKhzGhvWfRTLQ+QPWkJm+faxrZ0cwnygArS92+XCvwxuuRYPF9G5eJwaZcW8FaCjI/OEjs/a3OeBDx58FVlfVX8cZLEPxnJDiv7Ed3uxzFadoZf/uRHPu/g1XdyDEeEjunNiYQ2lu/Vwk/hcDPnJ+eA=)
+      api-key: ENC(MOBr/dC8vzmK3pRZmmB0sZRgZ+LMmQzoEaSdueXhtuzx3qDHQyVzni+huoQVgQjy)
+#      chat:
+#        options:
+#          model: gemini-2.0-flash
+#          temperature: 0.0
+#          max-tokens: 1000
+#        completions-path: /v1/chat/completions
+#        base-url: https://generativelanguage.googleapis.com/v1beta/openai/
+#      api-key: ENC(+T9SWaH75QZqZr5jsSY/GPfYhyJSiku54nYHGBHzq2D8M6Ri7sq3QXgWNzqalZw1kxI4ewSWJ5sbOH0zCQt6418r05/ShuliVIYKCWLIZtjMAOwzahzqKH+vtkWOlu2v5C3XBYdZYl2/14oOWDyR6yjYFNOTyCBOpxAEphIYS2SVMLqr6rTbFFN1RpBFs4Iko7C3Lmx1PdzADzBqyCezj4u+2PCSYN4ChZKtLrY7QnI=)
       chat:
         options:
           model: gpt-4o

@@ -12,8 +12,10 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8ebb7e444a8cd5d1f3bbc02bbacb744a&libraries=services"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.0/lame.min.js"></script>
 
+    <link href="/css/springai.css" rel="stylesheet" />
+    <script src="/js/springai.js"></script>
     <style>
         .fakeimg {
             height: 200px;
@@ -24,7 +26,7 @@
 <body>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
-    <h1>Item Management</h1>
+    <h1>SpringAI System</h1>
 </div>
 <ul class="nav justify-content-end">
     <li class="nav-item">
@@ -42,27 +44,27 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/springai1"/>">SpringAi1</a>
+                <a class="nav-link" href="<c:url value="/springai1"/>">SrpingAi1</a>
             </li>
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/springai2"/>">SpringAi2</a>
+                <a class="nav-link" href="<c:url value="/springai2"/>">SrpingAi2</a>
             </li>
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/springai3"/>">SpringAi3</a>
+                <a class="nav-link" href="<c:url value="/springai3"/>">SrpingAi3</a>
             </li>
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/springai4"/>">SpringAi4</a>
+                <a class="nav-link" href="<c:url value="/springai4"/>">SrpingAi4</a>
             </li>
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/springai5"/>">SpringAi5</a>
+                <a class="nav-link" href="<c:url value="/springai5"/>">SrpingAi5</a>
             </li>
         </ul>
     </div>
