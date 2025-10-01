@@ -1,10 +1,8 @@
 package edu.sm.controller;
 
-
 import edu.sm.app.dto.Hotel;
 import edu.sm.app.dto.ReviewClassification;
 import edu.sm.app.dto.ShopOrderResponse;
-import edu.sm.app.springai.service1.*;
 import edu.sm.app.springai.service2.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +27,8 @@ public class Ai2Controller {
   final private AiServiceShop aiServiceShop;
 
 
+
+
   // ##### 요청 매핑 메소드 #####
   @RequestMapping(value = "/list-output-converter")
   public List<String> listOutputConverter(@RequestParam("city") String city) {
@@ -44,8 +44,8 @@ public class Ai2Controller {
   }
   @RequestMapping(value = "/map-output-converter")
   public Map<String, Object> mapOutputConverter(@RequestParam("hotel") String hotel) {
-    Map<String, Object> hotelInfo = aiServicemoc.mapOutputConverterLowLevel(hotel);
-    // Map<String, Object> hotelInfo = aiServicemoc.mapOutputConverterHighLevel(hotel);
+//        Map<String, Object> hotelInfo = aiServicemoc.mapOutputConverterLowLevel(hotel);
+    Map<String, Object> hotelInfo = aiServicemoc.mapOutputConverterHighLevel(hotel);
     return hotelInfo;
   }
   @RequestMapping(value = "/generic-bean-output-converter")
@@ -69,4 +69,5 @@ public class Ai2Controller {
   public List<ShopOrderResponse.MenuCategory> menu() {
     return aiServiceShop.getMenuCategories();
   }
+
 }
