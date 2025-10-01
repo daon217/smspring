@@ -4,22 +4,22 @@
     <p>AI3 Left Menu</p>
     <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-            <a class="nav-link" href="<c:url value="/springai1/ai1"/>">ai1</a>
+            <a class="nav-link" href="<c:url value="/springai3/ai1"/>">ai1</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<c:url value="/springai1/ai2"/>">ai2</a>
+            <a class="nav-link" href="<c:url value="/springai3/ai2"/>">ai2</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<c:url value="/springai1/ai3"/>">ai3</a>
+            <a class="nav-link" href="<c:url value="/springai3/ai3"/>">ai3</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<c:url value="/springai1/ai4"/>">ai4</a>
+            <a class="nav-link" href="<c:url value="/springai3/ai4"/>">ai4</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<c:url value="/springai1/ai5"/>">ai5</a>
+            <a class="nav-link" href="<c:url value="/springai3/ai5"/>">ai5</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<c:url value="/springai1/ai6"/>">ai6</a>
+            <a class="nav-link" href="<c:url value="/springai3/ai6"/>">ai6</a>
         </li>
     </ul>
     <hr class="d-sm-none">

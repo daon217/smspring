@@ -38,7 +38,6 @@
 
             const jsonString = await response.text();
             const jsonObject = JSON.parse(jsonString);
-            console.log(jsonObject);
             const prettyJson = JSON.stringify(jsonObject, null, 2);
             $('#'+uuid).html(prettyJson)
 
