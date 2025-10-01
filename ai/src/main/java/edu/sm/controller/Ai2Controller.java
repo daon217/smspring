@@ -3,6 +3,7 @@ package edu.sm.controller;
 
 import edu.sm.app.dto.Hotel;
 import edu.sm.app.dto.ReviewClassification;
+import edu.sm.app.dto.ShopOrderResponse;
 import edu.sm.app.springai.service1.*;
 import edu.sm.app.springai.service2.*;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +26,7 @@ public class Ai2Controller {
   final private AiServiceMapOutputConverter aiServicemoc;
   final private AiServiceParameterizedTypeReference aiServiceptr;
   final private AiServiceSystemMessage aiServicesm;
+  final private AiServiceShop aiServiceShop;
 
 
   // ##### 요청 매핑 메소드 #####
@@ -56,5 +58,15 @@ public class Ai2Controller {
   public ReviewClassification beanOutputConverter2(@RequestParam("review") String review) {
     ReviewClassification reviewClassification = aiServicesm.classifyReview(review);
     return reviewClassification;
+  }
+
+  @RequestMapping(value = "/shop/order")
+  public ShopOrderResponse processOrder(@RequestParam("question") String question) {
+    return aiServiceShop.processOrder(question);
+  }
+
+  @RequestMapping(value = "/shop/menu")
+  public List<ShopOrderResponse.MenuCategory> menu() {
+    return aiServiceShop.getMenuCategories();
   }
 }
