@@ -8,6 +8,7 @@ import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -23,9 +24,9 @@ public class WebRTCSignalingHandler extends TextWebSocketHandler {
     }
 
     @Override
-    public void handleTextMessage(WebSocketSession session, TextMessage message) {
+    public void handleTextMessage(WebSocketSession wsession, TextMessage message) {
         try {
-            log.info("Received message from client {}: {}", session.getId(), message.getPayload());
+            log.info("Received message from client {}: {}", wsession.getId(), message.getPayload());
 
             SignalMessage signalMessage = objectMapper.readValue(message.getPayload(), SignalMessage.class);
             String roomId = signalMessage.getRoomId();
@@ -34,19 +35,30 @@ public class WebRTCSignalingHandler extends TextWebSocketHandler {
 
             switch (signalMessage.getType()) {
                 case "join":
-                    handleJoinMessage(session, roomId);
+                    handleJoinMessage(wsession, roomId);
+                    signalMessage.setType("join");
+                    broadcastToRoom(wsession, new TextMessage(objectMapper.writeValueAsString(signalMessage)), roomId);
+                    break;
+                case "bye":
+                    log.info("Received bye from: {}", wsession.getId());
+//                    Map<String, Object> chatData = new HashMap<>();
+//                    chatData.put("content", "Bye ...");
+//                    signalMessage.setData(chatData);
+                    signalMessage.setType("bye");
+                    broadcastToRoom(wsession, new TextMessage(objectMapper.writeValueAsString(signalMessage)), roomId);
                     break;
                 case "offer":
-                    log.info("Received offer from: {}", session.getId());
-                    broadcastToRoom(session, message, roomId);
+                    log.info("1Received offer from: {}", wsession.getId());
+                    log.info("2Received offer from: {}", message);
+                    broadcastToRoom(wsession, message, roomId);
                     break;
                 case "answer":
-                    log.info("Received answer from: {}", session.getId());
-                    broadcastToRoom(session, message, roomId);
+                    log.info("Received answer from: {}", wsession.getId());
+                    broadcastToRoom(wsession, message, roomId);
                     break;
                 case "ice-candidate":
-                    log.info("Received ICE candidate from: {}", session.getId());
-                    broadcastToRoom(session, message, roomId);
+                    log.info("Received ICE candidate from: {}", wsession.getId());
+                    broadcastToRoom(wsession, message, roomId);
                     break;
                 default:
                     log.warn("Unknown message type: {}", signalMessage.getType());
@@ -84,11 +96,11 @@ public class WebRTCSignalingHandler extends TextWebSocketHandler {
     }
 
     @Override
-    public void afterConnectionClosed(WebSocketSession session, CloseStatus status) {
-        String roomId = roomSessions.get(session.getId());
-        sessions.remove(session.getId());
-        roomSessions.remove(session.getId());
-        log.info("Client {} disconnected from room {}", session.getId(), roomId);
+    public void afterConnectionClosed(WebSocketSession wsession, CloseStatus status) {
+        String roomId = roomSessions.get(wsession.getId());
+        sessions.remove(wsession.getId());
+        roomSessions.remove(wsession.getId());
+        log.info("Client {} disconnected from room {}", wsession.getId(), roomId);
 
         // 남은 참가자 수 로깅
         if (roomId != null) {
@@ -97,6 +109,7 @@ public class WebRTCSignalingHandler extends TextWebSocketHandler {
                     .filter(room -> room.equals(roomId))
                     .count();
             log.info("Room {} now has {} participants remaining", roomId, remainingParticipants);
+
         }
     }
 

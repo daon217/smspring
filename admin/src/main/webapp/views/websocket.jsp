@@ -117,7 +117,13 @@
 
             try {
                 if (!this.peerConnection) {
+                    await this.startCam();
+
                     await this.createPeerConnection();
+                    this.sendSignalingMessage({
+                        type: 'join',
+                        roomId: this.roomId
+                    });
                 }
 
                 const offer = await this.peerConnection.createOffer();
@@ -149,9 +155,12 @@
             document.getElementById('startButton').style.display = 'block';
             document.getElementById('endButton').style.display = 'none';
             this.updateConnectionStatus('Call Ended');
-            this.websocket.close()
+            $('#user').html("접속이 끊어 졌습니다.");
             console.log("endCall-----------------------------------------------");
-
+            this.sendSignalingMessage({
+                type: 'bye',
+                roomId: this.roomId
+            });
         },
         sendSignalingMessage:function(message){
             if (this.websocket?.readyState === WebSocket.OPEN) {
@@ -184,11 +193,21 @@
                                 console.error('Error handling offer:', error);
                             }
                             break;
+                        case 'join':
+                            $('#user').html("사용자가 방문 하였습니다.  Start Call 버튼을 누르세요");
+                            break;
+                        case 'bye':
+                            $('#user').html("접속이 끊어 졌습니다.");
+                            document.getElementById('remoteVideo').srcObject = null;
+                            break;
                         case 'answer':
                             await this.peerConnection.setRemoteDescription(new RTCSessionDescription(message.data));
                             break;
                         case 'ice-candidate':
+                            document.getElementById('startButton').style.display = 'none';
+                            document.getElementById('endButton').style.display = 'block';
                             await this.peerConnection.addIceCandidate(new RTCIceCandidate(message.data));
+                            $('#user').html("접속 상태 입니다.");
                             break;
                     }
                 } catch (error) {
@@ -247,13 +266,20 @@
         websocketpage.init();
     });
 
+    window.onbeforeunload = function (e) {
+        //이벤트버블현상 처리막기
+        e.preventDefault();
+        console.log('aaaaaaaaaaaaaaaaaaa');
+        websocketpage.endCall();
+    };
+
 </script>
 
 
 
 <div class="col-sm-10">
     <h2>Chat3 Center</h2>
-
+    <h4 id="user">Start Call 버튼을 누르세요</h4>
     <div class="admin-webrtc-container">
         <div class="video-grid">
             <div class="video-wrapper">
