@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Main2 {
     public static void main(String[] args) throws IOException {
-        String url = "https://127.0.0.1:8443/savedata2";
+        String url = "https://10.20.36.102:8444/savedata2";
         String provider = "iot-main2";
         Random r = new Random();
         for (int i = 0; i < 1000; i++) {
