@@ -21,6 +21,14 @@
             height: 200px;
             background: #aaa;
         }
+        /* 음성 명령 아이콘 */
+        .voice-nav-icon {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: inline-block;
+            background: url('/image/speaker-green.png') no-repeat center center / contain;
+        }
     </style>
 </head>
 <body>
@@ -30,10 +38,15 @@
 </div>
 <ul class="nav justify-content-end">
     <li class="nav-item">
-        <a class="nav-link" href="#">LOGIN</a>
+        <a class="nav-link" href="<c:url value="/register"/> ">Register</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">REGISTER</a>
+        <a class="nav-link" href="<c:url value="/login"/>">Login</a>
+    </li>
+    <%-- 음성 명령 아이콘 및 스피너 추가 --%>
+    <li class="nav-item p-2 d-flex align-items-center">
+        <div id="voice-nav-icon" class="voice-nav-icon speakerPulse"></div>
+        <span id="voice-nav-spinner" class="spinner-border spinner-border-sm ml-2" style="display: none;"></span>
     </li>
 </ul>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -96,9 +109,79 @@
     </div>
 </div>
 
-<div class="text-center" style="background-color:black; color: white; margin-bottom:0; max-height: 50px;">
+<div class="text-center" style="background-color:black;
+color: white; margin-bottom:0; max-height: 50px;">
     <p>Footer</p>
 </div>
 
 </body>
+
+<c:if test="${activateVoiceNav == true}">
+    <script>
+        let voiceNav = {
+            init: function() {
+                // 초기 마이크 활성화 및 UI 설정
+                this.startVoiceQuestion();
+            },
+            // 마이크 활성화 및 UI 설정
+            startVoiceQuestion: function() {
+                springai.voice.initMic(this);
+                springai.voice.controlSpeakerAnimation('voice-nav-icon', true);
+                $('#voice-nav-spinner').hide();
+            },
+            // 음성 녹음 완료 후 처리 (STT 및 내비게이션)
+            handleVoice: async function(mp3Blob){
+
+                // --- 디버깅용 텍스트 프롬프트 코드 제거 (원래 STT 로직 복원) ---
+                springai.voice.controlSpeakerAnimation('voice-nav-icon', false);
+                $('#voice-nav-spinner').show();
+
+                // 1. STT (음성 -> 텍스트) 요청
+                const formData = new FormData();
+                formData.append("speech", mp3Blob, 'speech.mp3'); // Blob 에러가 발생하지 않도록 mp3Blob 사용
+
+                const sttResponse = await fetch("/ai3/stt", {
+                    method: "post",
+                    headers: { 'Accept': 'text/plain' },
+                    body: formData
+                });
+                const questionText = await sttResponse.text();
+
+                // --- 디버깅 로그 유지 ---
+                console.log("[VoiceNav Debug] 1. STT 결과 (questionText):", questionText);
+                // -----------------------
+
+                // 2. AI에게 명령을 분석하고 타겟 URL 요청
+                const navResponse = await fetch("/ai3/target", {
+                    method: "post",
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Accept': 'text/plain'
+                    },
+                    body: new URLSearchParams({ questionText: questionText })
+                });
+                const targetUrl = (await navResponse.text()).trim();
+
+                // --- 디버깅 로그 유지 ---
+                console.log("[VoiceNav Debug] 2. AI 분석 결과 (targetUrl):", targetUrl);
+                // -----------------------
+
+                if (targetUrl && targetUrl !== "") {
+                    console.log("[VoiceNav Debug] 3. 유효한 URL 확인. 페이지 이동 명령 실행:", targetUrl);
+                    // 3. 페이지 이동
+                    window.location.href = targetUrl;
+                } else {
+                    console.log("[VoiceNav Debug] 3. URL이 유효하지 않아 페이지 이동 실패. 재대기.");
+                    // 이동 명령 실패 시, 다시 음성 대기 상태로 복귀
+                    this.startVoiceQuestion();
+                }
+            }
+        };
+
+        $(() => {
+            voiceNav.init();
+        });
+    </script>
+</c:if>
+
 </html>
