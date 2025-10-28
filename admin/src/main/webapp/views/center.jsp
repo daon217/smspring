@@ -31,6 +31,7 @@
                 $('#count').html(receivedCount);
             });
 
+
             sse.addEventListener('adminmsg', e => {
                 const { data: receivedData } = e;
                 console.log("count event data",receivedData);

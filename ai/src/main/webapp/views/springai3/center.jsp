@@ -16,7 +16,7 @@
             this.statusElement = document.getElementById('statusMessage');
 
             if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-                this.updateStatus('이 브라우저에서는 카메라 접근을 지원하지 않습니다.');
+                this.updateStatus(' 이 브라우저에서는 카메라 접근을 지원하지 않습니다.');
                 return;
             }
 
